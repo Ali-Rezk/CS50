@@ -1,9 +1,10 @@
 #include <stdio.h>
-#include <stdio.cs50>
+#include <cs50.h>
 
 int main(void)
 {
- int i=3
+ int i = 3;
  while (i > 0)
- printf("yes)
+ printf("yes");
+ i--;
 }
