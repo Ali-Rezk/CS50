@@ -5,6 +5,9 @@ int main(void)
 {
  int i = 3;
  while (i > 0)
- printf("yes\n");
- i=i-1;
+ {
+    printf("yes\n");
+    i=i-1;
+ }
+
 }
