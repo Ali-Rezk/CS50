@@ -8,7 +8,7 @@ int main(void)
     int y=get_int ("y= ");
     int z=get_int ("z= ");
 
-    if (x>y);
+    if (x>y)
     {
     return=0;
     }
