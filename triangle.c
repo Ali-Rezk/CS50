@@ -8,20 +8,24 @@ int main(void)
     int y=get_int ("y= ");
     int z=get_int ("z= ");
 
-    if (x>y)
+    if (x+z>y)
     {
-    return=0;
+
     }
-    else if (y>x);
+    else if (y+z>x)
     {
-    return=0;
+    printf("good");
     }
-    else if (z>x);
+    else if (x+y>z)
     {
-    return=0;
+    return 1;
     }
-    else if (z>y);
+    else if (z>y)
     {
         printf("TRUE");
+    }
+    else
+    {
+        printf("FALSE");
     }
 }
