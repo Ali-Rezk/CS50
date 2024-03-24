@@ -4,9 +4,9 @@
 int main(void)
 
 {
-    int x=get_int (x= );
-    int y=get_int (y= );
-    int z=get_int (z= );
+    int x=get_int ("x= ");
+    int y=get_int ("y= ");
+    int z=get_int ("z= ");
 
     if (x>y);
     {
@@ -20,5 +20,8 @@ int main(void)
     {
     return=0;
     }
-    else
+    else if (z>y);
+    {
+        printf("TRUE");
+    }
 }
