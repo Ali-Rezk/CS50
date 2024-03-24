@@ -20,7 +20,6 @@ int main(void)
     {
         return 0;
     }
-    else if (z>y)
     {
         printf("TRUE");
     }
