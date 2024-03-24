@@ -10,7 +10,7 @@ int main(void)
 
     if (x+z>y)
     {
-        return 0;
+        return 1;
     }
     else if (y+z>x)
     {
