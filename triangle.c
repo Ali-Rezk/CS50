@@ -4,9 +4,9 @@
 int main(void)
 
 {
-    int x=get_int ("x= ");
-    int y=get_int ("y= ");
-    int z=get_int ("z= ");
+    float x=get_float ("x= ");
+    float y=get_float ("y= ");
+    float z=get_float ("z= ");
 
     if (x+z<y)
     {
