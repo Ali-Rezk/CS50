@@ -10,15 +10,15 @@ int main(void)
 
     if (x+z>y)
     {
-        return 1;
+        return 0;
     }
     else if (y+z>x)
     {
-        return 1;
+        return 0;
     }
     else if (x+y>z)
     {
-        return 1;
+        return 0;
     }
     else
     {
