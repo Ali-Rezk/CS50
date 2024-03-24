@@ -10,18 +10,15 @@ int main(void)
 
     if (x+z>y)
     {
-        return 0;
+        return 1;
     }
     else if (y+z>x)
     {
-        return 0;
+        return 1;
     }
     else if (x+y>z)
     {
-        return 0;
-    }
-    {
-        printf("TRUE");
+        return 1;
     }
     else
     {
