@@ -4,5 +4,6 @@
 int main (void)
 
 {
+    int n=get_int("change owned: \n");
     
 }
