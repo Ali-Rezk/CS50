@@ -12,8 +12,8 @@ int main (void)
 
     int x=(n/25);
     int y=(n/10 - x*2.5);
-    int z=(n/5 - x*5);
-    int v=(n/1 - x*25);
+    int z=(n/5 - y*2);
+    int v=(n/1 - z*5);
     int i=(x+y+z+v);
     printf("%i\n",i);
 
