@@ -14,10 +14,18 @@ int main(void)
         {
             printf("%c",s[i]-32);
         }
-        else if (z[i] >= 'a' && z[i] =< 'z')
+        else
+        {
+            printf("%c",s[i]);
+        }
+        if (z[i] >= 'a' && z[i] =< 'z')
         {
             printf("%c",z[i]-32);
-        
+
+        }
+        else
+        {
+            printf("%c",z[i]);
         }
     }
     printf("\n");
