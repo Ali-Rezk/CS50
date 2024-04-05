@@ -23,6 +23,6 @@ int main(void)
             z[i]-32;
         }
     }
-    p
-    printf("\n");
+
+    printf("%i\n",s);
 }
