@@ -14,6 +14,7 @@ int main(void)
         {
             s[i]-32;
         }
+        printf("%i\n",s[i]);
     }
 
      for (int i=0, n = strlen(z); i<n; i++)
@@ -24,5 +25,5 @@ int main(void)
         }
     }
 
-    printf("%i\n",s);
+
 }
