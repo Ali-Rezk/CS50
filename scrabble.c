@@ -12,7 +12,7 @@ int main(void)
     {
         if (s[i] >= 'a' && s[i] <= 'z')
         {
-            s[i]-32;
+            s[i]=s[i]-32;
         }
         printf("%i\n",s[i]);
     }
@@ -21,9 +21,8 @@ int main(void)
      {
         if (z[i] >= 'a' && z[i] <= 'z')
         {
-            z[i]-32;
+            z[i]=z[i]-32;
         }
     }
-
-
+    printf{""}
 }
