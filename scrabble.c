@@ -6,9 +6,11 @@ int main(void)
 
 {
     string s=get_string("input: ");
-
-    if (s[i]>='a' && s[i]<='z')
+    for (i=0; n=strlen(s); i<n; i++)
     {
-        printf("%c",s[i]-32)
+        if (s[i]>='a' && s[i]<='z')
+        {
+            printf("%c",s[i]-32)
+        }
     }
 }
