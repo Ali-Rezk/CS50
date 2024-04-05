@@ -7,7 +7,7 @@ int main(void)
 {
     string s = get_string ("player 1:");
     string z = get_string ("player 2:");
-
+    char 'A'= 1
     for (int i=0, n = strlen(s); i<n; i++)
     {
         if (s[i] >= 'a' && s[i] <= 'z')
@@ -18,7 +18,11 @@ int main(void)
         {
             printf("%c",s[i]);
         }
-        if (z[i] >= 'a' && z[i] =< 'z')
+    }
+
+     for (int i=0, n = strlen(z); i<n; i++)
+     {
+        if (z[i] >= 'a' && z[i] <= 'z')
         {
             printf("%c",z[i]-32);
 
