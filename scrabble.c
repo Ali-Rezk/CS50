@@ -14,22 +14,13 @@ int main(void)
         {
             s[i]-32;
         }
-        else
-        {
-            printf("%c",s[i]);
-        }
     }
 
      for (int i=0, n = strlen(z); i<n; i++)
      {
         if (z[i] >= 'a' && z[i] <= 'z')
         {
-            printf("%c",z[i]-32);
-
-        }
-        else
-        {
-            printf("%c",z[i]);
+            z[i]-32;
         }
     }
     printf("\n");
