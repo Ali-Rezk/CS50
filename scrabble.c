@@ -7,7 +7,7 @@ int main(void)
 {
     string s = get_string ("player 1:");
     string z = get_string ("player 2:");
-    char 'A'= 1
+    char (A)= 1;
     for (int i=0, n = strlen(s); i<n; i++)
     {
         if (s[i] >= 'a' && s[i] <= 'z')
