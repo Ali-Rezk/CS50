@@ -3,8 +3,9 @@
 #include <string.h>
 #include <stdio.h>
 
-int void(main)
+int main (void)
 
 {
+    string s = get_string ("text: ");
     
 }
