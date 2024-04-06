@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <ctype.h>
+#include <math.h>
 #include <string.h>
 #include <stdio.h>
 
@@ -17,6 +18,7 @@ int main (void)
     float L = letters/X;
     float S = sentences/X;
     int index = 0.0588 * L - 0.296 * S - 15.8;
+    int Z = round(index);
 }
 
 int compute_alpha(string letter)
