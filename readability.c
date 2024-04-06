@@ -12,7 +12,7 @@ int main (void)
 {
     string s = get_string ("text: ");
 
-    int words = compute_spaces(s);
+    float words = compute_spaces(s);
     int letters = compute_alpha(s);
     int sentences = compute_punct(s);
     float X = words/100;
