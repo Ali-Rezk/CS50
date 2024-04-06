@@ -17,19 +17,26 @@ int compute_alpha(string letter)
 
     for (int i=0, len=strlen(letter); i<len; i++)
     {
-        if (isalpha(s[i]))
+        if (isalpha(letter[i]))
         {
             alpha += 1;
         }
     }
+    return alpha;
 }
 
-int compute_spaces(string sentence)
+int compute_spaces(string words)
 {
     int spaces = 0;
 
     for (int i=0, len=strlen(sentence); i<len; i++)
     {
-        
+        if (isblank(sentence[i]))
+        {
+            spaces += 1;
+        }
     }
+    return spaces+1;
 }
+
+int compute_
