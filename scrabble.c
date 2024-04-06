@@ -9,5 +9,6 @@ int main(void)
 {
     string ask1= get_string ("player 1: ");
     string ask2= get_string ("player 2: ");
-    
+
 }
+int compute_score()
