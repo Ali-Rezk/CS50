@@ -19,6 +19,7 @@ int main (void)
     float S = sentences/X;
     int index = 0.0588 * L - 0.296 * S - 15.8;
     int Z = round(index);
+    
 }
 
 int compute_alpha(string letter)
