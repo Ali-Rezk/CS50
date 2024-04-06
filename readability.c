@@ -6,6 +6,7 @@
 
 int compute_alpha(string letter);
 int compute_spaces(string words);
+int compute_punct(string sentence);
 
 int main (void)
 {
@@ -13,13 +14,27 @@ int main (void)
 
     int words = compute_spaces(s);
     int letters = compute_alpha(s);
-    int sentences + compute_punct(s);
+    int sentences = compute_punct(s);
     float X = words/100;
     float L = letters/X;
     float S = sentences/X;
     int index = 0.0588 * L - 0.296 * S - 15.8;
     int Z = round(index);
-    
+
+    if (index<1)
+    {
+        printf("before grade 1");
+    }
+    else if (Z>16)
+    {
+        printf("grade 16+");
+    }
+    else
+    {
+        printf("grade %i",Z);
+    }
+
+    printf("\n");
 }
 
 int compute_alpha(string letter)
