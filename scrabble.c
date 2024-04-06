@@ -16,5 +16,6 @@ int compute_score(compute)
 {
     int score = 0;
 
+    if ()
     for ()
 }
