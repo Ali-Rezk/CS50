@@ -1,4 +1,5 @@
 #include <cs50.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -11,6 +12,23 @@ int main(void)
     string ask1= get_string ("player 1: ");
     string ask2= get_string ("player 2: ");
 
+    compute_score (ask1);
+    compute_score (ask2);
+
+    if (ask1>ask2)
+    {
+        printf("player 1 wins");
+    }
+    else if (ask2>ask1)
+    {
+        printf("Player 2 wins");
+    }
+    else
+    {
+        printf("tie");
+    }
+
+    printf("\n");
 }
 int compute_score(word)
 {
@@ -18,11 +36,14 @@ int compute_score(word)
 
     for (int i=0, n=strlen (word); i < n; i++)
     {
-        if (isupper(s[i]))
+        if (isupper(word[i]))
         {
             score += points[word[i]-'A'];
         }
-        else if (islower(s[i]))
+        else if (islower(word[i]))
+        {
+            score += points[word[i]-'a'];
+        }
 
     }
 }
