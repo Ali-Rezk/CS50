@@ -14,8 +14,8 @@ int main (void)
     int letters = compute_alpha(s);
     int sentences + compute_punct(s);
     float X = words/100;
-    int L = letters/X;
-    int S = sentences/X;
+    float L = letters/X;
+    float S = sentences/X;
     int index = 0.0588 * L - 0.296 * S - 15.8;
 }
 
