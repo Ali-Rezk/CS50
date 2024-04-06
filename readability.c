@@ -15,9 +15,8 @@ int main (void)
     float words = compute_spaces(s);
     int letters = compute_alpha(s);
     int sentences = compute_punct(s);
-    float X = words/100;
-    float L = letters/X;
-    float S = sentences/X;
+    float L = letters/words * 100;
+    float S = sentences/words *100;
     float index = 0.0588 * L - 0.296 * S - 15.8;
     float Z = float roundf(float index);
 
