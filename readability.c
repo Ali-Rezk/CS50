@@ -10,11 +10,12 @@ int main (void)
 {
     string s = get_string ("text: ");
 
-    int letters = compute_alpha(s);
     int words = compute_spaces(s);
+    int letters = compute_alpha(s);
     int sentences + compute_punct(s);
-    int L = letters/100;
-    int S = sentences/100;
+    float X = words/100;
+    int L = letters/X;
+    int S = sentences/X;
     int index = 0.0588 * L - 0.296 * S - 15.8;
 }
 
