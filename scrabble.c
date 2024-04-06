@@ -10,6 +10,11 @@ int main(void)
     string s = get_string ("player 1:");
     string z = get_string ("player 2:");
 
-    for (int i=0, n=strlen; i<n; i++)
-
+    if (int i >= 'a' && i <= 'z')
+    {
+    for (int i=0, n=strlen (s); i<n; i++)
+    {
+        s[i] -= 32
+    }
+    }
 }
