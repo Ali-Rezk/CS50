@@ -18,7 +18,7 @@ int main (void)
     float L = letters/words * 100;
     float S = sentences/words *100;
     float index = 0.0588 * L - 0.296 * S - 15.8;
-    int Z = index + 0.5;
+    int Z = (float) round(index);
 
     if (index<1)
     {
