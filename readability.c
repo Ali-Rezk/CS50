@@ -70,15 +70,15 @@ int compute_punct(string sentence)
 
     for (int i=0, len=strlen(sentence); i<len; i++)
     {
-        if (sentence[i]-'!'=0)
+        if (sentence[i]=='!')
         {
             punct += 1;
         }
-        else if (sentence[i]-'.'=0)
+        else if (sentence[i]=='.')
         {
             punct += 1;
         }
-        else if (sentence[i]-'?'=0)
+        else if (sentence[i]=='?')
         {
             punct += 1;
         }
