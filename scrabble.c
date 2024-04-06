@@ -16,6 +16,5 @@ int compute_score(compute)
 {
     int score = 0;
 
-    if ()
-    for ()
+    for (int i=0, n=strlen (ask1) )
 }
