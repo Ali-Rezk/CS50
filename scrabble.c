@@ -12,9 +12,16 @@ int main(void)
     string ask2= get_string ("player 2: ");
 
 }
-int compute_score(compute)
+int compute_score(word)
 {
     int score = 0;
 
-    for (int i=0, n=strlen (ask1) )
+    for (int i=0, n=strlen (word); i < n; i++)
+    {
+        if (isupper(s[i]))
+        {
+            score += points[word[i]-'A'];
+        }
+        else if
+    }
 }
