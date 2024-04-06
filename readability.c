@@ -19,7 +19,7 @@ int main (void)
     float L = letters/X;
     float S = sentences/X;
     float index = 0.0588 * L - 0.296 * S - 15.8;
-    int Z = float roundf(float index);
+    float Z = float roundf(float index);
 
     if (index<1)
     {
