@@ -12,14 +12,14 @@ int main(void)
     string ask1= get_string ("player 1: ");
     string ask2= get_string ("player 2: ");
 
-    compute_score (ask1);
-    compute_score (ask2);
+    int score1 = compute_score (ask1);
+    int score2 = compute_score (ask2);
 
-    if (ask1>ask2)
+    if (score1>score2)
     {
         printf("player 1 wins");
     }
-    else if (ask2>ask1)
+    else if (score2>score1)
     {
         printf("Player 2 wins");
     }
