@@ -11,4 +11,7 @@ int main(void)
     string ask2= get_string ("player 2: ");
 
 }
-int compute_score()
+int compute_score(compute)
+{
+    
+}
