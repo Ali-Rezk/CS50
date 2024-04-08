@@ -7,7 +7,7 @@
 int main(int argc,string argv[])
 {
     string s = get_string("plaintext:  ");
-    atoi(argv);
+    atoi(argv[]);
 
     if (argc>2 || argc<2)
     {
