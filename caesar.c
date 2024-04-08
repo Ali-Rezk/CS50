@@ -17,10 +17,12 @@ int main(int argc,string argv[])
     else if (isalpha(argv[1]))
     {
         printf{"Usage: ./caesar key"};
+        return 1;
     }
     else if (atoi(argv[1]);<0)
     {
         printf{"Usage: ./caesar key"};
+        return 1;
     }
 }
 
