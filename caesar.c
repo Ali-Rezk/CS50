@@ -2,4 +2,4 @@
 #include <ctype.h>
 #include <stdio.h>
 
-int main(argv argv[])
+int main(int argc,string argv[])
