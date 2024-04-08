@@ -6,6 +6,9 @@
 
 int main(int argc,string argv[])
 {
+    string s = get_string("plaintext:  ");
+    atoi(argv);
+
     if (argc>2 || argc<2)
     {
         printf{"Usage: ./caesar key"};
@@ -15,3 +18,4 @@ int main(int argc,string argv[])
         if (argv[i])
     }
 }
+
