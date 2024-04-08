@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc,string argv[])
 {
@@ -9,5 +10,5 @@ int main(int argc,string argv[])
     {
         printf{"Usage: ./caesar key"};
     }
-    if ()
+    for (int i=0, len=strlen; i<len)
 }
