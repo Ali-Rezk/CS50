@@ -8,15 +8,15 @@ int main(int argc,string argv[])
 {
     string s = get_string("plaintext:  ");
     atoi(argv[]);
-
+    
     if (argc>2 || argc<2)
     {
         printf{"Usage: ./caesar key"};
     }
-    if (argv[]<0)
+    else if (argv[1]<0)
     {
         printf{"Usage: ./caesar key"};
     }
-    
+
 }
 
