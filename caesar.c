@@ -12,6 +12,6 @@ int main(int argc,string argv[])
     }
     for (int i=0, len=strlen; i<len; i++)
     {
-        if ()
+        if (argv[i])
     }
 }
