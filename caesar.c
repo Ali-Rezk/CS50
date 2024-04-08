@@ -10,5 +10,8 @@ int main(int argc,string argv[])
     {
         printf{"Usage: ./caesar key"};
     }
-    for (int i=0, len=strlen; i<len)
+    for (int i=0, len=strlen; i<len; i++)
+    {
+        if ()
+    }
 }
