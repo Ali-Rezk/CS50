@@ -8,20 +8,19 @@ int alph[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,17,18,19,20,21,22,23,24,
 
 int main(int argc,string argv[])
 {
-    string s = get_string("plaintext:");
-    int k = atoi(argv[1]);
-
     if (argc != 2)
     {
-        printf("Usage: ./caesar key");
+        printf("Usage: ./caesar key\n");
         return 1;
     }
     else if (atoi(argv[1])<0)
     {
-        printf("Usage: ./caesar key");
+        printf("Usage: ./caesar key\n");
         return 1;
     }
 
+    string s = get_string("plaintext:");
+    int k = atoi(argv[1]);
     printf("output:   ");
     int x = strlen(s);
     int upp[x];
@@ -32,6 +31,7 @@ int main(int argc,string argv[])
     memset(low,0,sizeof(x));
     memset(v,0,sizeof(x));
     memset(c,0,sizeof(x));
+
     for (int i=0, len=strlen(s); i<len; i++)
     {
         if (isupper(s[i]))
