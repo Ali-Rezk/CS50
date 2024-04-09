@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+int alph
 
 int main(int argc,string argv[])
 {
