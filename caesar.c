@@ -34,6 +34,7 @@ int main(int argc,string argv[])
     {
         int c = (p[i] + k) %26;
         int z[i] = c
+        
     }
 
 }
