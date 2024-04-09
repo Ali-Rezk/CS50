@@ -24,7 +24,7 @@ int main(int argc,string argv[])
     }
     int x = strlen(s);
     int v = cipher(s);
-    int p[]=
+    int p[];
     for (int i=0, len=strlen(s); i<len; i++)
     {
         int c [i]= (v[i] + k) %26;
