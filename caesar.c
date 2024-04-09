@@ -28,6 +28,8 @@ int main(int argc,string argv[])
         return 1;
     }
 
+    cipher(s);
+
     int c = (alph[] + k) %26;
 
 }
