@@ -15,16 +15,16 @@ int main(int argc,string argv[])
 
     if (argc>2 || argc<2)
     {
-        printf{"Usage: ./caesar key"};
+        printf("Usage: ./caesar key");
     }
     else if (isalpha(argv[1]))
     {
-        printf{"Usage: ./caesar key"};
+        printf("Usage: ./caesar key");
         return 1;
     }
     else if (atoi(argv[1]);<0)
     {
-        printf{"Usage: ./caesar key"};
+        printf("Usage: ./caesar key");
         return 1;
     }
 
@@ -34,9 +34,9 @@ int main(int argc,string argv[])
     {
         int c = (p[i] + k) %26;
         int z[i] = c
-        
+        printf("output: %c",z[i]+65);
     }
-
+    printf("\n");
 }
 
 int cipher(string l)
