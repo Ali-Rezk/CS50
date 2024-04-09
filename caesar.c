@@ -30,12 +30,16 @@ int main(int argc,string argv[])
         if (isupper(s[i]))
         {
             score = alph[s[i]-'A'];
-            int upp[i]  = score;
+            int upp[i] = score;
+            int c [i] = (upp[i] + k) %26;
+            printf("output: %c",c[i]+65);
         }
         else if (islower(s[i]))
         {
             score = alph[s[i]-'a'];
             int low[i]  = score;
+            int v [i] = (low[i] + k) %26;
+            printf("output: %c",v[i]+65);
         }
     }
 
