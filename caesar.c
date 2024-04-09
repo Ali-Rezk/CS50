@@ -26,3 +26,12 @@ int main(int argc,string argv[])
     }
 }
 
+int cipher(int k)
+{
+    int score = 0;
+
+    for (int i=0, len=strlen(k); i<len; i++)
+    {
+        if ()
+    }
+}
