@@ -36,19 +36,18 @@ int main(int argc,string argv[])
 int cipher(string l,int v[])
 {
     int score = 0;
-    int p[];
 
     for (int i=0, len=strlen(l); i<len; i++)
     {
         if (isupper(l[i]))
         {
             score = alph[l[i]-'A'];
-            p[i]  = score;
+            int p[i]  = score;
         }
         else if (islower(l[i]))
         {
             score = alph[l[i]-'a'];
-            p[i]  = score;
+            int p[i]  = score;
         }
     }
     return p[];
