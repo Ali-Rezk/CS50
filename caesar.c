@@ -6,8 +6,6 @@
 
 int alph[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,17,18,19,20,21,22,23,24,25};
 
-int cipher(string l);
-
 int main(int argc,string argv[])
 {
     string s = get_string("plaintext:  ");
@@ -39,7 +37,7 @@ int main(int argc,string argv[])
             score = alph[s[i]-'a'];
             int low[i]  = score;
             int v [i] = (low[i] + k) %26;
-            printf("output: %c",v[i]+65);
+            printf("output: %c",v[i]+97);
         }
     }
 
