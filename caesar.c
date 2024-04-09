@@ -33,6 +33,11 @@ int main(int argc,string argv[])
     for (int i=0, len=strlen(s); i<len; i++)
     {
         int c = (p[i] + k) %26;
+
+        if (isupper())
+        {
+
+        }
     }
 
 }
