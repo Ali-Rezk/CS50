@@ -28,9 +28,13 @@ int main(int argc,string argv[])
         return 1;
     }
 
-    cipher(s);
+    int p[] = cipher(s);
+    int c = (p[] + k) %26;
 
-    int c = (alph[] + k) %26;
+    for (int i=0, len=strlen(s); i<len; i++)
+    {
+        
+    }
 
 }
 
