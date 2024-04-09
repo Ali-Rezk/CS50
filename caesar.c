@@ -32,6 +32,6 @@ int cipher(int k)
 
     for (int i=0, len=strlen(k); i<len; i++)
     {
-        if ()
+        if (isupper())
     }
 }
