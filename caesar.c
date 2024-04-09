@@ -23,11 +23,6 @@ int main(int argc,string argv[])
         return 1;
     }
 
-    for (int i=1; i<2; i++)
-    {
-        if ()
-    }
-
     int p[] = cipher(s);
 
     for (int i=0, len=strlen(s); i<len; i++)
