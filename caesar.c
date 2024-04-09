@@ -19,7 +19,7 @@ int main(int argc,string argv[])
     }
     for (int i=0; i<2; i++)
     {
-        if (isdigit(argv[1][i]))
+        if (isalpha(argv[1][i]) || ispunc)
         {
             printf("Usage: ./caesar key\n");
             return 1;
