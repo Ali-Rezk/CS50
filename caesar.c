@@ -16,7 +16,6 @@ int main(int argc,string argv[])
     else if (atoi(argv[1])<0)
     {
         printf("Usage: ./caesar key\n");
-        return 1;
     }
     for (int i=0, len=strlen(s); i<len; i++)
     {
