@@ -22,7 +22,7 @@ int main(int argc,string argv[])
         printf("Usage: ./caesar key");
         return 1;
     }
-    
+
     int score = 0;
 
     for (int i=0, len=strlen(s); i<len; i++)
@@ -30,13 +30,14 @@ int main(int argc,string argv[])
         if (isupper(s[i]))
         {
             score = alph[s[i]-'A'];
-            int v[i]  = score;
+            int upp[i]  = score;
         }
         else if (islower(s[i]))
         {
             score = alph[s[i]-'a'];
-            int v[i]  = score;
+            int low[i]  = score;
         }
+    }
 
     for (int i=0, len=strlen(s); i<len; i++)
     {
