@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 
 int alph[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,17,18,19,20,21,22,23,24,25};
 
@@ -20,7 +19,7 @@ int main(int argc,string argv[])
     }
     for (int i=0, len=strlen(argv[1]); i<len; i++)
     {
-        if (bool isdigit(argv[1][i])=false)
+        if (isalpha(argv[1][i]) || ispunct(argv[1][i]))
         {
             printf("Usage: ./caesar key\n");
             return 1;
