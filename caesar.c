@@ -24,22 +24,27 @@ int main(int argc,string argv[])
 
     int x = strlen(s);
     int upp[x];
+    int c[x];
+    int low[x];
+    int v[x];
     memset(upp,0,sizeof(x));
-
+    memset(low,0,sizeof(x));
+    memset(v,0,sizeof(x));
+    memset(c,0,sizeof(x));
     for (int i=0, len=strlen(s); i<len; i++)
     {
         if (isupper(s[i]))
         {
             int score = alph[s[i]-'A'];
-            int upp[i] = score;
-            int c [i] = (upp[i] + k) %26;
+            upp[i] = score;
+            c [i] = (upp[i] + k) %26;
             printf("output: %c",c[i]+65);
         }
         else if (islower(s[i]))
         {
             int score = alph[s[i]-'a'];
-            int low[i] = score;
-            int v [i] = (low[i] + k) %26;
+            low[i] = score;
+            v [i] = (low[i] + k) %26;
             printf("output: %c",v[i]+97);
         }
     }
