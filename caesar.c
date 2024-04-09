@@ -29,11 +29,10 @@ int main(int argc,string argv[])
     }
 
     int p[] = cipher(s);
-    int c = (p[] + k) %26;
 
     for (int i=0, len=strlen(s); i<len; i++)
     {
-        
+        int c = (p[i] + k) %26;
     }
 
 }
