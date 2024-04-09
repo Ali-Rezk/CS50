@@ -42,7 +42,7 @@ int main(int argc,string argv[])
     for (int i=0, len=strlen(s); i<len; i++)
     {
         int c [i]= (upp[i] + k) %26;
-        printf("output: %c",z[i]+65);
+        printf("output: %c",c[i]+65);
     }
     printf("\n");
 }
