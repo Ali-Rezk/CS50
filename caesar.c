@@ -23,12 +23,11 @@ int main(int argc,string argv[])
         return 1;
     }
     int x = strlen(s);
-    int v[x] = cipher(s);
-
+    int v = cipher(s);
+    
     for (int i=0, len=strlen(s); i<len; i++)
     {
-        int c = (v[i] + k) %26;
-        int z[i] = c
+        int c [i]= (v[i] + k) %26;
         printf("output: %c",z[i]+65);
     }
     printf("\n");
