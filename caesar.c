@@ -24,6 +24,20 @@ int main(int argc,string argv[])
     }
     int x = strlen(s);
     int v[x] == cipher(s);
+    int score = 0;
+
+    for (int i=0, len=strlen(s); i<len; i++)
+    {
+        if (isupper(s[i]))
+        {
+            score = alph[s[i]-'A'];
+            int v[i]  = score;
+        }
+        else if (islower(s[i]))
+        {
+            score = alph[s[i]-'a'];
+            int v[i]  = score;
+        }
 
     for (int i=0, len=strlen(s); i<len; i++)
     {
@@ -36,7 +50,7 @@ int main(int argc,string argv[])
 int cipher(string l,int v[])
 {
     int score = 0;
-    
+
     for (int i=0, len=strlen(l); i<len; i++)
     {
         if (isupper(l[i]))
