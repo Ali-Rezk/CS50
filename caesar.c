@@ -20,9 +20,9 @@ int main(int argc,string argv[])
     }
     for (int i=0, len=strlen(s); i<len; i++)
     {
-        else if (isalpha(argv[1]))
+        if (isalpha(argv[1][i]))
         {
-            printf("Usage: ./caesar key");
+            printf("Usage: ./caesar key\n");
             return 1;
         }
     }
