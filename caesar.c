@@ -17,15 +17,15 @@ int main(int argc,string argv[])
     {
         printf("Usage: ./caesar key");
     }
-    else if (isalpha(argv[1]))
-    {
-        printf("Usage: ./caesar key");
-        return 1;
-    }
     else if (atoi(argv[1]);<0)
     {
         printf("Usage: ./caesar key");
         return 1;
+    }
+
+    for (int i=1; i<2; i++)
+    {
+        if ()
     }
 
     int p[] = cipher(s);
