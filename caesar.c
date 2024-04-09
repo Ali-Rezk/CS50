@@ -56,7 +56,7 @@ int main(int argc,string argv[])
         }
         else
         {
-            printf("%c",v[i]);
+            printf("%c",s[i]);
         }
     }
     printf("\n");
