@@ -22,6 +22,10 @@ int main(int argc,string argv[])
         return 1;
     }
 
+    int x = strlen(s);
+    int upp[x];
+    memset(upp,0,sizeof(x));
+
     for (int i=0, len=strlen(s); i<len; i++)
     {
         if (isupper(s[i]))
