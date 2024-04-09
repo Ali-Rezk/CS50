@@ -13,7 +13,7 @@ int main(int argc,string argv[])
     string s = get_string("plaintext:  ");
     int k = atoi(argv[1]);
 
-    if (argc>2 || argc<2)
+    if (argc != 2)
     {
         printf("Usage: ./caesar key");
     }
