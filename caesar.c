@@ -17,9 +17,9 @@ int main(int argc,string argv[])
     {
         printf("Usage: ./caesar key\n");
     }
-    for (int i=0, len=strlen(s); i<len; i++)
+    for (int i=0; i<2; i++)
     {
-        if (isdigit(argv[1][i])=false)
+        if (isdigit(argv[1][i]))
         {
             printf("Usage: ./caesar key\n");
             return 1;
