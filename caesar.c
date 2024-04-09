@@ -48,7 +48,7 @@ int cipher(string l)
         }
         else if (islower(l[i]))
         {
-            score += alph[l[i]-'a'];
+            score = alph[l[i]-'a'];
             p[i]  = score;
         }
     }
