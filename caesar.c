@@ -54,6 +54,10 @@ int main(int argc,string argv[])
             v [i] = (low[i] + k) %26;
             printf("%c",v[i]+97);
         }
+        else
+        {
+            printf("%c",v[i]);
+        }
     }
     printf("\n");
 }
