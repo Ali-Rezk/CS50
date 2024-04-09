@@ -28,7 +28,7 @@ int main(int argc,string argv[])
         return 1;
     }
 
-    
+    int c = (alph[] + k) %26;
 
 }
 
