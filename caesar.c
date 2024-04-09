@@ -36,7 +36,7 @@ int main(int argc,string argv[])
 int cipher(string l,int v[])
 {
     int score = 0;
-
+    int p[];
     for (int i=0, len=strlen(l); i<len; i++)
     {
         if (isupper(l[i]))
