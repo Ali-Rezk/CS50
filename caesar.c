@@ -24,15 +24,17 @@ int main(int argc,string argv[])
         printf{"Usage: ./caesar key"};
         return 1;
     }
+
+    int k = atoi(argv[1]);
 }
 
-int cipher(string k)
+int cipher(string l)
 {
     int score = 0;
 
-    for (int i=0, len=strlen(k); i<len; i++)
+    for (int i=0, len=strlen(l); i<len; i++)
     {
-        if (isupper(k[i]))
+        if (isupper(l[i]))
         {
             score += alph[k[i]-'A'];
         }
