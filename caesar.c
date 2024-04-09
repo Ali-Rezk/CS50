@@ -33,7 +33,7 @@ int main(int argc,string argv[])
     printf("\n");
 }
 
-int cipher(string l)
+int cipher(string l,int v[])
 {
     int score = 0;
     int p[];
