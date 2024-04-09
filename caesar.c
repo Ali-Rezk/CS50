@@ -14,6 +14,7 @@ int main(int argc,string argv[])
     if (argc != 2)
     {
         printf("Usage: ./caesar key");
+        return 1;
     }
     else if (atoi(argv[1])<0)
     {
@@ -21,50 +22,23 @@ int main(int argc,string argv[])
         return 1;
     }
 
-    int score = 0;
-
     for (int i=0, len=strlen(s); i<len; i++)
     {
         if (isupper(s[i]))
         {
-            score = alph[s[i]-'A'];
+            int score = alph[s[i]-'A'];
             int upp[i] = score;
             int c [i] = (upp[i] + k) %26;
             printf("output: %c",c[i]+65);
         }
         else if (islower(s[i]))
         {
-            score = alph[s[i]-'a'];
-            int low[i]  = score;
+            int score = alph[s[i]-'a'];
+            int low[i] = score;
             int v [i] = (low[i] + k) %26;
             printf("output: %c",v[i]+97);
         }
     }
-
-    for (int i=0, len=strlen(s); i<len; i++)
-    {
-        int c [i]= (upp[i] + k) %26;
-        printf("output: %c",c[i]+65);
-    }
     printf("\n");
 }
 
-int cipher(string l,int v[])
-{
-    int score = 0;
-
-    for (int i=0, len=strlen(l); i<len; i++)
-    {
-        if (isupper(l[i]))
-        {
-            score = alph[l[i]-'A'];
-            int v[i]  = score;
-        }
-        else if (islower(l[i]))
-        {
-            score = alph[l[i]-'a'];
-            int v[i]  = score;
-        }
-    }
-    return v[];
-}
