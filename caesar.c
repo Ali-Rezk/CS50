@@ -35,13 +35,14 @@ int main(int argc,string argv[])
 int cipher(string l)
 {
     int score = 0;
+    int 
 
     for (int i=0, len=strlen(l); i<len; i++)
     {
         if (isupper(l[i]))
         {
             score += alph[l[i]-'A'];
-            return score;
+
         }
         else if (islower(l[i]))
         {
