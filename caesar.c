@@ -26,15 +26,19 @@ int main(int argc,string argv[])
     }
 }
 
-int cipher(int k)
+int cipher(string k)
 {
     int score = 0;
 
     for (int i=0, len=strlen(k); i<len; i++)
     {
-        if (isupper(s[i]))
+        if (isupper(k[i]))
         {
-            score 
+            score += alph[k[i]-'A'];
+        }
+        else if (islower(k[i]))
+        {
+            score += alph[k[i]-'a'];
         }
     }
 }
