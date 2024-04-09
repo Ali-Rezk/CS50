@@ -25,9 +25,9 @@ int main(int argc,string argv[])
             return 1;
         }
     }
-    string s = get_string("plaintext:");
+    string s = get_string("plaintext:  ");
     int k = atoi(argv[1]);
-    printf("output:   ");
+    printf("ciphertext: ");
     int x = strlen(s);
     int upp[x];
     int c[x];
