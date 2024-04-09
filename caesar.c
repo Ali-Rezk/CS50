@@ -41,4 +41,5 @@ int cipher(string k)
             score += alph[k[i]-'a'];
         }
     }
+    return score;
 }
