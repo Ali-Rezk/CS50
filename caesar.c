@@ -8,7 +8,7 @@ int alph[]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,14,15,16,17,18,19,20,21,22,23,24,
 
 int main(int argc,string argv[])
 {
-    string s = get_string("plaintext:  ");
+    string s = get_string("plaintext:");
     int k = atoi(argv[1]);
 
     if (argc != 2)
@@ -22,6 +22,7 @@ int main(int argc,string argv[])
         return 1;
     }
 
+    printf("output:   ");
     int x = strlen(s);
     int upp[x];
     int c[x];
@@ -38,14 +39,14 @@ int main(int argc,string argv[])
             int score = alph[s[i]-'A'];
             upp[i] = score;
             c [i] = (upp[i] + k) %26;
-            printf("output: %c",c[i]+65);
+            printf("%c",c[i]+65);
         }
         else if (islower(s[i]))
         {
             int score = alph[s[i]-'a'];
             low[i] = score;
             v [i] = (low[i] + k) %26;
-            printf("output: %c",v[i]+97);
+            printf("%c",v[i]+97);
         }
     }
     printf("\n");
