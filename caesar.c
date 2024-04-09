@@ -17,7 +17,7 @@ int main(int argc,string argv[])
     {
         printf("Usage: ./caesar key");
     }
-    else if (atoi(argv[1]);<0)
+    else if (atoi(argv[1])<0)
     {
         printf("Usage: ./caesar key");
         return 1;
