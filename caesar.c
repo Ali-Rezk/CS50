@@ -17,9 +17,9 @@ int main(int argc,string argv[])
     {
         printf("Usage: ./caesar key\n");
     }
-    for (int i=0; i<2; i++)
+    for (int i=0, len=strlen(argv[1]); i<len; i++)
     {
-        if (isalpha(argv[1][i]) || ispunc)
+        if (isalpha(argv[1][i]) || ispunct)
         {
             printf("Usage: ./caesar key\n");
             return 1;
