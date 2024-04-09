@@ -18,6 +18,12 @@ int main(int argc,string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
+    for (int i=0, len=strlen(s);)
+     else if (isalpha(argv[1]))
+    {
+        printf("Usage: ./caesar key");
+        return 1;
+    }
 
     string s = get_string("plaintext:");
     int k = atoi(argv[1]);
