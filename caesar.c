@@ -22,8 +22,7 @@ int main(int argc,string argv[])
         printf("Usage: ./caesar key");
         return 1;
     }
-    int x = strlen(s);
-    int v[x] == cipher(s);
+    
     int score = 0;
 
     for (int i=0, len=strlen(s); i<len; i++)
