@@ -17,7 +17,7 @@ while (n > 1)
         n = n/2;
         z += 1;
     }
-    else if (y =! x);
+    else if (y != x)
     {
         n = 3*n + 1;
         z += 1;
