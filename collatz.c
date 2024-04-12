@@ -7,7 +7,7 @@ int main(void)
 
 float n = get_int("n = ");
 int z = 0;
-float x = (float) roundf(n)/2;
+int x = (float) roundf(float n)/2;
 float y = n/2;
 
 while (n > 1)
