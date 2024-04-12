@@ -11,12 +11,12 @@ float x = round(n);
 
 while (n > 1)
 {
-    if (n/2 = x)
+    if (n/2 == x)
     {
         n = n/2;
         z += 1;
     }
-    else if(n/2 != x);
+    else (n/2 != x);
     {
         n = 3*n + 1;
         z += 1;
