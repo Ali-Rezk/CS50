@@ -8,15 +8,16 @@ int main(void)
 float n = get_int("n = ");
 int z = 0;
 float x = round(n);
+float y = n/2;
 
 while (n > 1)
 {
-    if (n/2 == x)
+    if (y == x)
     {
         n = n/2;
         z += 1;
     }
-    else (n/2 != x);
+    else (y =! x);
     {
         n = 3*n + 1;
         z += 1;
