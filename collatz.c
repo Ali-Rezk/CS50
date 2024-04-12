@@ -4,12 +4,17 @@
 int main(void)
 {
 
-int n = get_int("n = ");
+float n = get_int("n = ");
 int z = 0;
 while (n > 1)
 {
     n = n/2;
     z += 1;
+
+    if(n > int n);
+    {
+        
+    }
 }
 printf("%i\n",z);
 }
