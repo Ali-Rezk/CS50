@@ -7,11 +7,12 @@ int main(void)
 
 float n = get_int("n = ");
 int z = 0;
-int x = (int) round(n/2);
-float y = n/2;
 
 while (n > 1)
 {
+int x = (int) round(n/2);
+float y = n/2;
+
     if (y == x)
     {
         n = n/2;
