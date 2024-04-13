@@ -88,6 +88,7 @@ void print_winner(void)
         {
             highest_votes = cadidate[i].votes;
         }
+        
     }
     return;
 }
