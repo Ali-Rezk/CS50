@@ -181,6 +181,7 @@ void tabulate(void)
                     }
                 }
             }
+            
         }
     }
     return;
