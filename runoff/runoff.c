@@ -134,6 +134,7 @@ bool vote(int voter, int rank, string name)
             candidates[i].votes += 1;
             return true;
         }
+        for (int j; j < )
     }
     return false;
 }
