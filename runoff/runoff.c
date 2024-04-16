@@ -215,6 +215,7 @@ bool print_winner(void)
         printf("%s\n",winner);
         return true;
     }
+    if else ()
     else
     {
     return false;
