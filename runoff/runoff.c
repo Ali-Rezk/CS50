@@ -193,6 +193,7 @@ bool print_winner(void)
     // TODO
     int highest_votes = 0;
     string winner;
+    int w = 0;
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > highest_votes)
@@ -205,6 +206,7 @@ bool print_winner(void)
     {
         if (candidates[i].votes == highest_votes)
         {
+            w =
             printf("%s\n", candidates[i].name);
             return true;
         }
