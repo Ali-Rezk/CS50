@@ -135,8 +135,8 @@ bool vote(int voter, int rank, string name)
 
             for (int j = 0; j < candidate_count; j++)
             {
-               preferences[voter][rank] = i;
-               return true;
+                preferences[voter][rank] = i;
+                return true;
             }
         }
     }
@@ -210,13 +210,13 @@ bool print_winner(void)
             w += 1;
         }
     }
-    if (highest_votes < voter_count/2 || highest_votes == voter_count/2)
+    if (highest_votes < voter_count / 2 || highest_votes == voter_count / 2)
     {
         return false;
     }
     else if (w == 1)
     {
-        printf("%s\n",winner);
+        printf("%s\n", winner);
         return true;
     }
     else
