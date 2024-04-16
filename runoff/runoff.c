@@ -213,6 +213,7 @@ bool print_winner(void)
     if (w == 1)
     {
         printf("%s\n",winner);
+        return true;
     }
     else
     {
@@ -266,7 +267,7 @@ void eliminate(int min)
     {
         if (candidates[i].votes == min)
         {
-            candidates[i].eliminated == true
+            candidates[i].eliminated = true;
         }
     }
     return;
