@@ -166,6 +166,7 @@ void tabulate(void)
                         if (preferences[i][j] == z && !candidates[k].eliminated)
                         {
                             candidates[z].votes += 1;
+                            break;
                         }
                         else
                         {
