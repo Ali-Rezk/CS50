@@ -156,16 +156,16 @@ void tabulate(void)
             do
             {
                 j += 1;
-                preferences[i][j] = k
-                break;
+                preferences[i][j] = k;
+                candidates[k].votes += 1;
             }
             while (candidates[k].elemenated = true && preferences[i][j] = k);
-            }
-            else if (preferences[i][0] = k)
-            {
-                candidates[k].votes += 1;
-                break;
-            }
+        }
+        if (preferences[i][0] = k)
+        {
+            candidates[k].votes += 1;
+            break;
+        }
         }
     }
     return;
