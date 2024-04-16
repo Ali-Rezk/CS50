@@ -162,12 +162,9 @@ void tabulate(void)
                     }
                 }
             }
-            else
+            else if (preferences[i][0] = k)
             {
-                if (preferences[i][0] = k)
-                {
                 candidates[k].votes += 1;
-                }
             }
         }
     }
