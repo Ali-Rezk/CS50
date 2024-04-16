@@ -163,7 +163,14 @@ void tabulate(void)
                 }
                 else
                 {
-                    k += 1;
+                    while (k < candidate_count)
+                    {
+                        if (preferences[i][j] = k)
+                        {
+                            candidates[k].votes += 1;
+                        }
+                        k += 1;
+                    }
                 }
             }
             while (candidates[k].elemenated = true && preferences[i][j] = k);
