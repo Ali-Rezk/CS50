@@ -153,11 +153,13 @@ void tabulate(void)
     {
         for (int k = 0; k < candidate_count; k++)
         {
-            if (candidates[k].elemenated = true && preferences[i][j] = k)
+            do
             {
-                    j += 1;
-                    preferences[i][j] = k
-                    break;
+                j += 1;
+                preferences[i][j] = k
+                break;
+            }
+            while (candidates[k].elemenated = true && preferences[i][j] = k);
             }
             else if (preferences[i][0] = k)
             {
