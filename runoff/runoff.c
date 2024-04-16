@@ -227,16 +227,12 @@ int find_min(void)
     string loser;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].eleminated = true)
-        {
-            
-        }
-        else if ( candidates[i].votes < min)
+        if (candidates[i].eleminated = false && candidates[i].votes < min)
         {
             min = candidates[i].votes;
         }
-
     }
+    
     return 0;
 }
 
