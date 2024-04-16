@@ -159,7 +159,7 @@ void tabulate(void)
             }
             else if (candidates[k].eliminated == true)
             {
-                
+                preferences[i][j] == k
             }
         }
     }
