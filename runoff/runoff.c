@@ -172,10 +172,10 @@ void tabulate(void)
                         }
                         else
                         {
-                            x++;
+                            break;
                         }
                     }
-                    if (x = 1)
+                    if (x == 1)
                     {
                         break;
                     }
