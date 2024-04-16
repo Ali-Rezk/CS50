@@ -158,20 +158,17 @@ void tabulate(void)
                 {
                     if (preferences[i][j] == k)
                     {
-                        if (preferences[i][j+1] == k)
-                        {
-                            candidates[k].vote += 1;
-                            break;
-                        }
+                        break;
                     }
                 }
-                if (preferences[i][j] == k)
+            }
+                else if (preferences[i][j] == k)
                 {
                     candidates[k].vote += 1;
                 }
-            }
         }
     }
+}
     return;
 }
 
