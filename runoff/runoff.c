@@ -150,7 +150,11 @@ void tabulate(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        preferences[i][1] = k;
+        for (int k = 0; k < candidate_count; k++)
+        {
+            if (candidates)
+            preferences[i][0] = k;
+        }
     }
     return;
 }
