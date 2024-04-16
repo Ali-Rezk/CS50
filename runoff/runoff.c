@@ -162,6 +162,7 @@ void tabulate(void)
             {
                 candidates[k].votes += 1;
             }
+            break;
         }
     }
     return;
