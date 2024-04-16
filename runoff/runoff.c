@@ -160,8 +160,13 @@ void tabulate(void)
             }
             else if (candidates[k].eliminated == true)
             {
-                z += 1;
-                preferences[i][j] == z;
+                for (int j = 0; j < candidate_count; j++)
+                {
+                    for (z < candidate_count; z++)
+                    {
+                        preferences[i][j] == z;
+                    }
+                }
             }
         }
     }
