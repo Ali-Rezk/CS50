@@ -210,14 +210,14 @@ bool print_winner(void)
             w += 1;
         }
     }
-    if (w == 1)
+    if (highest_votes < voter_count/2 || highest_votes == voter_count/2)
+    {
+        return false;
+    }
+    else if (w == 1)
     {
         printf("%s\n",winner);
         return true;
-    }
-    else if (highest_votes < voter_count/2 || highest_votes == voter_count/2)
-    {
-        return false;
     }
     else
     {
