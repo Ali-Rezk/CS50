@@ -215,10 +215,13 @@ bool print_winner(void)
         printf("%s\n",winner);
         return true;
     }
-    if else (highest_votes < voter_count/2 )
+    else if (highest_votes < voter_count/2 || highest_votes = voter_count/2)
+    {
+        return false;
+    }
     else
     {
-    return false;
+        return false;
     }
 }
 
