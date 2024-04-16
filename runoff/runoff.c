@@ -226,7 +226,7 @@ int find_min(void)
     string loser;
     for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].eliminated == false && candidates[i].votes < min)
+        if (!candidates[i].eliminated && candidates[i].votes < min)
         {
             min = candidates[i].votes;
         }
