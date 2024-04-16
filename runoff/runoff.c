@@ -160,11 +160,12 @@ void tabulate(void)
             }
             else if (cadidates[k].eliminated == true)
             {
-                for (int j = 0; j < candidate_count; j++)
+                for (int j = 1; j < candidate_count; j++)
                 {
                     if (preferences[i][j] = k)
                     {
                         candidates[k].votes += 1;
+                        break;
                     }
                 }
             }
