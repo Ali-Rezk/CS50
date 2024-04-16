@@ -181,7 +181,10 @@ void tabulate(void)
                     }
                 }
             }
-            
+            if (x == 1)
+            {
+                break;
+            }
         }
     }
     return;
