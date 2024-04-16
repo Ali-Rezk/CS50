@@ -207,7 +207,7 @@ bool print_winner(void)
     {
         if (candidates[i].votes == highest_votes)
         {
-            w ++;
+            w += 1;
         }
     }
     if (w == 1)
