@@ -168,20 +168,22 @@ void tabulate(void)
                         if (preferences[i][j] = k)
                         {
                             candidates[k].votes += 1;
+                            break;
                         }
                         k += 1;
                     }
+                    break;
                 }
             }
             while (candidates[k].elemenated = true && preferences[i][j] = k);
+
+            if (preferences[i][0] = k)
+            {
+                candidates[k].votes += 1;
+                break;
+            }
         }
-        if (preferences[i][0] = k)
-        {
-            candidates[k].votes += 1;
-            break;
-        }
-        }
-    }
+    
     return;
 }
 
