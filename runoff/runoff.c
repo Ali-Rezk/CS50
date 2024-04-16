@@ -247,8 +247,14 @@ bool is_tie(int min)
             z++;
         }
     }
-    if (z = )
-    return false;
+    if (z == candidate_count)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }
 
 // Eliminate the candidate (or candidates) in last place
