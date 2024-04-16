@@ -152,8 +152,17 @@ void tabulate(void)
     {
         for (int k = 0; k < candidate_count; k++)
         {
-            if (candidates)
-            preferences[i][0] = k;
+            if (candidates[k].elemenated = true)
+            {
+                for (int j = 0; j < candidate_count; j++)
+                {
+                    preferences[i][j] = k;
+                }
+            }
+            else
+            {
+                preferences[i][0] = k;
+            }
         }
     }
     return;
