@@ -215,7 +215,7 @@ bool print_winner(void)
         printf("%s\n",winner);
         return true;
     }
-    if else ()
+    if else (highest_votes < voter_count/2 )
     else
     {
     return false;
