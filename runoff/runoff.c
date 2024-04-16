@@ -245,6 +245,10 @@ bool is_tie(int min)
         {
             z++;
         }
+        else if (candidates[i].eliminated)
+        {
+            
+        }
     }
     if (z == candidate_count)
     {
