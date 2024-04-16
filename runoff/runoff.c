@@ -148,7 +148,10 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
-    candidates[i].votes += 1;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (strcmp(name,candidates[i].name))
+    }
     return;
 }
 
