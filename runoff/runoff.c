@@ -161,11 +161,11 @@ void tabulate(void)
                         break;
                     }
                 }
-            }
                 else if (preferences[i][j] == k)
                 {
                     candidates[k].vote += 1;
                 }
+            }
         }
     }
 }
