@@ -150,7 +150,6 @@ void tabulate(void)
 {
     // TODO
     for (int i = 0; i < voter_count; i++)
-    check:
     {
         for (int k = 0; k < candidate_count; k++)
         {
@@ -163,17 +162,22 @@ void tabulate(void)
             {
                 for (int j = 1; j < candidate_count; j++)
                 {
+                    int x = 0;
                     for (int z = 0; z < candidate_count; z++)
                     {
                         if (preferences[i][j] == z && !candidates[z].eliminated)
                         {
                             candidates[z].votes += 1;
-                            goto check;
+                            x++;
                         }
                         else
                         {
-                            goto check;
+                            x++;
                         }
+                    }
+                    if (x = 1)
+                    {
+                        break;
                     }
                 }
             }
