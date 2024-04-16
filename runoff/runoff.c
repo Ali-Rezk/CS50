@@ -131,7 +131,6 @@ bool vote(int voter, int rank, string name)
     {
         if (strcmp(name, candidates[i].name) == 0)
         {
-            candidates[i].votes += 1;
 
             for (int j; j < candidate_count; j++)
             {
@@ -149,6 +148,7 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+    candidates[i].votes += 1;
     return;
 }
 
