@@ -156,8 +156,9 @@ void tabulate(void)
             if (candidates[k].elemenated = true && preferences[i][j] = k)
             {
                     j += 1;
+                    preferences[i][j] = k
             }
-            else if (preferences[i][j] = k)
+            else if (preferences[i][0] = k)
             {
                 candidates[k].votes += 1;
             }
