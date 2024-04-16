@@ -136,6 +136,7 @@ bool vote(int voter, int rank, string name)
             for (int j; j < candidate_count; j++)
             {
                preferences[voter][rank] = i;
+               return true;
             }
 
         }
