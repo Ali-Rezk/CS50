@@ -157,12 +157,13 @@ void tabulate(void)
             {
                     j += 1;
                     preferences[i][j] = k
+                    break;
             }
             else if (preferences[i][0] = k)
             {
                 candidates[k].votes += 1;
+                break;
             }
-            break;
         }
     }
     return;
