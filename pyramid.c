@@ -15,6 +15,7 @@ int main(void)
         print_rows(i+1);
         printf(" ");
         print_rows(i+1);
+        printf("\n");
     }
 }
 void print_rows(int length)
@@ -23,7 +24,6 @@ void print_rows(int length)
     {
         printf("#");
     }
-    printf("\n");
 }
 void print_bricks(int bricks)
 {
