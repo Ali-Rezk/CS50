@@ -13,6 +13,8 @@ int main(void)
     {
         print_bricks(n-i-1);
         print_rows(i+1);
+        printf(" ");
+        print_rows(i+1);
     }
 }
 void print_rows(int length)
