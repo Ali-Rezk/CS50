@@ -43,14 +43,14 @@ int main(int argc, char *argv[])
     fwrite(&buffer,HEADER_SIZE,1,output);
 
     // TODO: Read samples from input file and write updated data to output file
-    dbyte b;
-    dbyte a;
-    a = b;
+    dbyte b = 0;
+    dbyte a = 0;
+    &a = &b;
 
     while (fread(&b,2,1,input))
     {
         a = a*2;
-        fwrite(&a,2,2,output);
+        fwrite(a,2,2,output);
     }
 
     // Close files
