@@ -11,7 +11,7 @@ int main(void)
     int n = get_int("height:");
     while (n <= 0 || n > 8)
     {
-        int n = get_int("height:");
+        n = get_int("height:");
     }
     for (int i = 0; i < n; i++)
     {
