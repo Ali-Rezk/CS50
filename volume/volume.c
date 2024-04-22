@@ -44,8 +44,15 @@ int main(int argc, char *argv[])
 
     // TODO: Read samples from input file and write updated data to output file
     dbyte b;
+    dbyte a;
+    a = b;
+
     while (fread(&b,2,1,input))
-    
+    {
+        a = a*2;
+        fwrite(&a,2,2,output);
+    }
+
     // Close files
     fclose(input);
     fclose(output);
