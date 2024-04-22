@@ -43,12 +43,12 @@ int main(int argc, char *argv[])
     fwrite(&buffer,HEADER_SIZE,1,output);
 
     // TODO: Read samples from input file and write updated data to output file
-    dbyte b;
+    int* b = malloc(sizeof(dbyte));
 
-    while (fread(&b,2,1,input))
+    while (fread(b,2,1,input))
     {
         int a = b * factor;
-        fwrite(&a,2,2,output);
+        fwrite(&a,2,1,output);
     }
 
     // Close files
