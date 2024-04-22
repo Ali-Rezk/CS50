@@ -39,17 +39,17 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     byte buffer[44];
 
-    fread(&buffer,HEADER_SIZE,1,input);
-    fwrite(&buffer,HEADER_SIZE,1,output);
+    fread(&buffer, HEADER_SIZE, 1, input);
+    fwrite(&buffer, HEADER_SIZE, 1, output);
 
     // TODO: Read samples from input file and write updated data to output file
     dbyte b;
 
-    while (fread(&b,2,1,input))
+    while (fread(&b, 2, 1, input))
     {
         int a = b;
         a = a * factor;
-        fwrite(&a,2,1,output);
+        fwrite(&a, 2, 1, output);
     }
 
     // Close files
