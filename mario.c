@@ -17,7 +17,7 @@ int main(void)
     {
         print_bricks(n - i - 1);
         print_rows(i + 1);
-        printf(" ");
+        printf("  ");
         print_rows(i + 1);
         printf("\n");
     }
