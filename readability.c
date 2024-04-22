@@ -22,15 +22,15 @@ int main(void)
 
     if (index < 1)
     {
-        printf("before grade 1");
+        printf("Before Grade 1");
     }
     else if (Z > 16)
     {
-        printf("grade 16+");
+        printf("Grade 16+");
     }
     else
     {
-        printf("grade %i", Z);
+        printf("Grade %i", Z);
     }
 
     printf("\n");
