@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     while (fread(&b,2,1,input))
     {
         int a = b * 2;
-        fwrite(&a,2,1,output);
+        fwrite(&a,2,2,output);
     }
 
     // Close files
