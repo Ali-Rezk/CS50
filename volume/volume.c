@@ -39,8 +39,7 @@ int main(int argc, char *argv[])
     // TODO: Copy header from input file to output file
     byte buffer[44];
 
-    fread(&buffer, HEADER_SIZE, 1, input);
-    fwrite(&buffer, HEADER_SIZE, 1, output);
+
 
     // TODO: Read samples from input file and write updated data to output file
     dbyte b;
