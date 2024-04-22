@@ -44,12 +44,11 @@ int main(int argc, char *argv[])
 
     // TODO: Read samples from input file and write updated data to output file
     dbyte b;
-    int* a = 0;
 
     while (fread(&b,2,1,input))
     {
-        *a = b*factor;
-        fwrite(&a,2,2,output);
+        int a = b * 2;
+        fwrite(&a,2,1,output);
     }
 
     // Close files
