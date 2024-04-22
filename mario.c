@@ -9,6 +9,7 @@ int main(void)
 
 {
     int n = get_int("height:");
+    if
     for (int i = 0; i < n; i++)
     {
         print_bricks(n - i - 1);
