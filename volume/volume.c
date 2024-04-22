@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
 
     while (fread(&b,2,1,input))
     {
-        int a = b * 2;
+        int a = b * factor;
         fwrite(&a,2,2,output);
     }
 
