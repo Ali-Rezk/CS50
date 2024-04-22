@@ -5,6 +5,7 @@
 #include <stdlib.h>
 
 typedef uint8_t byte;
+typedef int16_t dbyte;
 
 // Number of bytes in .wav header
 const int HEADER_SIZE = 44;
@@ -42,8 +43,8 @@ int main(int argc, char *argv[])
     fwrite(&buffer,HEADER_SIZE,1,output);
 
     // TODO: Read samples from input file and write updated data to output file
-
-    while (fread())
+    dbyte b;
+    while (fread(&b,2,1,))
     // Close files
     fclose(input);
     fclose(output);
