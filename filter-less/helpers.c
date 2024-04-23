@@ -14,8 +14,10 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             b = image[i][j].rgbtBlue;
             r = image[i][j].rgbtRed;
             g = image[i][j].rgbtGreen;
+
             int x = b + r + g;
             int z = (int) round(x / 3);
+
             image[i][j].rgbtBlue = z;
             image[i][j].rgbtRed = z;
             image[i][j].rgbtGreen = z;
@@ -37,10 +39,11 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             b = image[i][j].rgbtBlue;
             r = image[i][j].rgbtRed;
             g = image[i][j].rgbtGreen;
-            int xb = 0.131 * b + 0.272 * r + 0.534 g;
-            int xr = 0.189 * b + 0.393 * r + 0.769 g;
-            int xg = 0.168 * b + 0.393 * r + 0.769 g;
-            int z = (int) round(x / 3);
+
+            int xb = 0.131 * b + 0.272 * r + 0.534 * g;
+            int xr = 0.189 * b + 0.393 * r + 0.769 * g;
+            int xg = 0.168 * b + 0.349 * r + 0.686 * g;
+            
             image[i][j].rgbtBlue = z;
             image[i][j].rgbtRed = z;
             image[i][j].rgbtGreen = z;
