@@ -1,12 +1,13 @@
 #include "helpers.h"
 #include <math.h>
 
+int b;
+int r;
+int g;
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    int b;
-    int r;
-    int g;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -29,9 +30,6 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
 // Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
-    int b;
-    int r;
-    int g;
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
@@ -87,6 +85,6 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    
+    r = 
     return;
 }
