@@ -79,7 +79,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             b = image[i][j].rgbtBlue;
             r = image[i][j].rgbtRed;
             g = image[i][j].rgbtGreen;
-
+            
             int x = b + r + g;
             int z = (int) round(x / 3);
         }
