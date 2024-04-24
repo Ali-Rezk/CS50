@@ -76,10 +76,10 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            b = image[i][j].rgbtBlue;
-            r = image[i][j].rgbtRed;
-            g = image[i][j].rgbtGreen;
-            
+            reflect[i][width - j].rgbtBlue = image[i][j].rgbtBlue;
+            reflect[i][width - j].rgbtRed = image[i][j].rgbtRed;
+            reflect[i][width - j].rgbtGreen = image[i][j].rgbtGreen;
+
             int x = b + r + g;
             int z = (int) round(x / 3);
         }
