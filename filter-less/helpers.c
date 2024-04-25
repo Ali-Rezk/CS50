@@ -17,11 +17,9 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             g = image[i][j].rgbtGreen;
 
             int x = b + r + g;
-            if (b == g & b== r)
+            if (width == height == 1)
             {
-                image[i][j].rgbtBlue = b;
-                image[i][j].rgbtRed = r;
-                image[i][j].rgbtGreen = g;
+                image[i][j] = image[i][j];
             }
             else
             {
