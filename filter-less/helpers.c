@@ -100,29 +100,29 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 {
                     if (0 <= i + k <= height & 0 <= j + l <= width)
                     {
-                        blur[i][j].rgbtRed += image[i + k][j + l].rgbtRed;
-                        blur[i][j].rgbtGreen += image[i + k][j + l].rgbtGreen;
-                        blur[i][j].rgbtBlue += image[i + k][j + l].rgbtBlue;
+                        r += image[i + k][j + l].rgbtRed;
+                        g += image[i + k][j + l].rgbtGreen;
+                        b += image[i + k][j + l].rgbtBlue;
                     }
                 }
             }
             if (i == 0 || i == height & j == 0 || j == width)
             {
-                image[i][j].rgbtRed = (int) round (blur[i][j].rgbtRed / 4);
-                image[i][j].rgbtGreen = (int) round (blur[i][j].rgbtGreen / 4);
-                image[i][j].rgbtBlue = (int) round (blur[i][j].rgbtBlue / 4);
+                image[i][j].rgbtRed = (int) round (r / 4);
+                image[i][j].rgbtGreen = (int) round (g / 4);
+                image[i][j].rgbtBlue = (int) round (b / 4);
             }
             else if (i == 0 || i == height || j == 0 || j == width)
             {
-                image[i][j].rgbtRed = (int) round (blur[i][j].rgbtRed / 6);
-                image[i][j].rgbtGreen = (int) round (blur[i][j].rgbtGreen / 6);
-                image[i][j].rgbtBlue = (int) round (blur[i][j].rgbtBlue / 6);
+                image[i][j].rgbtRed = (int) round (r / 6);
+                image[i][j].rgbtGreen = (int) round (g / 6);
+                image[i][j].rgbtBlue = (int) round (b / 6);
             }
             else
             {
-                image[i][j].rgbtRed = (int) round (blur[i][j].rgbtRed / 9);
-                image[i][j].rgbtGreen = (int) round (blur[i][j].rgbtGreen / 9);
-                image[i][j].rgbtBlue = (int) round (blur[i][j].rgbtBlue / 9);
+                image[i][j].rgbtRed = (int) round (r / 9);
+                image[i][j].rgbtGreen = (int) round (g / 9);
+                image[i][j].rgbtBlue = (int) round (b / 9);
             }
         }
     }
