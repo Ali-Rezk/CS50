@@ -7,7 +7,6 @@ int main(int argc, char *argv[])
 {
     char* infile = argv[1];
     FILE* src = fopen(infile, "r");
-    FILE* dst;
     byte buffer[512];
 
     while (fread(buffer,512,1,src) != 0)
@@ -16,7 +15,7 @@ int main(int argc, char *argv[])
         {
             sprintf(filename, "%03i.jpg", 2);
             FILE* img = fopen(filename, "w");
-            fwrite(buffer,512,1,dst);
+            fwrite(buffer,512,1,img);
         }
     }
 }
