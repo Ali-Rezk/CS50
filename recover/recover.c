@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 
     while (fread(buffer,512,1,src) != 0)
     {
-        if ()
+        if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & buffer)
         {
             fwrite(buffer,512,1,dst)
         }
