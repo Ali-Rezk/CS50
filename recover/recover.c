@@ -3,7 +3,8 @@
 
 int main(int argc, char *argv[])
 {
- char* infile
- fopen(argv[1],r);
+ char* infile = argv[1];
+
+ fopen(infile,r);
 
 }
