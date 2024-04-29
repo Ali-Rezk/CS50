@@ -6,12 +6,21 @@ typedef uint8_t byte;
 
 int main(int argc, char *argv[])
 {
+    if (argc > 2)
+    {
+        return 1;
+    }
     char* infile = argv[1];
     char* outfile = NULL;
     int i = 0;
     FILE* src = fopen(infile, "r");
     FILE* img;
     byte buffer[512];
+
+    if (infile == NULL)
+    {
+        printf("Could not open file \n")
+    }
 
     while (fread(buffer,512,1,src) != 0)
     {
