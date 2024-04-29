@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
             i++;
             sprintf(outfile, "%03i.jpg", i);
             img = fopen(outfile, "w");
+            fwrite(buffer,512,1,img);
         }
 
-        fwrite(buffer,512,1,img);
     }
     fclose(src);
     fclose(img);
