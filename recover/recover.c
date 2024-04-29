@@ -3,9 +3,9 @@
 
 int main(int argc, char *argv[])
 {
- char* infile = argv[1];
+    char* infile = argv[1];
 
- FILE* src = fopen(infile,"r");
+    FILE* src = fopen(infile,"r");
 
-
+    while (fread())
 }
