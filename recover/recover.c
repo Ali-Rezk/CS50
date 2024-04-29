@@ -14,11 +14,11 @@ int main(int argc, char *argv[])
     char* infile = argv[1];
     if (infile == NULL)
     {
-        printf("Could not open file \n")
+        printf("Could not open file \n");
         return 1;
     }
 
-    char* outfile = NULL;
+    char outfile[3];
     int i = 0;
     FILE* src = fopen(infile, "r");
     FILE* img;
