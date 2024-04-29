@@ -21,4 +21,6 @@ int main(int argc, char *argv[])
 
         fwrite(buffer,512,1,img);
     }
+    fclose(src);
+    fclose(img);
 }
