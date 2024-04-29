@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     char* infile = argv[1];
     FILE* src = fopen(infile, "r");
-    char* dst;
+    char* dst = NULL;
     FILE* img;
     byte buffer[512];
 
