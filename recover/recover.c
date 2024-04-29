@@ -5,6 +5,7 @@ int main(int argc, char *argv[])
 {
  char* infile = argv[1];
 
- fopen(infile,r);
+ fopen(infile,"r");
+ 
 
 }
