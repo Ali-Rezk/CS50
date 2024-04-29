@@ -5,7 +5,7 @@ int main(int argc, char *argv[])
 {
  char* infile = argv[1];
 
- fopen(infile,"r");
- 
+ FILE* src = fopen(infile,"r");
+
 
 }
