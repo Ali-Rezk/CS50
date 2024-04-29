@@ -7,10 +7,12 @@ int main(int argc, char *argv[])
 {
     char* infile = argv[1];
     FILE* src = fopen(infile,"r");
+    FILE* dst;
     byte buffer[512];
 
     while (fread(buffer,512,1,src) != 0)
     {
         
+        fwrite(buffer,512,1,dst)
     }
 }
