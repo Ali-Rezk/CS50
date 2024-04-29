@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    char* outfile = NULL;
+    char outfile[9];
     int i = 0;
     FILE* src = fopen(infile, "r");
     FILE* img;
