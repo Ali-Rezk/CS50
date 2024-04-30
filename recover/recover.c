@@ -23,15 +23,21 @@ int main(int argc, char *argv[])
     FILE *src = fopen(infile, "r");
     FILE *img;
     byte buffer[512];
-
+    int f = 0;
     while (fread(buffer, 512, 1, src) != 0)
     {
 
         if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
         {
             sprintf(outfile, "%03i.jpg", i);
-            img = fopen(outfile, "w");
-            i++;
+            if (f)
+            {
+                f = 0;
+                fclose(img);
+            }
+                img = fopen(outfile, "w");
+                f = 1;
+                i++;
         }
         if (i)
         {
