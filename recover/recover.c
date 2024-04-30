@@ -29,15 +29,10 @@ int main(int argc, char *argv[])
 
         if (buffer[0] == 0xff & buffer[1] == 0xd8 & buffer[2] == 0xff & (buffer[3] & 0xf0) == 0xe0)
         {
+            fclose(img);
             sprintf(outfile, "%03i.jpg", i);
-            if (f)
-            {
-                f = 0;
-                fclose(img);
-            }
-                img = fopen(outfile, "w");
-                f = 1;
-                i++;
+            img = fopen(outfile, "w");
+            i++;
         }
         if (i)
         {
