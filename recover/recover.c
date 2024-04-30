@@ -35,15 +35,14 @@ int main(int argc, char *argv[])
                 f = 0;
                 fclose(img);
             }
-                img = fopen(outfile, "w");
-                f = 1;
-                i++;
+            img = fopen(outfile, "w");
+            f = 1;
+            i++;
         }
         if (i)
         {
             fwrite(buffer, 512, 1, img);
         }
-
     }
     fclose(src);
     fclose(img);
