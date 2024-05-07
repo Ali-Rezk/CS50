@@ -46,7 +46,7 @@ bool unload(node *list)
     // TODO: Free all allocated nodes
     node *ptr = list->next;
     free(list);
-    
+    list = ptr;
     return false;
 }
 
