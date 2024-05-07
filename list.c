@@ -52,7 +52,7 @@ bool unload(node *list)
     }
     if (list->next = NULL)
     {
-        
+        return true;
     }
     return false;
 }
