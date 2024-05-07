@@ -34,8 +34,9 @@ int main(void)
 
         n->phrase = phrase;
         n->next = NULL;
+
+        n->next = list;
         list = n;
-        
 
         // Visualize list after adding a node.
         visualizer(list);
@@ -56,18 +57,15 @@ bool unload(node *list)
 {
     // TODO: Free all allocated nodes
 
-    if (!list = NULL)
+    while (list != NULL)
     {
         node *ptr = list->next;
         free(list);
         list = ptr;
-        return true;
-    }
-    else if (list = NULL)
-    {
-        return false;
+
     }
 
+    return true;
 }
 
 void visualizer(node *list)
