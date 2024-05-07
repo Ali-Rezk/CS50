@@ -1,4 +1,4 @@
-#include <cs50.h>
+#include <cs
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
