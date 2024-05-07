@@ -44,7 +44,8 @@ int main(void)
 bool unload(node *list)
 {
     // TODO: Free all allocated nodes
-    node *ptr = list;
+    node *ptr = list->next;
+    free(list);
     
     return false;
 }
