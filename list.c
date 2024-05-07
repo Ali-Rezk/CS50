@@ -50,6 +50,7 @@ bool unload(node *list)
         free(list);
         list = ptr;
     }
+    
     return false;
 }
 
