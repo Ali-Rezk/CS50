@@ -44,12 +44,12 @@ person *create_family(int generations)
     if (generations > 1)
     {
         // Create two new parents for current person by recursively calling create_family
-        person->parent[0] = create_family(generations - 1);
-        person->parent[1] = create_family(generations - 1);
+        person *parent0 = create_family(generations - 1);
+        person *parent1 = create_family(generations - 1);
 
         // TODO: Set parent pointers for current person
-        n->parent[0] = person *parent[0];
-        n->parent[1] = person *parent[1];
+        n->parents[0] = person *parent[0];
+        n->parents[1] = person *parent[1];
         // TODO: Randomly assign current person's alleles based on the alleles of their parents
         n.allele[0] = person.allele[rand() % 2];
         n.allele[1] = person.allele[rand() % 2];
@@ -59,8 +59,8 @@ person *create_family(int generations)
     else
     {
         // TODO: Set parent pointers to NULL
-        person->parent[0] = NULL;
-        person->parent[1] = NULL;
+        person->parents[0] = NULL;
+        person->parents[1] = NULL;
         // TODO: Randomly assign alleles
         person.alleles[0] = random_allele;
         person.alleles[1] = random_allele;
@@ -76,15 +76,15 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
-    if (person->parent[0] == NULL)
+    if (person->parents[0] == NULL)
     {
         free(person);
     }
     // TODO: Free parents recursively
-    else if (!person->parent[0] == NULL)
+    else if (!person->parents[0] == NULL)
     {
-        free_family(person->parent[0]);
-        free_family(person->parent[1]);
+        free_family(person->parents[0]);
+        free_family(person->parents[1]);
     }
     // TODO: Free child
 }
