@@ -76,9 +76,15 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
-    
+    if (p->parent[0] == NULL)
+    {
+        return;
+    }
     // TODO: Free parents recursively
-
+    else if (!p->parent[0] == NULL)
+    {
+        
+    }
     // TODO: Free child
 }
 
