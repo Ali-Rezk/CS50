@@ -26,7 +26,7 @@ int main(void)
     srand(time(0));
 
     // Create a new family with three generations
-    person *p = create_family(GENERATIONS);
+    person *p = create_family(3);
 
     // Print family tree of blood types
     print_family(p, 0);
@@ -69,14 +69,14 @@ person *create_family(int generations)
     }
 
     // TODO: Return newly created person
-    return NULL;
+    return n;
 }
 
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
     // TODO: Handle base case
-
+    
     // TODO: Free parents recursively
 
     // TODO: Free child
