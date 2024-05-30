@@ -78,7 +78,9 @@ person *create_family(int generations)
 void free_family(person *p)
 {
     // TODO: Handle base case
-    if (p->parents[0] == NULL)
+    person *parent0 = malloc(sizeof(person));
+
+    if (parent0->parents[0] == NULL)
     {
         free(p);
     }
