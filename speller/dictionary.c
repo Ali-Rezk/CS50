@@ -53,8 +53,8 @@ bool load(const char *dictionary)
     while (fscan(file_L, %s, word) != EOF)
     {
         strcpy(n->word, word);
-        n->next = table[hash(word)]
-
+        n->next = table[hash(word)];
+        
 
     }
 
