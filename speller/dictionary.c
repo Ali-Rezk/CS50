@@ -70,9 +70,10 @@ unsigned int size(void)
 
     if (file = NULL)
     {
-        
+        return 0;
     }
-    return 0;
+
+    while ()
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
