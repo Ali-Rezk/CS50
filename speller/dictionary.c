@@ -1,5 +1,5 @@
 // Implements a dictionary's functionality
-#include <cs50.h>
+
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -113,7 +113,23 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    node *n = malloc(sizeof(node));
 
-    return false;
+    if (n == NULL)
+    {
+        return false;
+    }
 
+    for (int i = 0; i < N; i++)
+    {
+        while (table[i] != NULL)
+        {
+            n = table[i]->next;
+            free(table[i]);
+            table[i] = n;
+        }
+    }
+
+    free(n);
+    return true;
 }
