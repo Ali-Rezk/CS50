@@ -40,8 +40,8 @@ bool load(const char *dictionary)
 {
     // TODO
     char word[LENGTH + 1];
-    FILE *file_L = fopen("./dictionaries./large","r");
-    FILE *file_S = fopen("./dictionaries./small","r");
+    FILE *file_L = fopen(dictionary,"r");
+    FILE *file_S = fopen(dictionary,"r");
     node *n = malloc(sizeof(node));
 
     if (file_L == NULL || file_S == NULL || n == NULL)
