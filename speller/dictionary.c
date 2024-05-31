@@ -43,16 +43,15 @@ bool load(const char *dictionary)
     FILE *file_S = fopen(./dictionaries./small.txt);
     node *n = malloc(sizeof(node));
 
-    if ()
-
-    if (file_L == NULL || file_S == NULL)
+    if (file_L == NULL || file_S == NULL || n == NULL)
     {
         return false;
     }
 
     while (fscan(file_L, %s, word) != EOF)
     {
-        strcpy
+        strcpy(n->word, word);
+        
     }
 
 
