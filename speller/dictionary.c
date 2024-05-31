@@ -34,7 +34,7 @@ bool check(const char *word)
 
     cursor->next = table[n];
 
-    while (strcmp(cursor->word,cursor->next) != 0 && cursor != NULL)
+    while (strcmp(cursor->word,word) != 0 && cursor != NULL)
     {
         cursor = cursor->next;
     }
@@ -51,8 +51,6 @@ bool check(const char *word)
     free(cursor);
 }
 
-
-}
 
 // Hashes word to a number
 unsigned int hash(const char *word)
