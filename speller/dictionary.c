@@ -113,6 +113,11 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    
+    node *n = malloc(sizeof(node));
+
+    for (int i = 0; i < N; i++)
+    {
+        
+    }
     return false;
 }
