@@ -40,26 +40,24 @@ bool load(const char *dictionary)
 {
     // TODO
     char word[LENGTH + 1];
-    FILE *file_L = fopen(dictionary,"r");
-    FILE *file_S = fopen(dictionary,"r");
+    FILE *file = fopen(dictionary,"r");
     node *n = malloc(sizeof(node));
 
-    if (file_L == NULL || file_S == NULL || n == NULL)
+    if (file == NULL || n == NULL)
     {
         return false;
     }
 
     n->next = NULL;
 
-    while (fscanf(file_L, "%s", word) != EOF)
+    while (fscanf(file, "%s", word) != EOF)
     {
         strcpy(n->word, word);
         n->next = table[hash(word)];
         table[hash(word)] = n;
     }
 
-    fclose(file_L);
-    fclose(file_S);
+    fclose(file);
     return true;
 }
 
