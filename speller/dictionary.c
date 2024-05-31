@@ -34,9 +34,14 @@ bool check(const char *word)
 
     cursor->next = table[n];
 
-    while (strcmp(cursor->word[],cursor->next) != 0)
+    while (cursor != NULL)
     {
+        strcmp(cursor->word[],cursor->next) != 0
         cursor = cursor->next;
+    }
+    if(cursor == NULL)
+    {
+        return false;
     }
 
     free(cursor);
