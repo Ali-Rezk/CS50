@@ -37,6 +37,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    char word[LENGTH + 1];
     FILE *file_L = fopen(./dictionaries./large.txt);
     FILE *file_S = fopen(./dictionaries./small.txt);
 
