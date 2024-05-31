@@ -34,26 +34,24 @@ bool check(const char *word)
 
     cursor->next = table[n];
 
-    while (cursor != NULL)
+    while (strcmp(cursor->word,cursor->next) != 0)
     {
-        while (strcmp(cursor->word,cursor->next) != 0)
-        {
-            cursor = cursor->next;
-        }
-
-        if(cursor == NULL)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
+        cursor = cursor->next;
     }
 
+    if(cursor == NULL)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
 
     free(cursor);
-    return true;
+}
+
+
 }
 
 // Hashes word to a number
