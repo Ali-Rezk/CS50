@@ -74,9 +74,9 @@ unsigned int size(void)
         return 0;
     }
 
-    while (fread(file, sizeof(char*), word) != EOF)
+    while (fread(file, sizeof(char), word))
     {
-
+        
     }
 
     fclose(file);
