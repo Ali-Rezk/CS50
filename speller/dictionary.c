@@ -75,7 +75,7 @@ unsigned int size(void)
         return 0;
     }
 
-    while (fread(file, sizeof(string), 1, word))
+    while (fread(file, sizeof(char *), 1, word))
     {
         n++;
     }
