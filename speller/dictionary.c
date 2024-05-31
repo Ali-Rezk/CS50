@@ -66,6 +66,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
+    fopen("dictionaries/large","r");
     
     return 0;
 }
