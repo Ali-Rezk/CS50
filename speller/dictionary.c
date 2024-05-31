@@ -26,8 +26,14 @@ bool check(const char *word)
     // TODO
     int n = hash(word);
     node *cursor = malloc(sizeof(node));
+
+    if (cursor == NULL)
+    {
+        return false;
+    }
+
     cursor = table[n];
-    
+
 
     free(cursor);
     return false;
