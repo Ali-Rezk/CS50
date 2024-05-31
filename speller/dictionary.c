@@ -70,7 +70,7 @@ unsigned int size(void)
     char word[LENGTH + 1];
     int n = 0;
 
-    if (file = NULL)
+    if (file == NULL)
     {
         return 0;
     }
