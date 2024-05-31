@@ -44,20 +44,21 @@ bool load(const char *dictionary)
     // TODO
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-    node *n = malloc(sizeof(node));
-
-    if (file == NULL || n == NULL)
-    {
-        return false;
-    }
-
-    n->next = NULL;
 
     while (fscanf(file, "%s", word) != EOF)
     {
+        node *n = malloc(sizeof(node));
+
+        if (file == NULL || n == NULL)
+        {
+            return false;
+        }
+
+        n->next = NULL;
         strcpy(n->word, word);
         n->next = table[hash(word)];
         table[hash(word)] = n;
+        free(n);
     }
 
     free(n);
