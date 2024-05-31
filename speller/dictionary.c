@@ -117,7 +117,8 @@ bool unload(void)
 
     for (int i = 0; i < N; i++)
     {
-        
+        n = table[i]->next;
+        free(table[i]);
     }
     return false;
 }
