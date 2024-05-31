@@ -1,6 +1,7 @@
 // Implements a dictionary's functionality
 
 #include <ctype.h>
+#include <stdio.h>
 #include <stdbool.h>
 
 #include "dictionary.h"
@@ -36,6 +37,9 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
+    FILE *file = fopen()
+    node *n = malloc(sizeof(node));
+
     return false;
 }
 
