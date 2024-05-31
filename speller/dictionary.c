@@ -32,7 +32,10 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    int x = toupper(word[0]) - 'A';
+    int y = toupperr(word[1]) - 'A';
+    int z = x + y;
+    return z;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
