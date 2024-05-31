@@ -42,12 +42,13 @@ bool load(const char *dictionary)
     FILE *file_L = fopen(./dictionaries./large.txt);
     FILE *file_S = fopen(./dictionaries./small.txt);
     node *n = malloc(sizeof(node));
-    n->next = NULL;
 
     if (file_L == NULL || file_S == NULL || n == NULL)
     {
         return false;
     }
+
+    n->next = NULL;
 
     while (fscan(file_L, %s, word) != EOF)
     {
