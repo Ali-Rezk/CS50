@@ -68,18 +68,20 @@ unsigned int size(void)
     // TODO
     FILE * file = fopen("dictionaries/large","r");
     char word[LENGTH + 1];
+    int n = 0;
 
     if (file = NULL)
     {
         return 0;
     }
 
-    while (fread(file, sizeof(char), word))
+    while (fread(file, sizeof(string), 1, word))
     {
-        
+        n++;
     }
 
     fclose(file);
+    return n;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
