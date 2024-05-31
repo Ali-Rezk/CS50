@@ -32,7 +32,7 @@ bool check(const char *word)
         return false;
     }
 
-    cursor = table[n];
+    cursor->next = table[n];
 
     while (strcmp(cursor->word[],table[n]->word) != 0)
     {
