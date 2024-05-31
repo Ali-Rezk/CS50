@@ -113,23 +113,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *n = malloc(sizeof(node));
 
-    if (n == NULL)
-    {
-        return false;
-    }
+    return false;
 
-    for (int i = 0; i < N; i++)
-    {
-        while (table[i] != NULL)
-        {
-            n = table[i]->next;
-            free(table[i]);
-            table[i] = n;
-        }
-    }
-
-    free(n);
-    return true;
 }
