@@ -48,8 +48,7 @@ bool load(const char *dictionary)
     while (fscanf(file, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
-        table = malloc(sizeof(node));
-
+        
         if (file == NULL || n == NULL)
         {
             return false;
@@ -60,7 +59,6 @@ bool load(const char *dictionary)
         n->next = table[hash(word)];
         table[hash(word)] = n;
         free(n);
-        free(table);
     }
 
 
