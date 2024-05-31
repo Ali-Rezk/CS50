@@ -40,6 +40,15 @@ bool check(const char *word)
         {
             cursor = cursor->next;
         }
+
+        if(cursor == NULL)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
 
