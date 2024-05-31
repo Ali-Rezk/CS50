@@ -25,7 +25,7 @@ bool check(const char *word)
 {
     // TODO
     int n = hash(word);
-    node *cursor = malloc(sizeof(node));
+    node *cursor = malloc(sizeof(node *));
 
     if (cursor == NULL)
     {
@@ -68,7 +68,7 @@ bool load(const char *dictionary)
     // TODO
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-    node *n = malloc(sizeof(node));
+    node *n = malloc(sizeof(node *));
 
     if (file == NULL || n == NULL)
     {
@@ -113,7 +113,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *n = malloc(sizeof(node));
+    node *n = malloc(sizeof(node *));
 
     if (n == NULL)
     {
