@@ -37,7 +37,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *file = fopen()
+    FILE *file = fopen(./dictionaries./large);
     node *n = malloc(sizeof(node));
 
     return false;
