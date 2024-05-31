@@ -41,6 +41,9 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
     FILE *file_L = fopen(./dictionaries./large.txt);
     FILE *file_S = fopen(./dictionaries./small.txt);
+    node *n = malloc(sizeof(node));
+
+    if ()
 
     if (file_L == NULL || file_S == NULL)
     {
@@ -52,7 +55,7 @@ bool load(const char *dictionary)
         strcpy
     }
 
-    node *n = malloc(sizeof(node));
+
 
     return false;
 }
