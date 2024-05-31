@@ -57,6 +57,8 @@ bool load(const char *dictionary)
         table[hash(word)] = n;
     }
 
+    fclose()
+    fclose()
     return true;
 }
 
