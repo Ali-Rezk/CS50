@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include <stdbool.h>
 
 #include "dictionary.h"
@@ -50,7 +51,7 @@ bool load(const char *dictionary)
 
     n->next = NULL;
 
-    while (fscan(file_L, %s, word) != EOF)
+    while (fscanf(file_L, "%s", word) != EOF)
     {
         strcpy(n->word, word);
         n->next = table[hash(word)];
