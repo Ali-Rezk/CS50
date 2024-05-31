@@ -44,7 +44,8 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    
+
+    fscan()
 
     node *n = malloc(sizeof(node));
 
