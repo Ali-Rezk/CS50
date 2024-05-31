@@ -67,6 +67,7 @@ unsigned int size(void)
 {
     // TODO
     FILE * file = fopen("dictionaries/large","r");
+    char word[LENGTH + 1];
 
     if (file = NULL)
     {
@@ -75,8 +76,10 @@ unsigned int size(void)
 
     while (fscanf(file, "%s", word) != EOF)
     {
-        
+
     }
+
+    fclose(file);
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
