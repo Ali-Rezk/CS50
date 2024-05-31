@@ -36,7 +36,7 @@ bool check(const char *word)
 
     while (cursor != NULL)
     {
-        strcmp(cursor->word[],cursor->next) != 0
+        strcmp(cursor->word,cursor->next)
         cursor = cursor->next;
     }
     if(cursor == NULL)
