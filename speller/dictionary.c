@@ -73,7 +73,10 @@ unsigned int size(void)
         return 0;
     }
 
-    while ()
+    while (fscanf(file, "%s", word) != EOF)
+    {
+        
+    }
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
