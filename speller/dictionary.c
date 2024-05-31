@@ -39,8 +39,8 @@ bool load(const char *dictionary)
 {
     // TODO
     char word[LENGTH + 1];
-    FILE *file_L = fopen(./dictionaries./large.txt);
-    FILE *file_S = fopen(./dictionaries./small.txt);
+    FILE *file_L = fopen("./dictionaries./large.txt","r");
+    FILE *file_S = fopen("./dictionaries./small.txt","r");
     node *n = malloc(sizeof(node));
 
     if (file_L == NULL || file_S == NULL || n == NULL)
@@ -57,8 +57,8 @@ bool load(const char *dictionary)
         table[hash(word)] = n;
     }
 
-    fclose()
-    fclose()
+    fclose(file_L);
+    fclose(file_S);
     return true;
 }
 
