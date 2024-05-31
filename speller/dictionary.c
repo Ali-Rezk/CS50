@@ -36,7 +36,7 @@ bool check(const char *word)
 
     while (strcmp(cursor->word[],table[n]->word) != 0)
     {
-        cursor->next = 
+        cursor = cursor->next;
     }
 
     free(cursor);
