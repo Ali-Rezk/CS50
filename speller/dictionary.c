@@ -33,7 +33,7 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     int x = toupper(word[0]) - 'A';
-    int y = toupperr(word[1]) - 'A';
+    int y = toupper(word[1]) - 'A';
     int z = x + y;
     return z;
 }
