@@ -2,6 +2,7 @@
 
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 #include <stdbool.h>
 
 #include "dictionary.h"
@@ -46,7 +47,10 @@ bool load(const char *dictionary)
         return false;
     }
 
-    fscan()
+    while (fscan(file_L, %s, word) != EOF)
+    {
+        strcpy
+    }
 
     node *n = malloc(sizeof(node));
 
