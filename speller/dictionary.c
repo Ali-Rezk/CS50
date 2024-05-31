@@ -117,8 +117,12 @@ bool unload(void)
 
     for (int i = 0; i < N; i++)
     {
-        n = table[i]->next;
-        free(table[i]);
+        while (table != NULL)
+        {
+            n = table[i]->next;
+            free(table[i]);
+            table[i] = n;
+        }
     }
     return false;
 }
