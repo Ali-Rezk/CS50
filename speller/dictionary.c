@@ -66,10 +66,10 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    char word[LENGTH + 1];
+    byte word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
     node *n = malloc(sizeof(node));
-
+    
     if (file == NULL || n == NULL)
     {
         return false;
@@ -122,11 +122,11 @@ bool unload(void)
 
     for (int i = 0; i < N; i++)
     {
-        while (table[i] != NULL)
+        while (n != NULL)
         {
-            n = table[i]->next;
-            free(table[i]);
-            table[i] = n;
+            n = table[i];
+            table[i] = n->next;
+            free(n);
         }
     }
 
