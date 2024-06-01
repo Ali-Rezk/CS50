@@ -1,5 +1,5 @@
 // Implements a dictionary's functionality
-
+#include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
@@ -36,7 +36,7 @@ bool check(const char *word)
     n->next = NULL;
     n = table[x];
 
-    while (strcmp(n->word,word) != 0 && n != NULL)
+    while (strcasecmp(n->word,word) != 0 && n != NULL)
     {
         n = n->next;
     }
