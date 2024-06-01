@@ -26,21 +26,21 @@ bool check(const char *word)
     // TODO
 
     int n = hash(word);
-    node *cursor = malloc(sizeof(node));
+    node *n = malloc(sizeof(node));
 
-    if (cursor == NULL)
+    if (n == NULL)
     {
         return false;
     }
 
-    cursor->next = table[n];
+    n->next = table[n];
 
-    while (strcmp(cursor->word,word) != 0 && cursor != NULL)
+    while (strcmp(n->word,word) != 0 && n != NULL)
     {
-        cursor = cursor->next;
+        n = n->next;
     }
 
-    if(cursor == NULL)
+    if(n == NULL)
     {
         return false;
     }
@@ -49,7 +49,7 @@ bool check(const char *word)
         return true;
     }
 
-    free(cursor);
+    free(n);
 }
 
 
