@@ -127,6 +127,12 @@ bool unload(void)
         while (n != NULL)
         {
             n = table[i];
+
+            if (n == NULL)
+            {
+                break;
+            }
+            
             table[i] = n->next;
             free(n);
         }
