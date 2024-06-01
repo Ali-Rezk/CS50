@@ -28,6 +28,7 @@ bool check(const char *word)
 
     int x = hash(word);
     node *n = malloc(sizeof(node));
+    string s = n->word;
 
     if (n == NULL)
     {
@@ -37,9 +38,10 @@ bool check(const char *word)
     n->next = NULL;
     n = table[x];
 
-    while (strcasecmp(n->word,word) != 0 && n != NULL)
+    while (strcasecmp(s,word) != 0 && n != NULL)
     {
         n = n->next;
+        s = n->word;
     }
 
     if(n == NULL)
