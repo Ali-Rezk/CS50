@@ -19,7 +19,7 @@ const unsigned int N = 52;
 
 // Hash table
 node *table[N];
-node *n = malloc(sizeof(node));
+node *n; = malloc(sizeof(node));
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -34,7 +34,7 @@ bool check(const char *word)
         return false;
     }
 
-    cursor->next = table[n];
+    cursor->next = table[x];
 
     while (strcmp(cursor->word,word) != 0 && cursor != NULL)
     {
@@ -70,7 +70,7 @@ bool load(const char *dictionary)
     // TODO
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-    
+
 
     if (file == NULL || n == NULL)
     {
