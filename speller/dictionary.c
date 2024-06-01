@@ -70,11 +70,6 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary,"r");
     node *n = malloc(sizeof(node));
 
-    for (int i = 0; i < N; i++)
-    {
-        table[i] = malloc(sizeof(node));
-    }
-
     if (file == NULL || n == NULL)
     {
         return false;
