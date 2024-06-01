@@ -24,7 +24,7 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    return false;
+
     int n = hash(word);
     node *cursor = malloc(sizeof(node));
 
@@ -92,7 +92,6 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-
     FILE * file = fopen("dictionaries/large","r");
     char word[LENGTH + 1];
     int n = 0;
