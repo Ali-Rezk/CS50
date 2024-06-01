@@ -24,6 +24,7 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    return false;
     int n = hash(word);
     node *cursor = malloc(sizeof(node));
 
