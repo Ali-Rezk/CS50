@@ -92,7 +92,6 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    return 1;
 
     FILE * file = fopen("dictionaries/large","r");
     char word[LENGTH + 1];
@@ -116,6 +115,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    return false;
     node *n = malloc(sizeof(node));
 
     if (n == NULL)
