@@ -19,14 +19,13 @@ const unsigned int N = 52;
 
 // Hash table
 node *table[N];
-node *n; = malloc(sizeof(node));
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
 {
     // TODO
     return false;
-    int x = hash(word);
+    int n = hash(word);
     node *cursor = malloc(sizeof(node));
 
     if (cursor == NULL)
@@ -34,7 +33,7 @@ bool check(const char *word)
         return false;
     }
 
-    cursor->next = table[x];
+    cursor->next = table[n];
 
     while (strcmp(cursor->word,word) != 0 && cursor != NULL)
     {
@@ -70,7 +69,7 @@ bool load(const char *dictionary)
     // TODO
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-
+    node *n = malloc(sizeof(node));
 
     if (file == NULL || n == NULL)
     {
@@ -84,7 +83,7 @@ bool load(const char *dictionary)
         table[hash(word)] = n;
     }
 
-
+    free(n);
     fclose(file);
     return true;
 }
@@ -95,7 +94,7 @@ unsigned int size(void)
     // TODO
     FILE * file = fopen("dictionaries/large","r");
     char word[LENGTH + 1];
-    int x = 0;
+    int n = 0;
 
     if (file == NULL)
     {
@@ -108,14 +107,14 @@ unsigned int size(void)
     }
 
     fclose(file);
-    return x;
+    return n;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
     // TODO
-
+    node *n = malloc(sizeof(node));
 
     if (n == NULL)
     {
