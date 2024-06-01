@@ -124,17 +124,13 @@ bool unload(void)
 
     for (int i = 0; i < N; i++)
     {
+        n = table[i];
+
         while (n != NULL)
         {
-            n = table[i];
-
-            if (n == NULL)
-            {
-                break;
-            }
-            
             table[i] = n->next;
             free(n);
+            n = table[i];
         }
     }
     return true;
