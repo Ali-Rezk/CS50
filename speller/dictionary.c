@@ -25,7 +25,7 @@ bool check(const char *word)
 {
     // TODO
 
-    int n = hash(word);
+    int x = hash(word);
     node *n = malloc(sizeof(node));
 
     if (n == NULL)
@@ -33,7 +33,7 @@ bool check(const char *word)
         return false;
     }
 
-    n->next = table[n];
+    n->next = table[x];
 
     while (strcmp(n->word,word) != 0 && n != NULL)
     {
