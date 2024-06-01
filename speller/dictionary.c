@@ -70,7 +70,7 @@ bool load(const char *dictionary)
     // TODO
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-
+    
 
     if (file == NULL || n == NULL)
     {
