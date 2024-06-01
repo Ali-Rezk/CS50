@@ -47,10 +47,10 @@ bool check(const char *word)
     }
     else
     {
+        free(n);
         return true;
     }
 
-    free(n);
 }
 
 
