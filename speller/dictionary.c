@@ -34,7 +34,7 @@ bool check(const char *word)
     }
 
     n->next = NULL;
-    n->next = table[x];
+    n = table[x];
 
     while (strcmp(n->word,word) != 0 && n != NULL)
     {
