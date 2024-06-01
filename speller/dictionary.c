@@ -119,6 +119,8 @@ bool unload(void)
     {
         return false;
     }
+    
+    n->next = NULL;
 
     for (int i = 0; i < N; i++)
     {
