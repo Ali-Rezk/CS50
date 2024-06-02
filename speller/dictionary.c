@@ -93,6 +93,7 @@ bool load(const char *dictionary)
         strcpy(n->word, word);
         n->next = table[hash(word)];
         table[hash(word)] = n;
+        free(n);
     }
 
     fclose(file);
@@ -125,6 +126,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    return false;
     free(n);
     return true;
 
