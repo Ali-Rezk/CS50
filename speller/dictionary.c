@@ -126,7 +126,6 @@ bool unload(void)
         return false;
     }
 
-    free(n);
     n->next = NULL;
 
     for (int i = 0; i < N; i++)
