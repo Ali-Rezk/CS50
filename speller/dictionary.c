@@ -46,6 +46,7 @@ bool check(const char *word)
 
     if(p == NULL)
     {
+        free(p);
         return false;
     }
     else
