@@ -79,6 +79,7 @@ bool load(const char *dictionary)
     }
     while (fscanf(file, "%s", word) != EOF)
     {
+        int z = hash(word);
         n->next = NULL;
         strcpy(n->word, word);
         n->next = table[hash(word)];
