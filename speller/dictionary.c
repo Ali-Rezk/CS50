@@ -26,7 +26,7 @@ node *n;
 bool check(const char *word)
 {
     // TODO
-    return false;
+    return true;
     int x = hash(word);
     node *p = malloc(sizeof(node));
 
@@ -81,7 +81,6 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
     n = malloc(sizeof(node));
-    memset(table, 0, sizeof(node));
 
     if (file == NULL || n == NULL)
     {
@@ -126,7 +125,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    return false;
     free(n);
     return true;
 
