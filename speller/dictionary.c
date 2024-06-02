@@ -26,7 +26,7 @@ node *n;
 bool check(const char *word)
 {
     // TODO
-    return false;
+
     node *cursor = malloc(sizeof(node));
     int x = hash(word);
 
@@ -43,14 +43,14 @@ bool check(const char *word)
         cursor = cursor->next;
     }
 
-    if (strcasecmp(cursor->word, word) == 0)
+    if (cursor == NULL)
     {
         free(cursor);
-        return true;
+        return false;
     }
 
     free(cursor);
-    return false;
+    return true;
 
 }
 
