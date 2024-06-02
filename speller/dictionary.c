@@ -124,8 +124,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    free(n);
-    return true;
+
 
     if (n == NULL)
     {
