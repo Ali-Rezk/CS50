@@ -27,7 +27,7 @@ bool check(const char *word)
 {
     // TODO
     return false;
-    
+
     int x = hash(word);
     node *p = malloc(sizeof(node));
     string s = p->word;
@@ -99,7 +99,7 @@ unsigned int size(void)
     // TODO
     FILE * file = fopen("dictionaries/large","r");
     char word[LENGTH + 1];
-    int n = 0;
+    int x = 0;
 
     if (file == NULL)
     {
@@ -108,11 +108,11 @@ unsigned int size(void)
 
     while (fread(word, sizeof(char *), 1, file))
     {
-        n++;
+        x++;
     }
 
     fclose(file);
-    return n;
+    return x;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
