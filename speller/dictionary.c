@@ -81,6 +81,7 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
     n = malloc(sizeof(node));
+    memset(&table[0], 0, sizeof(node));
 
     if (file == NULL || n == NULL)
     {
