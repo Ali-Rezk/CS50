@@ -61,7 +61,18 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int x = toupper(word[0]) - 'A';
+
+    int x = 0;
+    int y = 0;
+
+    if (isupper(word[0]))
+    {
+        x = toupper(word[0]) - 'A';
+    }
+    else
+    {
+        x = 
+    }
     int y = toupper(word[1]) - 'A';
     int z = x + y % 52;
     return x;
