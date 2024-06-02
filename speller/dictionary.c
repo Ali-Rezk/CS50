@@ -34,7 +34,6 @@ bool check(const char *word)
     {
         return false;
     }
-    table[0] = NULL;
     cursor->next = NULL;
     cursor = table[x];
 
