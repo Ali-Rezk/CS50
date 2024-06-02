@@ -37,12 +37,10 @@ bool check(const char *word)
 
     p->next = NULL;
     p = table[x];
-    string s = p->word;
 
-    while (strcasecmp(s,word) != 0 && p != NULL)
+    while (strcasecmp(p->word,word) != 0 && p != NULL)
     {
         p = p->next;
-        s
     }
 
     if(p == NULL)
