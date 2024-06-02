@@ -71,7 +71,7 @@ unsigned int hash(const char *word)
     }
 
     int z = x % 52;
-    return z;
+    return x;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -125,7 +125,8 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-
+    free(n);
+    return true;
 
     if (n == NULL)
     {
