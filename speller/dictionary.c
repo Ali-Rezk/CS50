@@ -36,7 +36,7 @@ bool check(const char *word)
     }
 
     cursor->next = NULL;
-    cursor = table[x];
+    cursor = table[0];
 
     while (cursor != NULL)
     {
