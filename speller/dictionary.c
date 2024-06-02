@@ -61,16 +61,9 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int m = strlen(word);
-    int x = 0;
 
-    for (int i = 0; i < m; i++)
-    {
-        x += toupper(word[i]) - 'A';
+    int x = toupper(word[0]) - 'A';
 
-    }
-
-    int z = x % 52;
     return x;
 }
 
@@ -94,7 +87,6 @@ bool load(const char *dictionary)
         table[hash(word)] = n;
 
     }
-    free(n);
     fclose(file);
     return true;
 }
