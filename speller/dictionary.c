@@ -45,7 +45,6 @@ bool check(const char *word)
 
     if (cursor == NULL)
     {
-        free(cursor);
         return false;
     }
 
