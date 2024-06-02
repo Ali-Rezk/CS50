@@ -64,7 +64,7 @@ unsigned int hash(const char *word)
     int x = toupper(word[0]) - 'A';
     int y = toupper(word[1]) - 'A';
     int z = x + y % 52;
-    return z;
+    return x;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
