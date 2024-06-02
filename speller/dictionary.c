@@ -26,6 +26,30 @@ node *n;
 bool check(const char *word)
 {
     // TODO
+    node *cursor = malloc(sizeof(node));
+    int x = hash(word);
+
+    if (cursor == NULL)
+    {
+        return false;
+    }
+
+    cursor->next = NULL;
+    cursor = table[x];
+
+    while (strcasecmp(cursor->word, word) != 0)
+    {
+        cursor->word = cursor->next;
+    }
+
+    if (strcasecmp(cursor->word, word) == 0)
+    {
+        free(cursor);
+        return true;
+    }
+
+    free(cursor);
+    return false;
 
 }
 
