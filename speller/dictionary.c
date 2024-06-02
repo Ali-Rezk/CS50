@@ -39,7 +39,7 @@ bool check(const char *word)
 
     while (strcasecmp(cursor->word, word) != 0)
     {
-        cursor->word = cursor->next;
+        cursor = cursor->next;
     }
 
     if (strcasecmp(cursor->word, word) == 0)
