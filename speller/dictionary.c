@@ -72,6 +72,7 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary,"r");
     n = malloc(sizeof(node));
     int z = 0;
+    node *checkk = malloc(sizeof(node));
 
     if (file == NULL || n == NULL)
     {
@@ -84,6 +85,7 @@ bool load(const char *dictionary)
         n->next = NULL;
         n->next = table[z];
         table[z] = n;
+        checkk = table[z];
 
     }
     printf("checkkkkkkkkkkkkkkkkkk: %s",table[3]->word);
