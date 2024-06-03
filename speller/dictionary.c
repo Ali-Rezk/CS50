@@ -36,20 +36,20 @@ bool check(const char *word)
     cursor->next = NULL;
     cursor = table[x];
 
-    while (cursor != NULL)
+    while (strcasecmp(cursor->word, word) != 0 || cursor != NULL)
     {
-        int z = strcasecmp(cursor->word, word);
-
-        if(z == 0)
-        {
-            free(cursor);
-            return true;
-        }
-
         cursor = cursor->next;
     }
 
-     return false;
+    if (cursor == NULL)
+    {
+        free (cursor);
+        return false;
+    }
+
+    free(cursor);
+    return true;
+
 }
 
 
