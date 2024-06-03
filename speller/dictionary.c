@@ -26,7 +26,6 @@ node *n;
 bool check(const char *word)
 {
     // TODO
-    return false;
     node *cursor = malloc(sizeof(node));
     int x = hash(word);
 
@@ -95,7 +94,6 @@ bool load(const char *dictionary)
         }
 
     }
-    printf("checkkkkkkkkkkkkkkkkkk: %s",table[0]->word);
     fclose(file);
     return true;
 }
