@@ -36,7 +36,7 @@ bool check(const char *word)
     }
     cursor->next = NULL;
     cursor = table[x];
-    printf("chekkkkkkkkkkk: %s",table[x]->word);
+    printf("chekk: %s",table[x]->word);
     while (cursor != NULL)
     {
         int z = strcasecmp(cursor->word, word);
