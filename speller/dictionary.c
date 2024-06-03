@@ -86,6 +86,7 @@ bool load(const char *dictionary)
         table[z] = n;
 
     }
+    printf("checkkkkkkkkkkkkkkkkkk: %s",table[2]->word);
     fclose(file);
     return true;
 }
