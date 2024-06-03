@@ -70,22 +70,28 @@ bool load(const char *dictionary)
     // TODO create hash table
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-    n = malloc(sizeof(node));
+
     int z = 0;
     node *checkk = malloc(sizeof(node));
 
-    if (file == NULL || n == NULL)
+    if (file == NULL)
     {
         return false;
     }
     while (fscanf(file, "%s", word) != EOF)
     {
+        n = malloc(sizeof(node));
+        if (n == NULL)
+        {
+            return false;
+        }
         z = hash(word);
         strcpy(n->word, word);
         n->next = NULL;
         n->next = table[z];
         table[z] = n;
         checkk = table[z];
+        free(n);
 
     }
     printf("checkkkkkkkkkkkkkkkkkk: %s",table[3]->word);
