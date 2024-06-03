@@ -94,7 +94,7 @@ bool load(const char *dictionary)
         free(n);
 
     }
-    printf("checkkkkkkkkkkkkkkkkkk: %s",table[3]->word);
+    printf("checkkkkkkkkkkkkkkkkkk: %s",table[0]->word);
     fclose(file);
     free(checkk);
     return true;
