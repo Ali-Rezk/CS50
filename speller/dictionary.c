@@ -89,7 +89,10 @@ bool load(const char *dictionary)
         n->next = NULL;
         n->next = table[z];
         table[z] = n;
-        free(n);
+        if (n != NULL)
+        {
+            free(n);
+        }
 
     }
     printf("checkkkkkkkkkkkkkkkkkk: %s",table[0]->word);
