@@ -72,7 +72,6 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary,"r");
 
     int z = 0;
-    node *checkk = malloc(sizeof(node));
 
     if (file == NULL)
     {
@@ -90,13 +89,11 @@ bool load(const char *dictionary)
         n->next = NULL;
         n->next = table[z];
         table[z] = n;
-        checkk = table[z];
         free(n);
 
     }
     printf("checkkkkkkkkkkkkkkkkkk: %s",table[0]->word);
     fclose(file);
-    free(checkk);
     return true;
 }
 
@@ -126,7 +123,6 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    free(n);
     return true;
 
     if (n == NULL)
