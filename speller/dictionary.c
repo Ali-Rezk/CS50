@@ -28,21 +28,15 @@ bool check(const char *word)
     // TODO
 
     int x = hash(word);
-
-    if (cursor == NULL)
-    {
-        return false;
-    }
-    cursor->next = NULL;
-    cursor = table[x];
+    node *cursor = table[x];
     printf("chekk: %s",table[x]->word);
+
     while (cursor != NULL)
     {
         int z = strcasecmp(cursor->word, word);
 
         if(z == 0)
         {
-            free(cursor);
             return true;
         }
 
