@@ -86,10 +86,6 @@ bool load(const char *dictionary)
         strcpy(n->word, word);
         n->next = table[z];
         table[z] = n;
-        if (n != NULL)
-        {
-            free(n);
-        }
     }
     fclose(file);
     return true;
@@ -123,13 +119,6 @@ bool unload(void)
 {
     // TODO
 
-    if (n == NULL)
-    {
-        return false;
-    }
-
-    n->next = NULL;
-
     for (int i = 0; i < N; i++)
     {
         n = table[i];
@@ -141,6 +130,5 @@ bool unload(void)
             n = table[i];
         }
     }
-    f
     return true;
 }
