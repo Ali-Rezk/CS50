@@ -70,7 +70,6 @@ bool load(const char *dictionary)
     // TODO create hash table
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-    node *checkk = malloc(sizeof(node));
 
     int z = 0;
 
@@ -90,14 +89,11 @@ bool load(const char *dictionary)
         n->next = NULL;
         n->next = table[z];
         table[z] = n;
-        checkk = table[z];
         if (n != NULL)
         {
             free(n);
         }
     }
-    printf("chekkkkkkkkkkk: %s",table[z]->word);
-    free(checkk);
     fclose(file);
     return true;
 }
