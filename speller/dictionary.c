@@ -26,7 +26,7 @@ node *n;
 bool check(const char *word)
 {
     // TODO
-    node *cursor = malloc(sizeof(node));
+
     int x = hash(word);
 
     if (cursor == NULL)
