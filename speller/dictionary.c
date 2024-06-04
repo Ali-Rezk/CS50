@@ -70,7 +70,6 @@ bool load(const char *dictionary)
     // TODO create hash table
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
-
     int z = 0;
 
     if (file == NULL)
