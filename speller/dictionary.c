@@ -110,7 +110,7 @@ unsigned int size(void)
         return 0;
     }
 
-    while (fread(word, LENGTH, 1, file))
+    while (fscanf(file, "%s", word) != EOF)
     {
         x++;
 
