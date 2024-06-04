@@ -110,10 +110,10 @@ unsigned int size(void)
         return 0;
     }
 
-    while (fread(word, sizeof(char *), 1, file))
+    while (fread(word, LENGTH, 1, file))
     {
         x++;
-        printf("checkkkkk: %s", word);
+
     }
 
     fclose(file);
