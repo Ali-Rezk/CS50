@@ -29,13 +29,15 @@ bool check(const char *word)
 
     int x = hash(word);
     node *cursor = table[x];
+    int z;
 
-    while (cursor != NULL || strcasecmp(cursor->word, word) != 0)
+    while (cursor != NULL || z != 0)
     {
+        z = strcasecmp(cursor->word, word);
         cursor = cursor->next;
     }
 
-    if(strcasecmp(cursor->word, word) == 0)
+    if(z == 0)
     {
         return true;
     }
