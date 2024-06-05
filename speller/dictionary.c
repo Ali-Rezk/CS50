@@ -52,7 +52,7 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     int z = 0;
 
-    for (int i = 0, int len = strlen(word); i < len; i++)
+    for (int i = 0, len = strlen(word); i < len; i++)
     {
         int x = toupper(word[i]) - 'A';
         z += x;
