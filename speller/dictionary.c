@@ -31,13 +31,12 @@ bool check(const char *word)
     while (cursor != NULL)
     {
         int z = strcasecmp(cursor->word, word);
+        cursor = cursor->next;
 
         if (z == 0)
         {
             return true;
         }
-
-        cursor = cursor->next;
     }
 
      return false;
