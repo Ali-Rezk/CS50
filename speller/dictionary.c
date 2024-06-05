@@ -29,7 +29,6 @@ bool check(const char *word)
 
     int x = hash(word);
     node *cursor = table[x];
-    printf("chekk: %s",table[x]->word);
 
     while (cursor != NULL)
     {
