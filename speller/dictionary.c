@@ -26,9 +26,7 @@ node *n;
 bool check(const char *word)
 {
     // TODO
-
-    int x = hash(word);
-    node *cursor = table[x];
+    node *cursor = table[hash(word)];
     int z;
 
     while (cursor != NULL || z != 0)
