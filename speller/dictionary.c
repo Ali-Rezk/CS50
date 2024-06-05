@@ -58,7 +58,7 @@ unsigned int hash(const char *word)
         z += x;
     }
 
-    return x;
+    return z % N;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
