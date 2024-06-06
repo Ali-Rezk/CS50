@@ -51,7 +51,7 @@ unsigned int hash(const char *word)
 
     for (int i = 0, len = strlen(word); i < len; i++)
     {
-        int x = toupper(word[i]) + 'A';
+        int x = toupper(word[i]) * 'A';
         z += x;
     }
 
