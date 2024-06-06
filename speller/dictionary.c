@@ -87,10 +87,10 @@ bool load(const char *dictionary)
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
-unsigned int size(const char *dictionary)
+unsigned int size(void)
 {
     // TODO
-    FILE * file = fopen(dictionary,"r");
+    FILE * file = fopen(argv[1],"r");
     char word[LENGTH + 1];
     int x = 0;
 
