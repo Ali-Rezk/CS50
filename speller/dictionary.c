@@ -90,7 +90,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    FILE * file = fopen("dictionaries/large","r");
+    FILE * file = fopen("dictionaries","r");
     char word[LENGTH + 1];
     int x = 0;
 
