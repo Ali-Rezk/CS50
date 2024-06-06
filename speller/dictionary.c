@@ -1,12 +1,12 @@
 // Implements a dictionary's functionality
+#include "dictionary.h"
 #include <cs50.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <strings.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include "dictionary.h"
 
 // Represents a node in a hash table
 typedef struct node
@@ -21,7 +21,7 @@ const unsigned int N = 10000;
 // Hash table
 node *table[N];
 node *n;
-const char * dict;
+const char *dict;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -39,9 +39,8 @@ bool check(const char *word)
         cursor = cursor->next;
     }
 
-     return false;
+    return false;
 }
-
 
 // Hashes word to a number
 unsigned int hash(const char *word)
@@ -64,7 +63,7 @@ bool load(const char *dictionary)
     // TODO create hash table
     dict = dictionary;
     char word[LENGTH + 1];
-    FILE *file = fopen(dictionary,"r");
+    FILE *file = fopen(dictionary, "r");
     int z = 0;
 
     if (file == NULL)
@@ -91,7 +90,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    FILE * file = fopen(dict,"r");
+    FILE *file = fopen(dict, "r");
     char word[LENGTH + 1];
     int x = 0;
 
@@ -103,7 +102,6 @@ unsigned int size(void)
     while (fscanf(file, "%s", word) != EOF)
     {
         x++;
-
     }
 
     fclose(file);
