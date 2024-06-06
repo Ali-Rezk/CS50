@@ -28,13 +28,12 @@ bool check(const char *word)
 {
     // TODO
     node *cursor = table[hash(word)];
-    int z;
 
-    while (cursor->next != NULL && strcasecmp(cursor->word, word) != 0)
+    while (cursor->next != NULL && (strcasecmp(cursor->word, word) != 0))
     {
         cursor = cursor->next;
     }
-        if (z == 0)
+        if (strcasecmp(cursor->word, word) == 0)
     {
         return true;
     }
