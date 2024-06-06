@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
     time_load = calculate(&before, &after);
 
     // Try to open text
-    printf("shshshsh %d", argc);
+    printf("shshshsh %d", argv[2]);
     char *text = (argc == 3) ? argv[2] : argv[1];
     FILE *file = fopen(text, "r");
     if (file == NULL)
