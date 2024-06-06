@@ -21,6 +21,7 @@ const unsigned int N = 10000;
 // Hash table
 node *table[N];
 node *n;
+const char * dict;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)
@@ -62,6 +63,7 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO create hash table
+    dict = dictionary;
     char word[LENGTH + 1];
     FILE *file = fopen(dictionary,"r");
     int z = 0;
@@ -90,7 +92,7 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    FILE * file = fopen(argv[1],"r");
+    FILE * file = fopen(dict,"r");
     char word[LENGTH + 1];
     int x = 0;
 
