@@ -1,5 +1,6 @@
+
 def main():
-    height = int(input("Height: "))
+    height = get_int("Height: ")
 
     if height < 1 or height > 8:
         height = int(input("Height: "))
