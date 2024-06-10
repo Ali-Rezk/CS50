@@ -5,3 +5,5 @@ def main():
 
 def brick(n):
     print("#")
+
+main()
