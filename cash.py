@@ -1,10 +1,10 @@
-from cs50 import get_int
+from cs50 import get_float
 
 
-n = get_int("change owned: ")
+n = get_float("change owned: ")
 
 while n < 0:
-    n = get_int("change owned: ")
+    n = get_float("change owned: ")
 
 x = (n / 25)
 y = (n / 10 - x * 2.5)
