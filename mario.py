@@ -7,9 +7,11 @@ def main():
         bricks(i + 1)
         print()
 
+
 def bricks(n):
     for i in range(n):
         print("#", end="")
+
 
 def spaces(n):
     for i in range(n):
