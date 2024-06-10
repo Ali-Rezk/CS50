@@ -4,6 +4,7 @@ def main():
         brick(i)
 
 def brick(n):
-    print("#")
+    for i in rang(n):
+        print("#")
 
 main()
