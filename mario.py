@@ -1,8 +1,9 @@
 def main():
     height = int(input("Height: "))
 
-    if height < 1:
-        
+    if height < 1 or height > 8:
+        height = int(input("Height: "))
+
 
     for i in range(height):
         spaces(height - i - 1)
