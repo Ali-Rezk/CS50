@@ -5,13 +5,11 @@ def main():
         bricks(i)
         print(" ", end="")
         bricks(i)
-
-    print()
+        print()
 
 def bricks(n):
     for i in range(n):
         print("#", end="")
-    print()
 
 def spaces(n):
     for i in range(n):
