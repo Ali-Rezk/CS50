@@ -1,5 +1,7 @@
-height = int(input("Height: "))
+def main():
+    height = int(input("Height: "))
+    for i in height:
+        brick(i)
 
-
-for i in height:
+def brick(n):
     print("#")
