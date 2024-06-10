@@ -3,7 +3,7 @@ def main():
     for i in range(height):
         spaces(height-i)
         bricks(i)
-        print(" ", end="")
+        print("  ", end="")
         bricks(i)
         print()
 
