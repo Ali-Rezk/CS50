@@ -12,8 +12,10 @@ def bricks(n):
         print("#", end="")
     print()
 
-def revbricks(n):
-    for i in range(n)
+def spaces(n):
+    for i in range(n):
+        print(" ", end="")
+    print()
 
 
 main()
