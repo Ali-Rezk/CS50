@@ -1,10 +1,10 @@
 def main():
     height = int(input("Height: "))
     for i in range(height):
-        spaces(height-i)
-        bricks(i)
+        spaces(height - i - 1)
+        bricks(i + 1)
         print("  ", end="")
-        bricks(i)
+        bricks(i + 1)
         print()
 
 def bricks(n):
