@@ -8,8 +8,8 @@ while n < 0:
 
 x = int((n / 0.25))
 y = int((n / 0.10 - x * 2.5))
-z = int((n / 0.05 - y * 2 - x * 5))
-v = int((n / 0.01 - z * 5 - y * 10 - x * 25))
+z = int((n / .05 - y * 2.0 - x * 5.0))
+v = int((n / 0.01 - z * 5.0 - y * 10.0 - x * 25.0))
 i = int((x + y + z + v))
 
 print(f"{i}")
