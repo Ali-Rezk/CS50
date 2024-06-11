@@ -55,3 +55,6 @@ def compute_punct(sentence):
             punct += 1
 
     return punct
+
+
+main()
