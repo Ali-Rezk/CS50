@@ -25,7 +25,7 @@ def compute_alpha(letter):
     alpha = 0
 
     for i in range(len(letter)):
-        if i.isalpha():
+        if letter[i].isalpha():
             alpha += 1
     return alpha
 
@@ -35,7 +35,7 @@ def compute_spaces(words):
     spaces = 0
 
     for i in range(len(words)):
-        if i.isspace():
+        if words[i].isspace():
             spaces += 1
 
     return spaces + 1
