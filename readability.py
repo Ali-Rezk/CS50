@@ -21,3 +21,17 @@ def main():
         print("Grade %i", Z)
 
     print()
+
+
+def compute_alpha(letter)
+{
+    alpha = 0
+
+    for (int i = 0, len = strlen(letter); i < len; i++)
+    {
+        if (isalpha(letter[i]))
+        {
+            alpha += 1
+        }
+    }
+    return alpha
