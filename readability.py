@@ -14,20 +14,30 @@ def main():
     if index < 1:
         print("Before Grade 1")
 
-    elif (Z > 16)
+    elif Z > 16:
         print("Grade 16+")
 
-    else
+    else:
         print("Grade %i", Z)
 
     print()
 
 
-def compute_alpha(letter)
-{
+def compute_alpha(letter):
+
     alpha = 0
 
     for i in len(letter):
-        if (isalpha(letter[i]))
+        if letter.isalpha():
             alpha += 1
     return alpha
+
+
+def compute_spaces(words):
+
+    spaces = 0
+    for for i in len(word):
+        if (isblank(words[i])):
+            spaces += 1
+
+    return spaces + 1
