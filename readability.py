@@ -24,7 +24,7 @@ def compute_alpha(letter):
 
     alpha = 0
 
-    for i in len(letter):
+    for i in range(len(letter)):
         if letter.isalpha():
             alpha += 1
     return alpha
@@ -34,7 +34,7 @@ def compute_spaces(words):
 
     spaces = 0
 
-    for i in len(words):
+    for i in range(len(words)):
         if not words:
             spaces += 1
 
@@ -45,7 +45,7 @@ def compute_punct(sentence):
 
     punct = 0
 
-    for i in len(sentence):
+    for i in range(len(sentence)):
         if (sentence[i] == '!'):
             punct += 1
 
