@@ -12,12 +12,12 @@ def main():
     Z = round(index)
 
     if index < 1:
-        printf("Before Grade 1")
+        print("Before Grade 1")
 
     elif (Z > 16)
-        printf("Grade 16+")
+        print("Grade 16+")
 
     else
-        printf("Grade %i", Z)
+        print("Grade %i", Z)
 
-    printf("\n");
+    print()
