@@ -25,7 +25,7 @@ def compute_alpha(letter):
     alpha = 0
 
     for i in range(len(letter)):
-        if letter.isalpha():
+        if i.isalpha():
             alpha += 1
     return alpha
 
