@@ -35,7 +35,7 @@ def compute_spaces(words):
     spaces = 0
 
     for i in range(len(words)):
-        if not words:
+        if i.isspace():
             spaces += 1
 
     return spaces + 1
