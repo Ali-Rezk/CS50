@@ -41,3 +41,20 @@ def compute_spaces(words):
             spaces += 1
 
     return spaces + 1
+
+
+def compute_punct(sentence):
+
+    punct = 0
+
+    for for i in len(sentence):
+        if (sentence[i] == '!')
+            punct += 1
+
+    else if (sentence[i] == '.'):
+            punct += 1
+
+    else if (sentence[i] == '?'):
+            punct += 1
+    
+    return punct
