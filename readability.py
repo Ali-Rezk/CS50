@@ -33,6 +33,7 @@ def compute_alpha(letter):
 def compute_spaces(words):
 
     spaces = 0
+
     for i in len(words):
         if not words:
             spaces += 1
