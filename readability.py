@@ -1,6 +1,3 @@
-
-
-
 def main():
     s = input("text: ")
     words = compute_spaces(s)
@@ -18,7 +15,7 @@ def main():
         print("Grade 16+")
 
     else:
-        print("Grade %i", Z)
+        print(F"Grade {Z}")
 
     print()
 
@@ -36,8 +33,8 @@ def compute_alpha(letter):
 def compute_spaces(words):
 
     spaces = 0
-    for for i in len(word):
-        if (isblank(words[i])):
+    for i in len(words):
+        if not words:
             spaces += 1
 
     return spaces + 1
@@ -47,7 +44,7 @@ def compute_punct(sentence):
 
     punct = 0
 
-    for for i in len(sentence):
+    for i in len(sentence):
         if (sentence[i] == '!'):
             punct += 1
 
