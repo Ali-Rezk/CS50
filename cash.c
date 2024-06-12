@@ -16,6 +16,4 @@ int main(void)
     int v = (n / 1 - z * 5 - y * 10 - x * 25);
     int i = (x + y + z + v);
     printf("%i\n", i);
-    int l = 0.15/0.05;
-    printf("%i", l);
 }
