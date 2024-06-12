@@ -36,3 +36,4 @@ void print_bricks(int bricks)
         printf(" ");
     }
 }
+
