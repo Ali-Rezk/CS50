@@ -13,4 +13,5 @@ v = int((n / 0.01 - z * 5.0 - y * 10.0 - x * 25.0))
 i = int((x + y + z + v))
 
 print(f"{i}")
-print(n)
+print(g)
+print(Decimal(n) / Decimal('0.05'))
