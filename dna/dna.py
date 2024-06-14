@@ -31,7 +31,7 @@ def main():
     # TODO: Check database for matching profiles
     for row in data:
         if int(row["AGATC"]) == AGATC and int(row["AATG"]) == AATG and int(row["TATC"]) == TATC and int(row["GAAA"]) == GAAA:
-            if int(row["TTTTTTCT"]) == TTTTTTCT and int(row["TCTAG"]) == TCTAG and int(row["GATA"]) == GATA and int(row["TCTG"]) == TCTG:
+            if int(row["TTTTTTCT"]) == TTTTTTCT and int(row["TCTAG"]) == TCTAG and int(row["GATA"]) == GATA and int(row["TCTG"]) == TCTG and int(row["GAAA"]) == GAAA:
                 print(row["name"])
                 file.close()
                 file1.close()
