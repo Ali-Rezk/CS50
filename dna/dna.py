@@ -29,7 +29,7 @@ def main():
             file1.close()
             return
     else:
-        print("no match")
+        print("No match")
         file.close()
         file1.close()
 
