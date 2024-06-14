@@ -47,7 +47,6 @@ def main():
         file1.close()
 
 
-
 def longest_match(sequence, subsequence):
     """Returns length of longest run of subsequence in sequence."""
 
