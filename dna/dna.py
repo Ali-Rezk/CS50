@@ -13,8 +13,8 @@ def main():
         data = csv.DictReader(file)
 
     # TODO: Read DNA sequence file into a variable
-    with open(sys.argv[2]) as file:
-        seq = file.read()
+    with open(sys.argv[2]) as file1:
+        seq = file1.read()
 
     # TODO: Find longest match of each STR in DNA sequence
     agatc = longest_match(seq, "AGATC")
