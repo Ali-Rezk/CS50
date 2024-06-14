@@ -7,7 +7,7 @@ def main():
     # TODO: Check for command-line usage
     database = sys.argv[1]
     sequence = sys.argv[2]
-    
+
     # TODO: Read database file into a variable
     with open(database) as file:
         data = csv.DictReader(file)
@@ -17,10 +17,12 @@ def main():
         seq = sequence.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    x = 0
     for i in seq:
-        x = 0
-        if seq[i] and =
+        if seq[i] == 'A' and seq[i+1] == 'G' and seq[i+2] == "A":
+            
 
+        x = 0
     # TODO: Check database for matching profiles
 
     return
