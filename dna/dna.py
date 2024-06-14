@@ -20,11 +20,13 @@ def main():
     AGATC = longest_match(seq, "AGATC")
     AATG = longest_match(seq, "AATG")
     TATC = longest_match(seq, "TATC")
-    TTTTTTCT = longest_match(seq, "TTTTTTCT")
-    TCTAG = longest_match(seq, "TCTAG")
-    GATA = longest_match(seq, "GATA")
-    GAAA = longest_match(seq, "GAAA")
-    TCTG = longest_match(seq, "TCTG")
+
+    if sys.argv[2] == "databases/large.csv":
+        TTTTTTCT = longest_match(seq, "TTTTTTCT")
+        TCTAG = longest_match(seq, "TCTAG")
+        GATA = longest_match(seq, "GATA")
+        GAAA = longest_match(seq, "GAAA")
+        TCTG = longest_match(seq, "TCTG")
 
     # TODO: Check database for matching profiles
     for row in data:
