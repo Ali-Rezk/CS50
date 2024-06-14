@@ -17,7 +17,7 @@ def main():
 
     # TODO: Read DNA sequence file into a variable
     with open("sequences/5.txt") as file:
-        seq = sequence.read()
+        seq = file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
     agatc = longest_match(seq, "AGATC")
