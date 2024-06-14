@@ -9,6 +9,7 @@ def main():
         print("commandline error")
 
     # TODO: Read database file into a variable
+    data = []
     with open(sys.argv[1]) as file:
         data = csv.DictReader(file)
 
