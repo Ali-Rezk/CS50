@@ -36,7 +36,7 @@ def main():
                 file.close()
                 file1.close()
                 return
-            else:
+            elif sys.argv[1] == "databases/small.csv":
                 print(row["name"])
                 file.close()
                 file1.close()
