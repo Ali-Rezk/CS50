@@ -22,8 +22,8 @@ def main():
     tatc = longest_match(seq, "TATC")
 
     # TODO: Check database for matching profiles
-    for 
-        if agatc == data["AGATC"] and aatg == data["AATG"] and tatc == data["TATC"]:
+    for row
+        if data["AGATC"] == agatc and data["AATG"] == aatg and data["TATC"] == tatc:
             print(data["name"])
         else:
             print("no match")
