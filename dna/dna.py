@@ -32,7 +32,7 @@ def main():
     for row in data:
         if int(row["AGATC"]) == AGATC and int(row["AATG"]) == AATG and int(row["TATC"]) == TATC:
             if (sys.argv[1] == "databases/large.csv" and int(row["TTTTTTCT"]) == TTTTTTCT and int(row["TCTAG"]) == TCTAG
-                and int(row["GATA"]) == GATA and int(row["TCTG"]) == TCTG and int(row["GAAA"]) == GAAA):
+                    and int(row["GATA"]) == GATA and int(row["TCTG"]) == TCTG and int(row["GAAA"]) == GAAA):
                 print(row["name"])
                 file.close()
                 file1.close()
