@@ -9,13 +9,12 @@ def main():
         print("commandline error")
 
     # TODO: Read database file into a variable
-    data = []
-    with open(sys.argv[1]) as file:
-        data = csv.DictReader(file)
+    file = open(sys.argv[1])
+    data = csv.DictReader(file)
 
     # TODO: Read DNA sequence file into a variable
-    with open(sys.argv[2]) as file1:
-        seq = file1.read()
+    file1 open(sys.argv[2])
+    seq = file1.read()
 
     # TODO: Find longest match of each STR in DNA sequence
     agatc = longest_match(seq, "AGATC")
@@ -26,6 +25,7 @@ def main():
     for row in data:
         if row["AGATC"] == agatc and row["AATG"] == aatg and row["TATC"] == tatc:
             print(row["name"])
+            
             return
     else:
         print("no match")
