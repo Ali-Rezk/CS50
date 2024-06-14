@@ -18,9 +18,12 @@ def main():
 
     # TODO: Find longest match of each STR in DNA sequence
     x = 0
+    maxvalue = 0
     for i in seq:
         if seq[i] == 'A' and seq[i+1] == 'G' and seq[i+2] == "A":
-            if seq[i + 3]
+            if seq[i+3] == "T" and seq[i+4] == "C":
+                x += 1
+                maxvalue = x
 
         x = 0
     # TODO: Check database for matching profiles
