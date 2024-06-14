@@ -36,6 +36,11 @@ def main():
                 file.close()
                 file1.close()
                 return
+            else:
+                print(row["name"])
+                file.close()
+                file1.close()
+                return
     else:
         print("No match")
         file.close()
