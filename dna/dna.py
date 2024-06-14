@@ -13,7 +13,7 @@ def main():
     data = csv.DictReader(file)
 
     # TODO: Read DNA sequence file into a variable
-    file1 open(sys.argv[2])
+    file1 = open(sys.argv[2])
     seq = file1.read()
 
     # TODO: Find longest match of each STR in DNA sequence
@@ -25,10 +25,13 @@ def main():
     for row in data:
         if row["AGATC"] == agatc and row["AATG"] == aatg and row["TATC"] == tatc:
             print(row["name"])
-            
+            file.close()
+            file1.close()
             return
     else:
         print("no match")
+        file.close()
+        file1.close()
 
 
 
