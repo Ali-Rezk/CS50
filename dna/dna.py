@@ -23,7 +23,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in data:
-        if row["AGATC"] == agatc and row["AATG"] == aatg and row["TATC"] == tatc:
+        if int(row["AGATC"]) == agatc and int(row["AATG"]) == aatg and int(row["TATC"]) == tatc:
             print(row["name"])
             file.close()
             file1.close()
