@@ -11,8 +11,8 @@ def main():
 
     # TODO: Read database file into a variable
     with open(database) as file:
-        data = database.read()
-    
+        data = csv.DictReader(file)
+
     open(sequence)
     sequence.read()
 
