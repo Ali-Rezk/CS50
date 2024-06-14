@@ -10,8 +10,9 @@ def main():
 
 
     # TODO: Read database file into a variable
-    open(database)
-    list data[] = database.read()
+    with open(database) as file:
+        data = database.read()
+    
     open(sequence)
     sequence.read()
 
