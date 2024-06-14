@@ -17,17 +17,23 @@ def main():
     seq = file1.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    agatc = longest_match(seq, "AGATC")
-    aatg = longest_match(seq, "AATG")
-    tatc = longest_match(seq, "TATC")
+    AGATC = longest_match(seq, "AGATC")
+    AATG = longest_match(seq, "AATG")
+    TATC = longest_match(seq, "TATC")
+    TTTTTTCT = longest_match(seq, "TTTTTTCT")
+    TCTAG = longest_match(seq, "TCTAG")
+    GATA = longest_match(seq, "GATA")
+    GAAA = longest_match(seq, "GAAA")
+    TCTG = longest_match(seq, "TCTG")
 
     # TODO: Check database for matching profiles
     for row in data:
-        if int(row["AGATC"]) == agatc and int(row["AATG"]) == aatg and int(row["TATC"]) == tatc:
-            print(row["name"])
-            file.close()
-            file1.close()
-            return
+        if int(row["AGATC"]) == AGATC and int(row["AATG"]) == AATG and int(row["TATC"]) == TATC and int(row["GAAA"]) == GAAA:
+            if int(row["TTTTTTCT"]) == TTTTTTCT and int(row["TCTAG"]) == TCTAG and int(row["GATA"]) == GATA and int(row["TCTG"]) == TCTG:
+                print(row["name"])
+                file.close()
+                file1.close()
+                return
     else:
         print("No match")
         file.close()
