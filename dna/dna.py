@@ -11,7 +11,7 @@ def main():
 
     # TODO: Read database file into a variable
     open(database)
-     = database.read()
+    list data[] = database.read()
     open(sequence)
     sequence.read()
 
