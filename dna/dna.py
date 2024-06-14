@@ -20,7 +20,7 @@ def main():
     x = 0
     for i in seq:
         if seq[i] == 'A' and seq[i+1] == 'G' and seq[i+2] == "A":
-            
+            if seq[i + 3]
 
         x = 0
     # TODO: Check database for matching profiles
