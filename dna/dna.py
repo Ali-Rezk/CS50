@@ -5,8 +5,15 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
-    
+    database = sys.argv[1]
+    sequence = sys.argv[2]
+
+
     # TODO: Read database file into a variable
+    open(database)
+      database.read()
+    open(sequence)
+    sequence.read()
 
     # TODO: Read DNA sequence file into a variable
 
