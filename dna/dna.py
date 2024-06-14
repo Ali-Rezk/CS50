@@ -5,6 +5,9 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
+    if len(argv) > 3 or len(argv) < 3:
+        print("commandline error")
+
     database = sys.argv[1]
     sequence = sys.argv[2]
 
