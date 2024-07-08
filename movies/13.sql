@@ -6,4 +6,4 @@ WHERE movie_id = (
         SELECT id FROM people WHERE name = 'Kevin Bacon' AND birth = 1958
     )
 )
-AND name NOT = 'Kevin Bacon';
+AND name NOT in ('Kevin Bacon');
