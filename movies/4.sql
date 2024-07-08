@@ -1,2 +1,4 @@
-SELECT * FROM ratings JOIN movies ON movie_id = id
-WHERE rating = 10.0;
+SELECT *
+FROM ratings r
+JOIN movies m ON r.movie_id = m.id
+WHERE r.rating = 10.0;
