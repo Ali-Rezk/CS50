@@ -1,6 +1,6 @@
-SELECT name
-FROM stars
-JOIN people ON person_id = id
+SELECT *
+FROM people
+JOIN stars ON id = person_id
 WHERE id = (
     SELECT person_id FROM stars WHERE movie_id = (
         SELECT movie_id FROM stars WHERE person_id = (
