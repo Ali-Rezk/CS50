@@ -5,4 +5,7 @@ JOIN movies m ON movie_id = m.id
 WHERE person_id = (
     SELECT id FROM people WHERE name = 'Kevin Bacon' AND birth = 1958
 )
+AND movie_id = (
+    
+)
 ;
