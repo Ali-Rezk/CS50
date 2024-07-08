@@ -6,7 +6,3 @@ WHERE id = (
             SELECT id FROM people WHERE name = 'Kevin Bacon' AND birth = 1958)))
 AND name NOT in ('Kevin Bacon') GROUP BY name;
 
-
-
-
-
