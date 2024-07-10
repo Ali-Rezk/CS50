@@ -1,8 +1,8 @@
-SELECT DISTINCT name
+SELECT DISTINCT *
 FROM people
 WHERE phone_number = (
-    SELECT reciever
+    SELECT receiver
     FROM phone_calls
-    WHERE reciever = '(375) 555-8161'
+    WHERE receiver = '(375) 555-8161'
 )
 ;
