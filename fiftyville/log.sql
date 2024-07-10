@@ -25,13 +25,17 @@ SELECT *
 FROM bank_accounts
 JOIN people ON person_id = id
 WHERE account_number IN (28500762, 28296815, 76054385, 49610011, 16153065, 25506511, 81061156, 26013199);
---getting info about the phone calls that fit the description
+--getting info about the phone calls that fit the description.
 SELECT *
 FROM phone_calls
 WHERE day = 28 AND month = 7
 AND year = 2023 AND duration < 60;
---identifying the earliest flight from fiftyville and its destination
+--identifying the earliest flight from fiftyville and its destination.
 SELECT *
 FROM flights
 WHERE day = 29 AND month = 7
 AND year = 2023;
+--identifying the city the thief escaped to.
+SELECT *
+FROM airports
+WHERE id IN (8, 4);
