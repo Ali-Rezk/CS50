@@ -1,6 +1,4 @@
 SELECT *
 FROM bank_accounts
-WHERE day = 28 AND month = 7
-AND year = 2023 AND atm_location = 'Leggett Street'
-AND transaction_type = 'withdraw'
+WHERE account_number = (28500762, 28296815, 76054385, 49610011, 16153065, 25506511, 81061156, 26013199)
 ;
