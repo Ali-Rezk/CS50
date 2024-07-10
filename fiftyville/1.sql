@@ -1,10 +1,7 @@
 SELECT *
-FROM people
-WHERE license_plate = (
-    SELECT license_plate
-    FROM bakery_security_logs
-    WHERE day = 28 AND month = 7
-    AND year = 2023 AND hour = 10
-    AND minute >= 15 AND minute <= 25
-)
+FROM people p
+JOIN bakery_security_logs b ON p.license_plate = b.license_plate
+WHERE day = 28 AND month = 7
+AND year = 2023 AND hour = 10
+AND minute >= 15 AND minute <= 25
 ;
