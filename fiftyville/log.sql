@@ -39,3 +39,7 @@ AND year = 2023;
 SELECT *
 FROM airports
 WHERE id IN (8, 4);
+--getting passport numbers
+SELECT *
+FROM passengers
+WHERE flight_id = 36;
