@@ -1,4 +1,6 @@
 SELECT *
 FROM airports
-WHERE id IN (8, 6, 11, 4, 1, 9)
+JOIN flights f ON origin_airport_id = f.id
+WHERE day = 29 AND month = 7
+AND year = 2023
 ;
