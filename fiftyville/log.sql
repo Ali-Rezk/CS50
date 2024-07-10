@@ -14,3 +14,9 @@ FROM bakery_security_logs
 WHERE day = 28 AND month = 7
 AND year = 2023 AND hour = 10
 AND minute >= 15 AND minute <= 25;
+--getting some info about the suspicious the transactions
+SELECT *
+FROM atm_transactions
+WHERE day = 28 AND month = 7
+AND year = 2023 AND atm_location = 'Leggett Street'
+AND transaction_type = 'withdraw';
