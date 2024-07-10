@@ -1,9 +1,9 @@
-SELECT DISTINCT name
+SELECT DISTINCT name, p1.license_plate, p1.phone_number, account_number, p1.passport_number
 FROM people p1
 JOIN bakery_security_logs b ON p1.license_plate = b.license_plate
 JOIN phone_calls p2 ON p1.phone_number = p2.caller
 JOIN passengers PS ON P1.passport_number = PS.passport_number
-JOIN bank_accounts ON p1.id = person_id
+JOIN bank_accounts b2 ON p1.id = b2.person_id
 WHERE duration < 60
 AND b.day = 28 AND b.month = 7
 AND b.year = 2023 AND hour = 10
