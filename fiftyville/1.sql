@@ -1,5 +1,5 @@
 SELECT *
-FROM peaople
-JOIN phone_calls ON 
+FROM passengers
+JOIN phone_calls ON
 WHERE
 ;
