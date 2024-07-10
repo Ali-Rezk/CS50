@@ -1,4 +1,5 @@
 SELECT *
-FROM airports
-WHERE id IN (8, 4)
+FROM peaople
+JOIN phone_calls ON 
+WHERE
 ;
