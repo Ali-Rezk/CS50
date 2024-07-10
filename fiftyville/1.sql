@@ -1,5 +1,4 @@
 SELECT *
-FROM bakery_security_logs
+FROM atm_transactions
 WHERE day = 28 AND month = 7
-AND year = 2023 AND hour = 10
-AND minute >= 15 AND minute <= 25;
+AND year = 2023;
