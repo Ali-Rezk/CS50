@@ -1,4 +1,5 @@
-SELECT person_id, account_number
+SELECT *
 FROM bank_accounts
+JOIN people ON person_id = id
 WHERE account_number IN (28500762, 28296815, 76054385, 49610011, 16153065, 25506511, 81061156, 26013199)
 ;

@@ -20,7 +20,8 @@ FROM atm_transactions
 WHERE day = 28 AND month = 7
 AND year = 2023 AND atm_location = 'Leggett Street'
 AND transaction_type = 'withdraw';
---getting person_id
-SELECT person_id, account_number
+--getting info about the suspects
+SELECT *
 FROM bank_accounts
+JOIN people ON person_id = id
 WHERE account_number IN (28500762, 28296815, 76054385, 49610011, 16153065, 25506511, 81061156, 26013199);
