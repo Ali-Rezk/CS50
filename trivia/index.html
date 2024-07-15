@@ -32,8 +32,8 @@
                 <!-- TODO: Add free response question here -->
                 <h3>Q2: How many countries are there in the world</h3>
                 <p id="result1"></p>
-                    <form id="box"><input id="txt" type="text" placeholder="Enter answer"></form>
-                    <button id="check" type="submit" onclick="getinputValue()">Check answer</button>
+                <input id="txt" type="text" placeholder="Enter answer"></input>
+                <button id="check" type="submit" onclick="getinputValue()">Check answer</button>
             </div>
         </div>
         <script>
@@ -51,7 +51,7 @@
             document.querySelector('#result0').innerHTML = "Correct!";
             document.getElementById('answer').style.backgroundColor = 'green';
         }
-        
+
         function getinputValue{
             let inputValue = document.getElementById("txt").value;
         }
