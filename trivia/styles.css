@@ -32,6 +32,12 @@ body {
     transition: color 2s ease-in-out, background-color 0.15s ease-in-out;
 }
 
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
