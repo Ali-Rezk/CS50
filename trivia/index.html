@@ -70,7 +70,10 @@
             {
                 document.getElementById('answer0').style.backgroundColor = 'green';
             }
-            
+            function turnRed()
+            {
+                document.getElementById('wrong0').style.backgroundColor = 'red';
+            }
 
             document.querySelector('#answer0').onclick = function() {
                 document.querySelector('#result0').innerHTML = "Correct!";
