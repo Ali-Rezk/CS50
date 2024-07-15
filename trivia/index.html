@@ -7,7 +7,9 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
-            document.querySelector('answer')
+            document.querySelector('#answer0').onclick = function() {
+                
+            }
         </script>
     </head>
     <body>
@@ -26,7 +28,7 @@
                         <label><input type="radio" name="question0" value="A">Alexandira</label>
                     </li>
                     <li>
-                        <label><input type="radio" name="question0" value="B">Cairo</label>
+                        <label><input type="radio" id="answer0" name="question0" value="B">Cairo</label>
                     </li>
                     <li>
                         <label><input type="radio" name="question0" value="C">Hurghada</label>
@@ -41,13 +43,13 @@
                         <label><input type="radio" name="question1" value="B">1 heart</label>
                     </li>
                     <li>
-                        <label><input type="radio" name="question1" value="C">3 hearts</label>
+                        <label><input type="radio" id="answer1" name="question1" value="C">3 hearts</label>
                     </li>
                 </ul>
                 <h3>Q3: How many letters are there in "ABC?"</h3>
                 <ul class="choices">
                     <li>
-                        <label><input type="radio" name="question2" value="A">3</label>
+                        <label><input type="radio" id="answer3" name="question2" value="A">3</label>
                     </li>
                     <li>
                         <label><input type="radio" name="question2" value="B">2</label>
