@@ -51,8 +51,9 @@
             document.querySelector('#result0').innerHTML = "Correct!";
             document.getElementById('answer').style.backgroundColor = 'green';
         }
+        const inputValue = document.querySelector("#box").value;
         document.querySelector('#check').onclick = function() {
-            if ( == 195)
+            if ( inputValue == 195)
             {
                 document.querySelector('#result1').innerHTML = "Correct!";
                 document.getElementById('box').style.backgroundColor = 'green';
