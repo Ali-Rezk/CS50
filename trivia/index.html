@@ -9,12 +9,12 @@
             // TODO: Add code to check answers to questions
             function turnGreen()
             {
-                document.getElementById('question0').style.backgroundColor = 'green';
+                document.getElementById('color').style.backgroundColor = 'green';
             }
 
             let q0 = 0;
 
-            document.querySelector('#question0').onclick = function() {
+            document.querySelector('#color').onclick = function() {
                 q0 = q0 + 1;
                 if (value == B)
                 {
@@ -33,8 +33,10 @@
                 <h2 id='question0'>Part 1: Multiple Choice </h2>
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
+                <div id = "color"></div>
                 <h3>Q1: What is Egypt's capital city?</h3>
                 <p id="result0"></p>
+                <div>
                 <ul>
                     <li>
                         <label><input type="button" onclick = "turnGreen()" name="question0" value="A"> Alexandira</label>
@@ -45,6 +47,7 @@
                     <li>
                         <label><input type="button" name="question0" onclick = "turnGreen()" value="C"> Hurghada</label>
                     </li>
+                </div>
                 </ul>
                 <h3>Q2: How many hearts does an octopus have?</h3>
                 <ul class="choices">
