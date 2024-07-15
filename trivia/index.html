@@ -51,12 +51,17 @@
             document.querySelector('#result0').innerHTML = "Correct!";
             document.getElementById('answer').style.backgroundColor = 'green';
         }
-        const inputValue = document.querySelector("#txt").value;
+        const inputValue = document.getElementById('txt_id').value;
         document.querySelector('#check').onclick = function() {
             if ( inputValue == 195)
             {
                 document.querySelector('#result1').innerHTML = "Correct!";
                 document.getElementById('box').style.backgroundColor = 'green';
+            }
+            else
+            {
+                document.querySelector('#result1').innerHTML = "Incorrect";
+                document.getElementById('box').style.backgroundColor = 'red';
             }
         }
         </script>
