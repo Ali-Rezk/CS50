@@ -31,10 +31,10 @@
                 <!-- TODO: Add free response question here -->
                  <h3>How many countries are there in the world</h3>
                  <p id="result1"></p>
-                 <div class="row">
+                 <div style="display: flex; flex-direction: row;">
                     <tr>
-                        <td><form id="box"><input type="text"></form></td>
-                        <td> <button type="submit">Check aswer</button> </td>
+                        <td><form id="box"><input type="text" placeholder="Enter answer"></form></td>
+                        <td> <button id="check" type="submit">Check aswer</button> </td>
                     </tr>
                 </div>
             </div>
@@ -54,7 +54,7 @@
             document.querySelector('#result0').innerHTML = "Correct!";
             document.getElementById('answer').style.backgroundColor = 'green';
         }
-        document.querySelector('#box').onclick = function() {
+        document.querySelector('#check').onclick = function() {
             if (input == 195)
             {
                 document.querySelector('#result1').innerHTML = "Correct!";
