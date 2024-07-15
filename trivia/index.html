@@ -40,21 +40,18 @@
         </div>
                 <script>
             // TODO: Add code to check answers to questions
-            function turnGreen0()
-            {
-                document.getElementById('answer').style.backgroundColor = 'green';
-            }
-            function turnRed0()
-            {
+            document.querySelector('#wrong0').onclick = function() {
+                document.querySelector('#result0').innerHTML = "Incorrect";
                 document.getElementById('wrong0').style.backgroundColor = 'red';
             }
-            function turnRed1()
-            {
+            document.querySelector('#wrong1').onclick = function() {
+                document.querySelector('#result0').innerHTML = "Incorrect";
                 document.getElementById('wrong1').style.backgroundColor = 'red';
             }
 
             document.querySelector('#answer').onclick = function() {
                 document.querySelector('#result0').innerHTML = "Correct!";
+                document.getElementById('answer').style.backgroundColor = 'green';
             }
         </script>
     </body>
