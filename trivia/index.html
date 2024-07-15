@@ -33,7 +33,7 @@
                 <h3>Q2: How many countries are there in the world</h3>
                 <p id="result1"></p>
                     <form id="box"><input id="txt" type="text" placeholder="Enter answer"></form>
-                    <button id="check" type="submit">Check answer</button>
+                    <button id="check" type="submit" onclick="getinputValue()">Check answer</button>
             </div>
         </div>
         <script>
@@ -51,7 +51,9 @@
             document.querySelector('#result0').innerHTML = "Correct!";
             document.getElementById('answer').style.backgroundColor = 'green';
         }
-        const inputValue = document.getElementById("txt").value;
+        function getinputValue{
+        let inputValue = document.getElementById("txt").value;
+        }
         document.querySelector('#check').onclick = function() {
             if ( inputValue == 195)
             {
