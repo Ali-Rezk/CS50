@@ -9,12 +9,12 @@
             // TODO: Add code to check answers to questions
             function turnGreen()
             {
-                document.getElementById('color').style.backgroundColor = 'green';
+                document.getElementById('answer0').style.backgroundColor = 'green';
             }
 
             let q0 = 0;
 
-            document.querySelector('#color').onclick = function() {
+            document.querySelector('#answer0').onclick = function() {
                 q0 = q0 + 1;
                 if (value == B)
                 {
@@ -37,7 +37,7 @@
                 <p id="result0"></p>
                 <div>
                 <ul>
-                    <li>
+                    <li id="answer0">
                         <label><input type="button" onclick = "turnGreen()" name="question0" value="A"> Alexandira</label>
                     </li>
                     <li>
