@@ -20,37 +20,11 @@
                 <p id="result0"></p>
                 <table>
                     <tr>
-                        <td><button type="submit" id="wrong0" onclick="turnRed();"> 8 </button> </td>
-                        <td><button type="submit" id="answer0" onclick="turnGreen();"> 3 </button></td>
-                        <td><button type="submit" id="wrong0" onclick="turnRed();"> 1 </button></td>
+                        <td><button type="submit" id="wrong0" onclick="turnRed0();"> 8 </button> </td>
+                        <td><button type="submit" id="answer" onclick="turnGreen0();"> 3 </button></td>
+                        <td><button type="submit" id="wrong1" onclick="turnRed1();"> 1 </button></td>
                     </tr>
-            </table>
-                <h3>Q2: How many hearts does an octopus have?</h3>
-                <ul class="choices">
-                    <li>
-                        <label><input type="radio" name="question1" value="A">8 hearts</label>
-                    </li>
-                    <li>
-                        <label><input type="radio" name="question1" value="B">1 heart</label>
-                    </li>
-                    <li>
-                        <label><input type="radio" id="answer1" name="question1" value="C">3 hearts</label>
-                    </li>
-                </ul>
-                <h3>Q3: How many letters are there in "ABC?"</h3>
-                <ul class="choices">
-                    <li>
-                        <label><input type="radio" id="answer3" name="question2" value="A">3</label>
-                    </li>
-                    <li>
-                        <label><input type="radio" name="question2" value="B">2</label>
-                    </li>
-                    <li>
-                        <label><input type="radio" name="question2" value="C">4</label>
-                    </li>
-                </ul>
-            </div>
-
+                </table>
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
@@ -66,16 +40,20 @@
         </div>
                 <script>
             // TODO: Add code to check answers to questions
-            function turnGreen()
+            function turnGreen0()
             {
-                document.getElementById('answer0').style.backgroundColor = 'green';
+                document.getElementById('answer').style.backgroundColor = 'green';
             }
-            function turnRed()
+            function turnRed0()
             {
-                document.getElementById('q0wrong0').style.backgroundColor = 'red';
+                document.getElementById('wrong0').style.backgroundColor = 'red';
+            }
+            function turnRed1()
+            {
+                document.getElementById('wrong1').style.backgroundColor = 'red';
             }
 
-            document.querySelector('#answer0').onclick = function() {
+            document.querySelector('#answer').onclick = function() {
                 document.querySelector('#result0').innerHTML = "Correct!";
             }
         </script>
