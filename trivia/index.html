@@ -8,7 +8,7 @@
         <script>
             // TODO: Add code to check answers to questions
             document.querySelector('#answer0').onclick = function() {
-                document.querySelector('#question0').innerHTML =  “Correct!”;
+                document.querySelector('#result0').innerHTML =  “Correct!”;
             }
         </script>
     </head>
@@ -23,6 +23,7 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                 <h3>Q1: What is Egypt's capital city?</h3>
+                <h4 id="result0"></h4>
                 <ul class="choices">
                     <li>
                         <label><input type="radio" name="question0" value="A">Alexandira</label>
