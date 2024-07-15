@@ -5,6 +5,39 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                document.querySelector('#wrong0').onclick = function() {
+                    document.querySelector('#result0').innerHTML = "Incorrect";
+                    document.getElementById('wrong0').style.backgroundColor = 'red';
+                }
+                document.querySelector('#wrong1').onclick = function() {
+                    document.querySelector('#result0').innerHTML = "Incorrect";
+                    document.getElementById('wrong1').style.backgroundColor = 'red';
+                }
+
+                document.querySelector('#answer').onclick = function() {
+                    document.querySelector('#result0').innerHTML = "Correct!";
+                    document.getElementById('answer').style.backgroundColor = 'green';
+                }
+
+                let inputValue = document.querySelector("txt").value;
+                document.querySelector('#check').onclick = function() {
+                    if ( inputValue == '195')
+                    {
+                        document.querySelector('#result1').innerHTML = "Correct!";
+                        document.getElementById('txt').style.backgroundColor = 'green';
+                    }
+                    else
+                    {
+                        document.querySelector('#result1').innerHTML = "Incorrect";
+                        document.getElementById('txt').style.backgroundColor = 'red';
+                    }
+                }
+            }
+        </script>
     </head>
     <body>
         <div class="header">
@@ -36,35 +69,5 @@
                 <button id="check" type="submit">Check answer</button>
             </div>
         </div>
-        <script>
-        // TODO: Add code to check answers to questions
-        document.querySelector('#wrong0').onclick = function() {
-            document.querySelector('#result0').innerHTML = "Incorrect";
-            document.getElementById('wrong0').style.backgroundColor = 'red';
-        }
-        document.querySelector('#wrong1').onclick = function() {
-            document.querySelector('#result0').innerHTML = "Incorrect";
-            document.getElementById('wrong1').style.backgroundColor = 'red';
-        }
-
-        document.querySelector('#answer').onclick = function() {
-            document.querySelector('#result0').innerHTML = "Correct!";
-            document.getElementById('answer').style.backgroundColor = 'green';
-        }
-
-        let inputValue = document.querySelector("txt").value;
-        document.querySelector('#check').onclick = function() {
-            if ( inputValue == '195')
-            {
-                document.querySelector('#result1').innerHTML = "Correct!";
-                document.getElementById('txt').style.backgroundColor = 'green';
-            }
-            else
-            {
-                document.querySelector('#result1').innerHTML = "Incorrect";
-                document.getElementById('txt').style.backgroundColor = 'red';
-            }
-        }
-        </script>
     </body>
 </html>
