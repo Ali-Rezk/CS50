@@ -5,17 +5,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
-        <script>
-            // TODO: Add code to check answers to questions
-            function turnGreen()
-            {
-                document.getElementById('#answer0').style.backgroundColor = 'green';
-            }
-
-            document.querySelector('#answer0').onclick = function() {
-                document.querySelector('#result0').innerHTML = "Correct!";
-            }
-        </script>
     </head>
     <body>
         <div class="header">
@@ -31,9 +20,9 @@
                 <p id="result0"></p>
                 <table>
                     <tr>
-                        <td><button type="submit" onclick="turnGreen();"> Alexandira </button> </td>
+                        <td><button type="submit" id="wrong0" onclick="turnRed();"> Alexandira </button> </td>
                         <td><button type="submit" id="answer0" onclick="turnGreen();"> Cairo </button></td>
-                        <td><button> Hurghada </button></td>
+                        <td><button type="submit" id="wrong0" onclick="turnRed();"> Hurghada </button></td>
                     </tr>
             </table>
                 <h3>Q2: How many hearts does an octopus have?</h3>
@@ -75,5 +64,17 @@
                 </div>
             </div>
         </div>
+                <script>
+            // TODO: Add code to check answers to questions
+            function turnGreen()
+            {
+                document.getElementById('answer0').style.backgroundColor = 'green';
+            }
+            
+
+            document.querySelector('#answer0').onclick = function() {
+                document.querySelector('#result0').innerHTML = "Correct!";
+            }
+        </script>
     </body>
 </html>
