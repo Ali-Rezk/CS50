@@ -24,7 +24,33 @@
                         <td><button type="submit" id="answer0" onclick="turnGreen();"> 3 </button></td>
                         <td><button type="submit" id="wrong0" onclick="turnRed();"> 1 </button></td>
                     </tr>
+            </table>
+                <h3>Q2: How many hearts does an octopus have?</h3>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" name="question1" value="A">8 hearts</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question1" value="B">1 heart</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" id="answer1" name="question1" value="C">3 hearts</label>
+                    </li>
+                </ul>
+                <h3>Q3: How many letters are there in "ABC?"</h3>
+                <ul class="choices">
+                    <li>
+                        <label><input type="radio" id="answer3" name="question2" value="A">3</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="B">2</label>
+                    </li>
+                    <li>
+                        <label><input type="radio" name="question2" value="C">4</label>
+                    </li>
+                </ul>
             </div>
+
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
@@ -46,7 +72,7 @@
             }
             function turnRed()
             {
-                document.getElementById('wrong0').style.backgroundColor = 'red';
+                document.getElementById('q0wrong0').style.backgroundColor = 'red';
             }
 
             document.querySelector('#answer0').onclick = function() {
