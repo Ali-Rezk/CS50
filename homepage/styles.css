@@ -1,7 +1,7 @@
 title {
-    background-color: #477bff;
-    color: #fff;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
+    padding: 60px;
     text-align: center;
+    background: #1abc9c; /* Your desired background color */
+    color: white;
+    font-size: 30px;
 }
