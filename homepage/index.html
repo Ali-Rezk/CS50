@@ -12,19 +12,17 @@
         <script>
             document.addEventListener('DOMContentLoaded', function() {
 
-                document.querySelector('#check').addEventListener('click', function() {
-                    let input = document.querySelector('input');
-                    if (input.value === '195')
-                    {
-                        document.querySelector('#result1').innerHTML = "Correct!";
-                        document.getElementById('txt').style.backgroundColor = 'green';
-                    }
-                    else
-                    {
-                        document.querySelector('#result1').innerHTML = "Incorrect";
-                        document.getElementById('txt').style.backgroundColor = 'red';
-                    }
-                });
+                document.querySelector('#cat').onclick = function() {
+                    document.querySelector('#result').innerHTML = "Incorrect";
+                }
+                document.querySelector('#dog').onclick = function() {
+                    document.querySelector('#result').innerHTML = "Incorrect";
+                }
+
+                document.querySelector('#duck').onclick = function() {
+                    document.querySelector('#result').innerHTML = "Correct!";
+                }
+
             });
         </script>
     </head>
@@ -37,13 +35,13 @@
             <p id="result"></p>
             <ul>
                 <li>
-                    <input type="radio" name="q0">Cats</input>
+                    <input id="cat" type="radio" name="q0">Cats</input>
                 </li>
                 <li>
-                    <input type="radio" name="q0">Dogs</input>
+                    <input id="dog" type="radio" name="q0">Dogs</input>
                 </li>
                 <li>
-                    <input type="radio" name="q0">Ducks</input>
+                    <input id="duck" type="radio" name="q0">Ducks</input>
                 </li>
             </ul>
         </div>
