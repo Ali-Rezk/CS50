@@ -10,20 +10,6 @@
         <link href="styles.css" rel="stylesheet">
         <title>Ducks</title>
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-
-                document.querySelector('#cat').onclick = function() {
-                    document.querySelector('#result').innerHTML = "Checkout our cats page";
-                }
-                document.querySelector('#dog').onclick = function() {
-                    document.querySelector('#result').innerHTML = "Checkout our dogs page";
-                }
-
-                document.querySelector('#duck').onclick = function() {
-                    document.querySelector('#result').innerHTML = "Checkout our ducks page";
-                }
-
-            });
         </script>
     </head>
     <body>
@@ -45,21 +31,6 @@
           </nav>
         <div>
         <h1 class="header">Ducks</h1>
-        </div>
-        <div class="section">
-            <h4>Which animal do you prefer?</h4>
-            <p id="result"></p>
-            <ul>
-                <li>
-                    <input id="cat" type="radio" name="q0">Cats</input>
-                </li>
-                <li>
-                    <input id="dog" type="radio" name="q0">Dogs</input>
-                </li>
-                <li>
-                    <input id="duck" type="radio" name="q0">Ducks</input>
-                </li>
-            </ul>
         </div>
     </body>
 </html>
