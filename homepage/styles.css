@@ -157,6 +157,10 @@
     display: inline;
 }
 
+.accordion img {
+    width: 40%;
+}
+
 .accordion h3 {
     margin-bottom: 2rem;
 }
