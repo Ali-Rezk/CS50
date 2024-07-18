@@ -41,7 +41,11 @@
 
 .breeds .breeds-text-h {
     font-size: 28px;
-    vertical-align: top;
+    text-align: center;
+}
+
+.breeds .breeds-text p {
+    padding: 20px 0;
 }
 
 h1 {
