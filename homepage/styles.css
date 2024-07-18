@@ -36,16 +36,17 @@
 
 .breeds .breeds-text {
     display: inline-block;
-    text-align: center;
+
 }
 
 .breeds .breeds-text-h {
     font-size: 28px;
-    text-align: center;
+
 }
 
 .breeds .breeds-text p {
     padding: 20px 0;
+    padding-left: 50px;
 }
 
 h1 {
