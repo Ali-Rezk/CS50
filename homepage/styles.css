@@ -39,6 +39,11 @@
     text-align: center;
 }
 
+.breeds .breeds-text-h {
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
