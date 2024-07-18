@@ -120,6 +120,30 @@
     text-align: left;
 }
 
+.meow {
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 150px;
+    padding-top: 50px;
+    text-align: center;
+}
+
+.meow img{
+    width:30%;
+    display: inline-block;
+}
+
+.meow .meow-text {
+    display: inline-block;
+}
+
+.meow .meow-text ul li {
+    padding: 20px 0;
+    padding-left: 50px;
+    font-size: 20px;
+    text-align: left;
+}
+
 .accordion {
     padding-left: 50px;
     padding-top: 100px;
