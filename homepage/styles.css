@@ -29,10 +29,18 @@
 }
 
 .row img{
-    width:30%;
+    width:25%;
 }
 
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
+}
+h3 {
+    font-size: 32px;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
 }
