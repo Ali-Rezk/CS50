@@ -151,11 +151,11 @@
 .accordion {
     padding-left: 50px;
     padding-top: 100px;
+    text-align: center;
 }
 
 .accordion h3 {
     margin-bottom: 2rem;
-    padding-left: 200px;
 }
 
 .accordion-button {
