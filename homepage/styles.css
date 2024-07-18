@@ -54,13 +54,12 @@
 
 .breeds .breeds-text {
     display: inline-block;
+    text-align: center;
 
 }
 
 .breeds .breeds-text-h {
     font-size: 28px;
-    padding: 170px;
-    text-align: center;
 
 }
 
