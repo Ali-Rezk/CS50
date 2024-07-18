@@ -44,3 +44,10 @@ h3 {
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }
+
+.home{
+    min-height: 100vh;
+    background-image:url();
+    background-size: 100% 100%;
+    background-position: center center ;
+ }
