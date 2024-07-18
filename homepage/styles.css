@@ -22,12 +22,12 @@
  }
 
 .home .caption{
-    color: black;
     text-align: center;
     padding-top: 100px;
 }
 
 .home .caption h1{
+    color: white;
     font-family: 'Montserrat', sans-serif;
     font-size: 76px;
     padding-top: 150px;
@@ -35,6 +35,7 @@
 }
 
 .home .caption p {
+    color: black;
     font-size: 24px;
     font-family: 'Roboto', sans-serif;
 }
