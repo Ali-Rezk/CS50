@@ -59,13 +59,15 @@
 
 .breeds .breeds-text-h {
     font-size: 28px;
-    padding: 250px;
+    padding: 170px;
+    text-align: center;
 
 }
 
 .breeds .breeds-text p {
     padding: 20px 0;
     padding-left: 50px;
+    font-size: 20px;
 }
 
 
