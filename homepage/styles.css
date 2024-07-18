@@ -21,16 +21,21 @@
     color: #fff;
 }
 
-.row {
+.breeds {
     margin-left: auto;
     margin-right: auto;
     padding-left: 100px;
     padding-top: 50px;
+
+}
+
+.breeds img{
+    width:30%;
     display: inline-block;
 }
 
-.row img{
-    width:30%;
+.breeds .breeds-text {
+    display: inline-block;
 }
 
 h1 {
@@ -53,17 +58,18 @@ h3 {
     background-position: center center;
  }
 
- .home .caption{
+.home .caption{
     color: white;
     text-align: center;
     padding-top: 100px;
 }
 
- .home .caption h1{
+.home .caption h1{
     font-size: 76px;
     padding: 35px 0 35px 0;
- }
+}
 
- .home .caption p {
+.home .caption p {
     font-size: 24px;
- }
+}
+
