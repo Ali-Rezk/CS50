@@ -38,8 +38,14 @@
 }
 
 .nav{
-    padding-left: 1000px;
-
+    float: right;
+    padding: 20px;
+    margin-left: 20px;
+}
+.nav-logo{
+    float: left;
+    padding: 20px;
+    margin-left: 20px;
 }
 
 .home .caption h1{
