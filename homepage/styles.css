@@ -37,6 +37,11 @@
     padding-top: 100px;
 }
 
+.nav{
+    text-align: center;
+
+}
+
 .home .caption h1{
     color: white;
     font-family: 'Montserrat', sans-serif;
