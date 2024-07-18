@@ -1,9 +1,6 @@
-.header {
-    background-color: #746EFC;
-    color: #fff;
-    margin-bottom: 2rem;
-    padding: 2rem 1rem;
-    text-align: center;
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
 }
 
 .container {
@@ -19,47 +16,6 @@
 
 .nav-link {
     color: #fff;
-}
-
-.breeds {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 150px;
-    padding-top: 50px;
-
-}
-
-.breeds img{
-    width:30%;
-    display: inline-block;
-}
-
-.breeds .breeds-text {
-    display: inline-block;
-
-}
-
-.breeds .breeds-text-h {
-    font-size: 28px;
-
-}
-
-.breeds .breeds-text p {
-    padding: 20px 0;
-    padding-left: 50px;
-}
-
-h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
-}
-h3 {
-    font-size: 32px;
-}
-
-* {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
 }
 
 .home{
@@ -82,5 +38,40 @@ h3 {
 
 .home .caption p {
     font-size: 24px;
+    font-family: 'Roboto', sans-serif
 }
+
+.breeds {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 150px;
+    padding-top: 50px;
+
+}
+
+.breeds img{
+    width:30%;
+    display: inline-block;
+}
+
+.breeds .breeds-text {
+    display: inline-block;
+
+}
+
+.breeds .breeds-text-h {
+    font-size: 28px;
+    padding: 250px;
+
+}
+
+.breeds .breeds-text p {
+    padding: 20px 0;
+    padding-left: 50px;
+}
+
+
+
+
+
 
