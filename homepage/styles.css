@@ -97,14 +97,12 @@
     margin-right: auto;
     padding-left: 150px;
     padding-top: 50px;
-    
-
+    text-align: center;
 }
 
 .sleep img{
     width:30%;
     display: inline-block;
-    padding-right: 150px;
 }
 
 .sleep .sleep-text {
@@ -116,6 +114,7 @@
 .sleep .sleep-text p {
     padding: 20px 0;
     padding-right: 50px;
+    padding-left: 300px;
     font-size: 20px;
 }
 
