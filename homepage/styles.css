@@ -83,13 +83,14 @@
 
 .breeds .breeds-text {
     display: inline-block;
+}
 
-
+.breeds .breeds-text ul {
+    padding-left: 50px;
 }
 
 .breeds .breeds-text ul li {
     padding: 20px 0;
-    padding-left: 50px;
     font-size: 20px;
     text-align: left;
 }
@@ -137,9 +138,12 @@
     display: inline-block;
 }
 
+.meow .meow-text ul {
+    padding-left: 50px;
+}
+
 .meow .meow-text ul li {
     padding: 20px 0;
-    padding-left: 50px;
     font-size: 20px;
     text-align: left;
 }
