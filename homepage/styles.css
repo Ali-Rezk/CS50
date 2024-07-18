@@ -97,12 +97,14 @@
     margin-right: auto;
     padding-left: 150px;
     padding-top: 50px;
+    
 
 }
 
 .sleep img{
     width:30%;
     display: inline-block;
+    padding-right: 150px;
 }
 
 .sleep .sleep-text {
