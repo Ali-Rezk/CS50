@@ -62,6 +62,12 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.did-you-know {
+    font-size: 28px;
+    text-align: center;
+    padding-top: 20px;
+}
+
 .breeds {
     margin-left: auto;
     margin-right: auto;
@@ -81,16 +87,11 @@
 
 }
 
-.breeds-text-h {
-    font-size: 28px;
-    text-align: center;
-
-}
-
-.breeds .breeds-text p {
+.breeds .breeds-text ul li {
     padding: 20px 0;
     padding-left: 50px;
     font-size: 20px;
+    text-align: left;
 }
 
 .sleep {
@@ -112,10 +113,11 @@
 
 }
 
-.sleep .sleep-text p {
+.sleep .sleep-text ul li {
     padding: 20px 0;
     padding-right: 50px;
     font-size: 20px;
+    text-align: left;
 }
 
 .accordion {
