@@ -25,18 +25,21 @@
     color: white;
     text-align: center;
     padding-top: 100px;
-    vertical-align: middle;
+    line-height: 100px;
+
 }
 
 .home .caption h1{
     font-family: 'Montserrat', sans-serif;
     font-size: 76px;
-    padding: 35px 0 35px 0;
+    padding-top: 150px;
+    line-height: 100px;
 }
 
 .home .caption p {
     font-size: 24px;
-    font-family: 'Roboto', sans-serif
+    font-family: 'Roboto', sans-serif;
+    line-height: 100px;
 }
 
 .breeds {
