@@ -21,4 +21,10 @@
     color: #fff;
 }
 
+.row {
+    display: inline-block;
+}
 
+.row img{
+    width:40%;
+}
