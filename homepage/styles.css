@@ -42,8 +42,8 @@
     padding: 20px;
     margin-left: 20px;
 }
-.nav-logo{
-    width: 2%;
+.nav-logo img {
+    width: 5%;
     float: left;
     padding: 10px;
 }
