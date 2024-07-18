@@ -35,10 +35,6 @@
 h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
-    color: white;
-    text-align: center;
-    padding-top: 100px;
-    margin-top: 70px;
 }
 h3 {
     font-size: 32px;
@@ -54,4 +50,17 @@ h3 {
     background-image:url(imgs/2111331.jpg);
     background-size: 100% 100%;
     background-position: center center;
+ }
+
+ .home .caption{
+
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+    margin-top: 70px;
+}
+
+ .home .caption h1{
+    font-size: 76px;
+    padding: 35px 0 35px 0;
  }
