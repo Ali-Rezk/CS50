@@ -154,6 +154,7 @@
 
 .accordion {
     text-align: center;
+    display: inline-block;
 }
 
 .accordion img {
