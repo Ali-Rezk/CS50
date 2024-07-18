@@ -154,11 +154,11 @@
 
 .accordion {
     text-align: center;
-    display: inline;
 }
 
 .accordion img {
     width: 40%;
+    display: inline-block;
 }
 
 .accordion h3 {
