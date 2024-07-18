@@ -22,9 +22,13 @@
 }
 
 .row {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 100px;
     display: inline-block;
 }
 
 .row img{
-    width:40%;
+    width:30%;
 }
+
