@@ -92,6 +92,31 @@
     font-size: 20px;
 }
 
+.sleep {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 150px;
+    padding-top: 50px;
+
+}
+
+.sleep img{
+    width:30%;
+    display: inline-block;
+}
+
+.sleep .sleep-text {
+    display: inline-block;
+    text-align: center;
+
+}
+
+.sleep .sleep-text p {
+    padding: 20px 0;
+    padding-left: 50px;
+    font-size: 20px;
+}
+
 .accordion {
     padding-left: 50px;
     padding-top: 100px;
