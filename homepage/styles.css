@@ -40,13 +40,20 @@
 .nav{
     float: right;
     padding: 20px;
-    padding-right: 100;
+    padding-right: 50;
     margin-left: 20px;
 }
+
+.nav-link {
+    padding: 10px;
+    margin-right: 50px;
+}
+
 .nav-logo img {
     width: 5%;
     float: left;
     padding: 10px;
+    margin-left: 50px;
 }
 
 .home .caption h1{
