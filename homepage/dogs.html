@@ -12,7 +12,21 @@
         <link href="Dogs_styles.css" rel="stylesheet">
         <title>Dogs</title>
         <script>
-        </script>
+          document.addEventListener('DOMContentLoaded', function() {
+
+              document.querySelector('#cat').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Checkout our cats page";
+              }
+              document.querySelector('#dog').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Checkout our dogs page";
+              }
+
+              document.querySelector('#duck').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Checkout our ducks page";
+              }
+
+          });
+      </script>
     </head>
     <body>
         <div class="home">
