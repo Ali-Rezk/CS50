@@ -42,15 +42,14 @@
 }
 
 .nav{
-
-}
-
-.nav ul {
-    list-style-type: none;
     float: right;
     padding: 20px;
     padding-right: 50;
     margin-left: 20px;
+}
+
+.home .nav ul {
+    list-style-type: none;
 }
 
 .nav ul li {
