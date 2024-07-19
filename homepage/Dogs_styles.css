@@ -192,12 +192,14 @@ ul {
 
 .meow .meow-text ul {
     padding-left: 50px;
+    display: flex;
+    align-items: center;
+    height: 100px;
 }
 
 .meow .meow-text ul li {
     padding: 20px;
     font-size: 20px;
-
 }
 
 
