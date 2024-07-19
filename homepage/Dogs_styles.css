@@ -130,6 +130,7 @@ ul {
 
 .breeds img{
     width:30%;
+    min-height: 50vh;
     display: inline-block;
 }
 
@@ -157,6 +158,7 @@ ul {
 
 .sleep img{
     width:30%;
+    min-height: 50vh;
     display: inline-block;
 }
 
@@ -183,6 +185,7 @@ ul {
 
 .meow img{
     width:30%;
+    min-height: 50vh;
     display: inline-block;
 }
 
@@ -195,7 +198,7 @@ ul {
 }
 
 .meow .meow-text ul li {
-    padding: 20px;
+    padding-top: 20px;
     font-size: 20px;
 }
 
