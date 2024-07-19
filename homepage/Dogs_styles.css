@@ -24,11 +24,15 @@ ul {
 }
 
 .section {
-    padding: 50px 2rem 1rem 2rem;
+    padding: 0.5rem 2rem 1rem 2rem;
 }
 
 .section h2 {
     text-align: center;
+}
+
+.section h4 {
+    padding
 }
 
 .nav-link {
