@@ -14,19 +14,6 @@ h2 {
     text-align: center;
 }
 
-button {
-    background-color: #353535;
-    color: white;
-    border: 1px solid transparent;
-    border-radius: 0.25rem;
-    font-size: 0.95rem;
-    font-weight: 400;
-    line-height: 1.5;
-    padding: 0.375rem 0.75rem;
-    text-align: center;
-    vertical-align: middle;
-    width: 40%;
-}
 
 .container h2 {
     padding-top: 50px;
@@ -105,8 +92,23 @@ button {
     font-family: 'Roboto', sans-serif;
 }
 
-.quiz li{
-    padding-top: 3px;
+.quiz li {
+    display: inline;
+}
+
+.quiz li button {
+
+    background-color: #353535;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 0.375rem 0.75rem;
+    text-align: center;
+    vertical-align: middle;
+    width: 25%;
 }
 
 .accordion {
