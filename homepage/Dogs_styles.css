@@ -10,6 +10,10 @@ ul {
     list-style-type: none;
 }
 
+h2 {
+    text-align: center;
+}
+
 .container h2 {
     padding-top: 50px;
     text-align: center;
@@ -24,15 +28,11 @@ ul {
 }
 
 .section {
-    padding: 0.5rem 2rem 1rem 2rem;
-}
-
-.section h2 {
-    text-align: center;
+    padding: 0.5rem 2rem 1rem 100px;
 }
 
 .section h4 {
-    padding
+
 }
 
 .nav-link {
