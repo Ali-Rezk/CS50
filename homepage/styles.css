@@ -9,7 +9,8 @@
 .container h2 {
     padding-top: 50px;
     text-align: center;
-    font-size:3vw
+    font-size:10vw;
+    font-size:3vh;
 }
 
 .container p {
