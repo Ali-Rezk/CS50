@@ -7,29 +7,131 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.google.com/share?selection.family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900" rel="stylesheet">
         <link href="styles.css" rel="stylesheet">
         <title>Dogs</title>
         <script>
         </script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/index.html#">Animals</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/cats.html">Cats</a>
-                  <a class="nav-link active" aria-current="page" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/dogs.html">Dogs</a>
-                  <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/ducks.html">Ducks</a>
+        <div class="home">
+          <div class="nav-logo"><a href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/index.html#"><img src="imgs/Logo.png"></a></div>
+          <div class="nav">
+            <ul>
+              <li>
+                <a class="nav-link active" aria-current="page" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/cats.html">Cats</a>
+              </li>
+              <li>
+                <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/dogs.html">Dogs</a>
+              </li>
+              <li>
+                <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/ducks.html">Ducks</a>
+              </li>
+            </ul>
+          </div>
+          <div class="caption">
+            <h1>Cats</h1>
+          </div>
+        </div>
+        <div class="container">
+          <h2><strong>Origin and history of cats</strong></h2>
+          <p>After the nonavian dinosaurs became extinct, mammals became the dominant life forms. The first felinelike mammal, Proailurus, evolved about 30 million years ago. It is thought that all true cat species evolved from this small civetlike predator.</p>
+          <p>Cats that resemble today’s felids first appeared in the early Pliocene Epoch (5.3 to 3.6 million years ago), and they have continued into present times with remarkably few changes. The original design of fang and claw, flexible backbone, muscular strength, and agility allowed felids to survive and adapt to the changes brought by each new era. Adaptations have occurred with changes in prey, but the basic body type has stayed the same.</p>
+        </div>
+        <hr>
+          <div class="accordion" id="accordionExample">
+            <h3>Top questions.</h3>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  What family does the domestic cat belong to?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Cat (Felis catus), also called house cat or domestic cat, is a member of the family Felidae in the order Carnivora. It is also the smallest member of that family, which includes lions, tigers, and pumas.</p>
                 </div>
               </div>
             </div>
-          </nav>
-        <div class="home">
-        <h1>Dogs</h1>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  What is the lineage of cats?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>The average weight of a household cat varies from 2.7 to 4.5 kg (6 to 10 pounds), although among non-pedigreed cats weights up to 12.7 kg (28 pounds) are not uncommon. Average lengths are 71.1 cm (28 inches) for males and 50.8 cm (20 inches) for females.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Why do cats purr?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Domestic cats and other species of the genus Felis purr. Purring is a continuous, rattling hum and often is interpreted as an expression of pleasure or contentment. However, purring also occurs in cats that are injured and in pain.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Why do cat eyes glow in the dark?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>The retina of the cat's eye is made extra sensitive to light by a layer of guanine, which causes the eye to shine at night in a strong light. Cats' eyes are large with pupils that expand or contract to mere slits according to the density of light.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  How big is a full-grown cat?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>The average weight of a household cat varies from 2.7 to 4.5 kg (6 to 10 pounds), although among non-pedigreed cats weights up to 12.7 kg (28 pounds) are not uncommon. Average lengths are 71.1 cm (28 inches) for males and 50.8 cm (20 inches) for females.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        <h2 class="did-you-know"><b>Did you know?</b></h2>
+        <div class="breeds">
+          <img src="imgs/Breeds.jpg">
+          <div class="breeds-text">
+            <ul>
+            <li>There are currently between 42 and 100 cat breeds in the world</li>
+            <li>Cats only sweat through their paws and nowhere else on their body.</li>
+            </ul>
+          </div>
         </div>
+        <div class="sleep">
+          <div class="sleep-text">
+            <ul>
+            <li>Cats sleep 70% of their lives</li>
+            <li>The ridged pattern on cat’s nose is as unique as a human fingerprint.</li>
+            </ul>
+          </div>
+          <img src="imgs/sleepingcats5.jpg">
+        </div>
+        <div class="meow">
+          <img src="imgs/grooming-cat-.jpg">
+          <div class="meow-text">
+            <ul>
+            <li>Cats spend between 30 to 50 percent of their day grooming themselves.</li>
+            <li>Meows are not innate cat language—they developed them to communicate with humans!.</li>
+            </ul>
+          </div>
+        </div>
+        <hr>
     </body>
 </html>
