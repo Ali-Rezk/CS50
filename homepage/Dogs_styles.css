@@ -32,8 +32,8 @@ h2 {
     padding: 0.5rem 2rem 1rem 100px;
 }
 
-.section h4 {
-
+.container h4 {
+    padding-top: 30px;
 }
 
 .nav-link {
