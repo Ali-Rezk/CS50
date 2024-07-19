@@ -14,15 +14,15 @@
         <script>
           document.addEventListener('DOMContentLoaded', function() {
 
-              document.querySelector('#cat').onclick = function() {
-                  document.querySelector('#result').innerHTML = "Checkout our cats page";
+              document.querySelector('#right').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Correct!";
               }
-              document.querySelector('#dog').onclick = function() {
-                  document.querySelector('#result').innerHTML = "Checkout our dogs page";
+              document.querySelector('#wrong').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Incorrect";
               }
 
-              document.querySelector('#duck').onclick = function() {
-                  document.querySelector('#result').innerHTML = "Checkout our ducks page";
+              document.querySelector('#wrong').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Incorrect";
               }
 
           });
@@ -59,13 +59,13 @@
           <p id="result"></p>
           <ul class="quiz">
               <li>
-                  <button id="cat"  name="q0">Akita</button>
+                  <button id="Wrong" type="button" name="q0">Akita</button>
               </li>
               <li>
-                  <button id="dog" type="button" name="q0">American Bulldog</button>
+                  <button id="Wrong" type="button" name="q0">American Bulldog</button>
               </li>
               <li>
-                  <button id="duck" type="button" name="q0">Australian kelpie</button>
+                  <button id="right" type="button" name="q0">Australian kelpie</button>
               </li>
           </ul>
         </div>
