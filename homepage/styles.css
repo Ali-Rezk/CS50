@@ -10,6 +10,10 @@ ul {
     list-style-type: none;
 }
 
+h2 {
+    text-align: center;
+}
+
 .container h2 {
     padding-top: 50px;
     text-align: center;

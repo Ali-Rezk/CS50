@@ -12,7 +12,21 @@
         <link href="styles.css" rel="stylesheet">
         <title>Cats</title>
         <script>
-        </script>
+          document.addEventListener('DOMContentLoaded', function() {
+
+              document.querySelector('#right').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Correct!";
+              }
+              document.querySelector('#wrong0').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Incorrect";
+              }
+
+              document.querySelector('#wrong1').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Incorrect";
+              }
+
+          });
+      </script>
     </head>
     <body>
         <div class="home">
