@@ -236,6 +236,11 @@ h2 {
     width: 15%;
 }
 
+#result {
+    padding-left: 40px;
+    font-size: 20px;
+}
+
 .space {
     margin-bottom: 50px;
 
