@@ -23,7 +23,9 @@
     padding: 0.5rem 2rem 1rem 2rem;
 }
 
-
+.nav-link {
+    color: #fff;
+}
 
 .home{
     min-height: 100vh;
@@ -48,11 +50,17 @@
 
 .nav ul {
     list-style-type: none;
+
+}
+
+.nav ul li {
+    float: left;
+    padding-right: 25px;
 }
 
 .nav-link {
     padding: 10px;
-    margin-right: 50px;
+
 }
 
 .nav-logo img {
