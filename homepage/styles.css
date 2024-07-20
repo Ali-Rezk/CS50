@@ -149,6 +149,7 @@ h2 {
 
 .breeds .breeds-text {
     display: inline-block;
+    vertical-align: middle;
 }
 
 .breeds .breeds-text ul {
@@ -172,13 +173,12 @@ h2 {
 .sleep img{
     width:30%;
     display: inline-block;
-    align: center;
 }
 
 .sleep .sleep-text {
     display: inline-block;
     text-align: center;
-
+    vertical-align: middle;
 }
 
 .sleep .sleep-text ul li {
@@ -203,6 +203,7 @@ h2 {
 
 .meow .meow-text {
     display: inline-block;
+    vertical-align: middle;
 }
 
 .meow .meow-text ul {
