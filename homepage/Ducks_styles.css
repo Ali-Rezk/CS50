@@ -125,6 +125,10 @@ h2 {
     font-size: 20px;
 }
 
+.accordion-body p{
+    font-size: 20px;
+}
+
 .did-you-know {
     font-size: 28px;
     text-align: center;
