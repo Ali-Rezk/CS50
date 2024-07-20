@@ -9,7 +9,7 @@ h2 {
 @media (min-width: 768px) {
     .container p {
         padding-top: 20px;
-        font-size: 20px;
+        font-size: 18px;
         font-family: 'Roboto', sans-serif;
     }
 
@@ -17,6 +17,23 @@ h2 {
         padding: 20px 0;
         font-size: 16px;
 
+    }
+
+    .sleep .sleep-text ul li {
+        padding: 20px 0;
+        padding-right: 50px;
+        font-size: 16px;
+
+    }
+
+    .meow .meow-text ul li {
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    #result {
+        padding-left: 40px;
+        font-size: 16px;
     }
 }
 
