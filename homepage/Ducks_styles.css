@@ -13,6 +13,19 @@
     padding-right: 15px;
 }
 
+.accord p {
+    padding-top: 20px;
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.accord h2 {
+    padding-top: 50px;
+    text-align: center;
+    font-size:10vw;
+    font-size:3vh;
+}
+
 ul {
     list-style-type: none;
 }
