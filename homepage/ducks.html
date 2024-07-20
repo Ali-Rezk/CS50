@@ -7,29 +7,161 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-        <link href="styles.css" rel="stylesheet">
-        <title>Ducks</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="https://fonts.google.com/share?selection.family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900" rel="stylesheet">
+        <link href="Dogs_styles.css" rel="stylesheet">
+        <title>Dogs</title>
         <script>
-        </script>
+          document.addEventListener('DOMContentLoaded', function() {
+
+              document.querySelector('#right').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Correct!";
+              }
+              document.querySelector('#wrong0').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Incorrect";
+              }
+
+              document.querySelector('#wrong1').onclick = function() {
+                  document.querySelector('#result').innerHTML = "Incorrect";
+              }
+
+          });
+      </script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/index.html#">Animals</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                  <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/cats.html">Cats</a>
-                  <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/dogs.html">Dogs</a>
-                  <a class="nav-link active" aria-current="page" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/ducks.html">Ducks</a>
+        <div class="home">
+          <div class="nav-logo"><a href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/index.html#"><img src="imgs/Logo.png"></a></div>
+          <div class="nav">
+            <ul>
+              <li>
+                <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/cats.html">Cats</a>
+              </li>
+              <li>
+                <a class="nav-link active" aria-current="page" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/dogs.html">Dogs</a>
+              </li>
+              <li>
+                <a class="nav-link" href="https://miniature-couscous-pjj5g5w5jg59c77jj-8080.app.github.dev/ducks.html">Ducks</a>
+              </li>
+            </ul>
+          </div>
+          <div class="caption">
+            <h1>Dogs</h1>
+          </div>
+        </div>
+        <div class="container">
+          <h2><strong>Origin and history of dogs</strong></h2>
+          <p>Paleontologists and archaeologists have determined that about 60 million years ago a small mammal, rather like a weasel, lived in the environs of what are now parts of Asia. It is called Miacis, the genus that became the ancestor of the animals known today as canids: dogs, jackals, wolves, and foxes. Miacis did not leave direct descendants, but doglike canids evolved from it. By about 30 to 40 million years ago Miacis had evolved into the first true dog—namely, Cynodictis. This was a medium-size animal, longer than it was tall, with a long tail and a fairly brushy coat. Over the millennia Cynodictis gave rise to two branches, one in Africa and the other in Eurasia. The Eurasian branch was called Tomarctus and is the progenitor of wolves, dogs, and foxes.</p>
+        </div>
+        <hr>
+          <div class="accordion" id="accordionExample">
+            <h3>Top questions.</h3>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                  Why do dogs bark?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Barking is a way for dogs to communicate with other dogs and with humans. Fierce barking or growling often signals that dogs are being territorial, feel threatened, or simply want to be left alone. However, dogs also bark when they are bored and want attention from other dogs or from humans.</p>
                 </div>
               </div>
             </div>
-          </nav>
-        <div>
-        <h1 class="header">Ducks</h1>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Why do dogs sniff other dogs’ rear ends?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>A dog may sniff other dogs’ rear ends to gather chemical information that helps the sniffer identify them as individuals. Gland-lined sacs, housed internally on either side of a dog’s anus, produce a scent that contributes to each dog’s unique odour profile. That profile may also indicate genetic makeup, reproductive status, diet, and emotional state.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  How are dog years calculated?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Many people have learned that one human year equals roughly seven dog years. However, this is a huge oversimplification. How a dog ages is based largely on its size and breed. Smaller dogs tend to age “slower” than larger dogs. Also, the aging rate of some breeds, such as beagles, differs from that of other similarly sized breeds.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  When do dogs need shots?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>Beginning when dogs are six weeks old, a series of four doses of combined vaccines against distemper, hepatitis, parainfluenza, and parvovirus are given two to four weeks apart. Within one year of that series, they receive a booster, which is readministered every three years. At three months old, dogs can receive a rabies vaccine, which is readministered every year or every three years.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  What is a dog?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <p>A dog is a domestic mammal of the family Canidae and the order Carnivora. Its scientific name is Canis lupus familiaris. Dogs are a subspecies of the gray wolf, and they are also related to foxes and jackals. Dogs are one of the two most ubiquitous and most popular domestic animals in the world. (Cats are the other.)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+        <h2 class="did-you-know"><b>Did you know?</b></h2>
+        <div class="breeds">
+          <img src="imgs/Dogs/OIP.jpg">
+          <div class="breeds-text">
+            <ul>
+            <li>There are approximately 195 to 500 dog breeds worldwide.</li>
+            <li>Puppies are born blind and deaf after 58-68 days of gestation.</li>
+            </ul>
+          </div>
         </div>
+        <div class="sleep">
+          <div class="sleep-text">
+            <ul>
+            <li><p>From 3 to 12 weeks of age, puppies learn to </p><p>interact with other dogs, humans, and their environment.</p></li>
+            <li><p>From 6 to 18 months of age, dogs undergo</p><p>physical and behavioral changes as they reach sexual maturity.</p></li>
+            </ul>
+          </div>
+          <img src="imgs/Dogs/R.jpg">
+        </div>
+        <div class="meow">
+          <img src="imgs/Dogs/dog-1742295_640.jpg">
+          <div class="meow-text">
+            <ul>
+            <li><p></p>From 6 years of age onwards, dogs enter their senior years</p><p>and may show signs of aging, such as gray hairs, reduced activity, and health issues.</p></li>
+            <li><p></p>Dogs have an average lifespan of 10-13 years,</p><p>depending on their breed, size, and health conditions.</p></li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <h2>Quiz time</h2>
+        <div class="sec">
+          <h4>What is the name of the breed of dog that originated in Japan?</h4>
+          <p id="result"></p>
+          <ul class="quiz">
+              <li>
+                  <button id="wrong0" type="button" name="q0">Akita</button>
+              </li>
+              <li>
+                  <button id="wrong1" type="button" name="q0">American Bulldog</button>
+              </li>
+              <li>
+                  <button id="right" type="button" name="q0">Australian kelpie</button>
+              </li>
+          </ul>
+        </div>
+        <div class="space"></div>
     </body>
 </html>
