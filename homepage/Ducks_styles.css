@@ -145,7 +145,6 @@ h2 {
 
 .breeds img{
     width:30%;
-    min-height: 50vh;
     display: inline-block;
 }
 
@@ -173,7 +172,6 @@ h2 {
 
 .sleep img{
     width:30%;
-    min-height: 50vh;
     display: inline-block;
 }
 
@@ -200,7 +198,6 @@ h2 {
 
 .meow img{
     width:30%;
-    min-height: 50vh;
     display: inline-block;
 }
 
