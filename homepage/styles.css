@@ -6,11 +6,6 @@ h2 {
     text-align: center;
 }
 
-.nav-container{
-    margin: auto;
-    width: 80%;
-}
-
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -58,6 +53,11 @@ h2 {
 .home .caption{
     text-align: center;
     padding-top: 180px;
+}
+
+.nav-container{
+    margin: auto;
+    width: 80%;
 }
 
 .nav{
