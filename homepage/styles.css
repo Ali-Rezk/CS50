@@ -19,6 +19,7 @@ h2 {
     font-family: 'Roboto', sans-serif;
 }
 
+
 .container #origin {
     padding-top: 50px;
     text-align: center;
@@ -171,6 +172,7 @@ h2 {
 .sleep img{
     width:30%;
     display: inline-block;
+    align: center;
 }
 
 .sleep .sleep-text {
