@@ -6,6 +6,11 @@
     padding-right: 15px;
 }
 
+.sec {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 ul {
     list-style-type: none;
 }
