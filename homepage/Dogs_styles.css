@@ -138,6 +138,7 @@ h2 {
     padding-right: 150px;
     padding-top: 50px;
     text-align: center;
+    display: inline-block;
 }
 
 .part1 img{
