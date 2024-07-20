@@ -136,7 +136,7 @@ h2 {
     padding-top: 20px;
 }
 
-.breeds {
+.part1 {
     margin-left: auto;
     margin-right: auto;
     padding-right: 150px;
@@ -144,27 +144,27 @@ h2 {
     text-align: center;
 }
 
-.breeds img{
+.part1 img{
     width:30%;
     display: inline-block;
 }
 
-.breeds .breeds-text {
+.part1 .part1-text {
     display: inline-block;
     vertical-align: middle;
 }
 
-.breeds .breeds-text ul {
+.part1 .part1-text ul {
     padding-left: 50px;
 }
 
-.breeds .breeds-text ul li {
+.part1 .part1-text ul li {
     padding: 20px 0;
     font-size: 20px;
 
 }
 
-.sleep {
+.part2 {
     margin-left: auto;
     margin-right: auto;
     padding-left: 150px;
@@ -172,25 +172,25 @@ h2 {
     text-align: center;
 }
 
-.sleep img{
+.part2 img{
     width:30%;
     display: inline-block;
 }
 
-.sleep .sleep-text {
+.part2 .part2-text {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
 }
 
-.sleep .sleep-text ul li {
+.part2 .part2-text ul li {
     padding: 20px 0;
     padding-right: 50px;
     font-size: 20px;
 
 }
 
-.meow {
+.part3 {
     margin-left: auto;
     margin-right: auto;
     padding-right: 150px;
@@ -198,22 +198,22 @@ h2 {
     text-align: center;
 }
 
-.meow img{
+.part3 img{
     width:30%;
     display: inline-block;
 }
 
-.meow .meow-text {
+.part3 .part3-text {
     display: inline-block;
     vertical-align: middle;
 }
 
-.meow .meow-text ul {
+.part3 .part3-text ul {
     padding-left: 50px;
 }
 
-.meow .meow-text ul li {
-    padding-top: 20px;
+.part3 .part3-text ul li {
+    padding: 20px 0;
     font-size: 20px;
 }
 
