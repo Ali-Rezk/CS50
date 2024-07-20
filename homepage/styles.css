@@ -14,12 +14,7 @@ h2 {
     text-align: center;
 }
 
-.container h2 {
-    padding-top: 50px;
-    text-align: center;
-    font-size:10vw;
-    font-size:3vh;
-}
+
 
 .container p {
     padding-top: 20px;
@@ -27,7 +22,7 @@ h2 {
     font-family: 'Roboto', sans-serif;
 }
 
-.container #Etymology {
+.container #origin {
     padding-top: 50px;
     text-align: center;
     font-size:10vw;
