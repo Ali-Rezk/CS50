@@ -121,39 +121,6 @@ h2 {
     .part3 {
       max-width: 960px;
     }
-    .container p {
-        padding-top: 20px;
-        font-size: 18px;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .part1 .part1-text ul li {
-        padding: 20px 0;
-        font-size: 16px;
-
-    }
-
-    .part2 .part2-text ul li {
-        padding: 20px 0;
-        padding-right: 50px;
-        font-size: 16px;
-
-    }
-
-    .part3 {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .part3 .part3-text ul li {
-        padding: 20px 0;
-        font-size: 16px;
-    }
-
-    #result {
-        padding-left: 40px;
-        font-size: 16px;
-    }
 
   }
 
@@ -161,40 +128,6 @@ h2 {
     .part3 {
       max-width: 720px;
     }
-    .container p {
-        padding-top: 20px;
-        font-size: 18px;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .part1 .part1-text ul li {
-        padding: 20px 0;
-        font-size: 16px;
-
-    }
-
-    .part2 .part2-text ul li {
-        padding: 20px 0;
-        padding-right: 50px;
-        font-size: 16px;
-
-    }
-
-    .part3 {
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    .part3 .part3-text ul li {
-        padding: 20px 0;
-        font-size: 16px;
-    }
-
-    #result {
-        padding-left: 40px;
-        font-size: 16px;
-    }
-
   }
 
   @media screen and (max-width: 768px) {
@@ -212,7 +145,7 @@ h2 {
     .part3 {
       padding-inline: 15px;
     }
-    
+
     .part3 {
         margin-right: 50px;
         margin-left: 50px;
