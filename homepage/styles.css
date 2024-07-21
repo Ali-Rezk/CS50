@@ -293,7 +293,7 @@ $grid-breakpoints: (
 }
 
 .part1 {
-    margin-left: auto;
+    margin-left: 50px;
     margin-right: 100px;
     margin-top: 50px;
     text-align: center;
