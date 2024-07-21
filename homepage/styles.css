@@ -203,14 +203,19 @@ h2 {
     }
 
     .part3 {
-        margin-right: auto;
-        margin-left: auto;
+        margin-right: 50px;
+        margin-left: 50px;
     }
   }
 
   @media screen and (max-width: 576px) {
     .part3 {
       padding-inline: 15px;
+    }
+    
+    .part3 {
+        margin-right: 50px;
+        margin-left: 50px;
     }
 
   }
