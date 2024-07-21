@@ -6,65 +6,80 @@ h2 {
     text-align: center;
 }
 
-$grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1400px
-);
+@media screen and (max-width: 1400px) {
 
-@include media-breakpoint-up(sm) {
+    .container p {
+        padding-top: 20px;
+        font-size: 18px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .part1 .part1-text ul li {
+        padding: 20px 0;
+        font-size: 16px;
+
+    }
+
+    .part2 .part2-text ul li {
+        padding: 20px 0;
+        padding-right: 50px;
+        font-size: 16px;
+
+    }
+
     .part3 {
-        padding-inline: 15px;
-      }
+        margin-right: auto;
+        margin-left: auto;
+    }
 
-      .part3 {
-          margin-right: 50px;
-          margin-left: 50px;
-      }
-}
-@include media-breakpoint-up(md) {
+    .part3 .part3-text ul li {
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    #result {
+        padding-left: 40px;
+        font-size: 16px;
+    }
+
+  }
+
+
+  @media screen and (max-width: 1200px) {
     .part3 {
-        padding-inline: 15px;
-      }
+      max-width: 960px;
+    }
 
-      .part3 {
-          margin-right: 50px;
-          margin-left: 50px;
-      }
- }
-@include media-breakpoint-up(lg) {
+  }
+
+  @media screen and (max-width: 992px) {
     .part3 {
-        padding-inline: 15px;
-      }
+      max-width: 720px;
+    }
+  }
 
-      .part3 {
-          margin-right: 50px;
-          margin-left: 50px;
-      }
- }
-@include media-breakpoint-up(xl) {
+  @media screen and (max-width: 768px) {
     .part3 {
-        padding-inline: 15px;
-      }
+      max-width: 540px;
+    }
 
-      .part3 {
-          margin-right: 50px;
-          margin-left: 50px;
-      }
- }
-@include media-breakpoint-up(xxl) {
     .part3 {
-        padding-inline: 15px;
-      }
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+  }
 
-      .part3 {
-          margin-right: 50px;
-          margin-left: 50px;
-      }
- }
+  @media screen and (max-width: 576px) {
+    .part3 {
+      padding-inline: 15px;
+    }
+
+    .part3 {
+        margin-right: 50px;
+        margin-left: 50px;
+    }
+
+  }
 
 .container {
     margin-left: auto;
