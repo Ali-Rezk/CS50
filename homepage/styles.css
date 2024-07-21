@@ -6,8 +6,6 @@ h2 {
     text-align: center;
 }
 
-
-
 .container {
     margin-left: auto;
     margin-right: auto;
@@ -196,7 +194,6 @@ h2 {
 }
 
 #result {
-    padding-left: 40px;
     font-size: 20px;
 }
 
