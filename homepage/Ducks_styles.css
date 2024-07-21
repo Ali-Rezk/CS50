@@ -6,7 +6,7 @@ h2 {
     text-align: center;
 }
 
-@media (min-width: 1400px) {
+@media screen and (min-width: 1400px) {
     .home{
         min-height: 100vh;
      }
@@ -26,7 +26,7 @@ h2 {
 
   }
 
-@media (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
     .home{
         min-height: 80vh;
      }
@@ -45,7 +45,7 @@ h2 {
     }
   }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
     .home{
         min-height: 60vh;
      }
@@ -64,8 +64,26 @@ h2 {
     }
   }
 
+@media screen and (max-width: 992px) {
+    .home{
+        min-height: 50vh;
+     }
 
-@media (max-width: 768px) {
+     .home .caption{
+        padding-top: 350px;
+    }
+
+     .nav ul li {
+        font-size: 24px;
+        padding-right: 35px;
+    }
+
+    .nav-logo img {
+        width: 11%;
+    }
+  }
+
+@media screen and (max-width: 768px) {
     .home{
         min-height: 40vh;
      }
@@ -84,7 +102,7 @@ h2 {
     }
   }
 
-@media (max-width: 576px) {
+@media screen and (max-width: 576px) {
     .home{
         min-height: 40vh;
      }
