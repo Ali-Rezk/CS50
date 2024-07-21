@@ -6,6 +6,42 @@ h2 {
     text-align: center;
 }
 
+@media screen and (min-width: 1400px) {
+    .home{
+        min-height: 100vh;
+     }
+  }
+
+@media screen and (max-width: 1400px) {
+    .home{
+        min-height: 80vh;
+     }
+  }
+
+@media screen and (max-width: 1200px) {
+    .home{
+        min-height: 60vh;
+     }
+  }
+
+@media screen and (max-width: 992px) {
+    .home{
+        min-height: 50vh;
+     }
+  }
+
+@media screen and (max-width: 768px) {
+    .home{
+        min-height: 40vh;
+     }
+  }
+
+@media screen and (max-width: 576px) {
+    .home{
+        min-height: 40vh;
+     }
+  }
+
 
 .container {
     margin-left: auto;
@@ -33,12 +69,7 @@ h2 {
     padding: 0.5rem 2rem 1rem 100px;
 }
 
-.nav-link {
-    color: #fff;
-}
-
 .home{
-    min-height: 100vh;
     max-width:100%;
     height:auto;
     background-image:url(imgs/Dogs/lb-1-e1614372591594.jpg);
@@ -67,6 +98,9 @@ h2 {
     padding-right: 25px;
 }
 
+.nav-link {
+    color: #fff;
+}
 
 .nav-logo img {
     width: 7%;
