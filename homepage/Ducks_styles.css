@@ -83,7 +83,7 @@ h2 {
     }
   }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .home{
         min-height: 40vh;
      }
@@ -102,13 +102,13 @@ h2 {
     }
   }
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 576px) {
     .home{
         min-height: 40vh;
      }
 
      .home .caption{
-        padding-top: 350px;
+        padding-top: 330px;
     }
 
      .nav ul li {
