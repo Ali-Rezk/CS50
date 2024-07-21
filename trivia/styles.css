@@ -15,43 +15,6 @@ body {
     padding-right: 15px;
 }
 
-@media screen and (min-width: 1400px) {
-    .container {
-      max-width: 1320px;
-    }
-  }
-
-  @media screen and (max-width: 1400px) {
-    .container {
-      max-width: 1140px;
-    }
-  }
-
-  @media screen and (max-width: 1200px) {
-    .container {
-      max-width: 960px;
-    }
-  }
-
-  @media screen and (max-width: 992px) {
-    .container {
-      max-width: 720px;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    .container {
-      max-width: 540px;
-    }
-  }
-
-  @media screen and (max-width: 576px) {
-    .container {
-      padding-inline: 15px;
-    }
-  }
-
-
 .header {
     background-color: #477bff;
     color: #fff;
