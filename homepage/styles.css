@@ -44,7 +44,7 @@ h2 {
 
 .home .caption{
     text-align: center;
-    padding-top: 180px;
+    vertical-align: middle;
 }
 
 .nav{
@@ -178,7 +178,7 @@ h2 {
 }
 
 .sec h4 {
-    
+
     padding-top: 30px;
     padding-bottom: 10px;
 }
