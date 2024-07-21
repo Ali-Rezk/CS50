@@ -11,6 +11,10 @@ h2 {
         min-height: 100vh;
      }
 
+     .home .caption{
+        padding-top: 180px;
+    }
+
      .nav ul li {
         font-size: 18px;
         padding-right: 25px;
@@ -27,6 +31,10 @@ h2 {
         min-height: 80vh;
      }
 
+     .home .caption{
+        padding-top: 180px;
+    }
+
      .nav ul li {
         font-size: 20px;
         padding-right: 30px;
@@ -42,6 +50,10 @@ h2 {
         min-height: 60vh;
      }
 
+     .home .caption{
+        padding-top: 190px;
+    }
+
      .nav ul li {
         font-size: 22px;
         padding-right: 30px;
@@ -56,6 +68,10 @@ h2 {
     .home{
         min-height: 50vh;
      }
+
+     .home .caption{
+        padding-top: 210px;
+    }
 
      .nav ul li {
         font-size: 24px;
@@ -170,11 +186,6 @@ h2 {
     line-height: 100px;
 }
 
-.home .caption p {
-    color: black;
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
-}
 
 .accordion {
     text-align: center;
