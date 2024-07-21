@@ -174,14 +174,12 @@ h2 {
 .sec {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 40px;
-    padding-right: 15px;
+    text-align: center;
 }
 
 .sec h4 {
     padding-top: 30px;
     padding-bottom: 10px;
-    padding-left: 40px;
 }
 
 .quiz li {
