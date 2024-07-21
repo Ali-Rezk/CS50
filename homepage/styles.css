@@ -354,7 +354,8 @@ h2 {
 }
 
 .part2 {
-    margin-left: 150px;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 50px;
     text-align: center;
 }
