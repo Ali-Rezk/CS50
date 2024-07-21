@@ -69,7 +69,6 @@ h2 {
 }
 
 .home{
-    min-height: 100vh;
     max-width:100%;
     height:auto;
     background-image:url(imgs/Home/R.png);
