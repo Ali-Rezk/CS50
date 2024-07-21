@@ -295,11 +295,9 @@ $grid-breakpoints: (
 .part1 {
     border: 1px solid transparent;
     border-radius: 1rem;
-    margin-left: 50px;
-    margin-right: 50px;
     margin-top: 50px;
     text-align: center;
-    background-color: #C4BCA9;
+    background-color: #CAB694;
 }
 
 .part1 img{
@@ -350,11 +348,9 @@ $grid-breakpoints: (
 .part3 {
     border: 1px solid transparent;
     border-radius: 1rem;
-    margin-left: 50px;
-    margin-right: 50px;
     margin-top: 50px;
     text-align: center;
-    background-color: #C4BCA9;
+    background-color: #CAB694;
 }
 
 .part3 img{
