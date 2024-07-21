@@ -69,6 +69,24 @@ h2 {
         width: 10%;
     }
   }
+  @media screen and (min-width: 1023px) {
+    .home{
+        min-height: 60vh;
+     }
+
+     .home .caption{
+        padding-top: 100px;
+    }
+
+     .nav ul li {
+        font-size: 22px;
+        padding-right: 30px;
+    }
+
+    .nav-logo img {
+        width: 10%;
+    }
+  }
 
 
 .container {
