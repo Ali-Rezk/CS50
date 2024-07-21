@@ -77,13 +77,13 @@ h2 {
 .did-you-know {
     font-size: 28px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .part1 {
     border: 1px solid transparent;
     border-radius: 1rem;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-right: auto;
     margin-left: auto;
     text-align: center;
