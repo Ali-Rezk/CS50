@@ -85,7 +85,7 @@ h2 {
 
 @media screen and (max-width: 767px) {
     .home{
-        min-height: 40vh;
+        min-height: 50vh;
      }
 
      .home .caption{
@@ -93,7 +93,7 @@ h2 {
     }
 
      .nav ul li {
-        font-size: 26px;
+        font-size: 24px;
         padding-right: 35px;
     }
 
