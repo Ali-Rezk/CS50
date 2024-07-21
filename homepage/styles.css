@@ -6,6 +6,12 @@ h2 {
     text-align: center;
 }
 
+@media screen and (min-width: 1400px) {
+    .home{
+        min-height: 100vh;
+     }
+  }
+
 @media screen and (max-width: 1400px) {
     .home{
         min-height: 80vh;
