@@ -70,7 +70,7 @@ h2 {
      }
 
      .home .caption{
-        padding-top: 210px;
+        padding-top: 350px;
     }
 
      .nav ul li {
@@ -88,6 +88,10 @@ h2 {
         min-height: 40vh;
      }
 
+     .home .caption{
+        padding-top: 350px;
+    }
+
      .nav ul li {
         font-size: 26px;
         padding-right: 35px;
@@ -102,6 +106,10 @@ h2 {
     .home{
         min-height: 40vh;
      }
+
+     .home .caption{
+        padding-top: 350px;
+    }
 
      .nav ul li {
         font-size: 26px;
@@ -150,7 +158,6 @@ h2 {
 
 .home .caption{
     text-align: center;
-    padding-top: 180px;
 }
 
 .nav{
