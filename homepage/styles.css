@@ -329,6 +329,7 @@ h2 {
 .part1 {
     margin-left: auto;
     margin-right: auto;
+    padding-right: 100px;
     padding-top: 50px;
     text-align: center;
 }
@@ -348,6 +349,7 @@ h2 {
 }
 
 .part1 .part1-text ul li {
+    padding: 20px 0;
     font-size: 20px;
 
 }
@@ -355,7 +357,8 @@ h2 {
 .part2 {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    padding-left: 100px;
+    padding-top: 50px;
     text-align: center;
 }
 
@@ -371,13 +374,16 @@ h2 {
 }
 
 .part2 .part2-text ul li {
+    padding: 20px 0;
+    padding-right: 50px;
     font-size: 20px;
+
 }
 
 .part3 {
     margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
+    margin-right: 100px;
+    padding-top: 50px;
     text-align: center;
 }
 
