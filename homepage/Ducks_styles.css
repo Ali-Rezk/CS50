@@ -15,6 +15,11 @@ $grid-breakpoints: (
   xxl: 1400px
 );
 
+@include media-breakpoint-up(sm) { ... }
+@include media-breakpoint-up(md) { ... }
+@include media-breakpoint-up(lg) { ... }
+@include media-breakpoint-up(xl) { ... }
+@include media-breakpoint-up(xxl) { ... }
 
 @media screen and (min-width: 1400px) {
     .home{
@@ -71,25 +76,6 @@ $grid-breakpoints: (
 
     .nav-logo img {
         width: 10%;
-    }
-  }
-
-@media screen and (max-width: 992px) {
-    .home{
-        min-height: 50vh;
-     }
-
-     .home .caption{
-        padding-top: 350px;
-    }
-
-     .nav ul li {
-        font-size: 24px;
-        padding-right: 35px;
-    }
-
-    .nav-logo img {
-        width: 11%;
     }
   }
 
