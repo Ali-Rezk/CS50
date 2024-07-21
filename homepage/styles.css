@@ -42,17 +42,23 @@ h2 {
     background-position: center center;
  }
 
-.home .caption h1 {
+.home .caption{
     text-align: center;
-    vertical-align: middle;
+    padding-top: 180px;
+}
 
+.home .caption h1{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 76px;
+    padding-top: 150px;
+    line-height: 100px;
 }
 
 .nav{
     float: right;
     padding: 20px;
     padding-right: 50;
-    margin-left: 20px;
 }
 
 .nav ul li {
@@ -66,20 +72,6 @@ h2 {
     float: left;
     padding: 10px;
     margin-left: 50px;
-}
-
-.home .caption h1{
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 76px;
-    padding-top: 150px;
-    line-height: 100px;
-}
-
-.home .caption p {
-    color: black;
-    font-size: 24px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .did-you-know {
