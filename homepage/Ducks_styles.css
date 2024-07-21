@@ -6,17 +6,17 @@ h2 {
     text-align: center;
 }
 
-@media screen and (min-width: 359px){
+@media screen and (min-width: 319px) {
     .home{
-        min-height: 40vh;
+        min-height: 50vh;
      }
 
      .home .caption{
-        padding-top: 330px;
+        padding-top: 350px;
     }
 
      .nav ul li {
-        font-size: 26px;
+        font-size: 24px;
         padding-right: 35px;
     }
 
