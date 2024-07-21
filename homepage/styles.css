@@ -127,6 +127,8 @@ h2 {
     border: 1px solid transparent;
     border-radius: 1rem;
     margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
     text-align: center;
     background-color: #B9B9B8;
 }
@@ -153,7 +155,7 @@ h2 {
 
 .part2 {
     margin-right: auto;
-    margin-left: 100px;
+    margin-left: auto;
     margin-top: 50px;
     text-align: center;
 }
