@@ -50,20 +50,31 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
+    .part1 {
+        max-width: 540px;
+    }
+
+    .part2 {
+        max-width: 540px;
+    }
+
     .part3 {
-      max-width: 540px;
+        max-width: 540px;
     }
 
 }
 
 @media screen and (max-width: 576px) {
-    .part3 {
-      padding-inline: 15px;
+    .part1 {
+        padding-inline: 15px;
+    }
+
+    .part2 {
+        padding-inline: 15px;
     }
 
     .part3 {
-        margin-right: 50px;
-        margin-left: 50px;
+        padding-inline: 15px;
     }
 
 }
