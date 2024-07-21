@@ -374,8 +374,6 @@ h2 {
 }
 
 .part2 .part2-text ul li {
-    padding: 20px 0;
-    padding-right: 50px;
     font-size: 20px;
 
 }
@@ -383,8 +381,7 @@ h2 {
 .part3 {
     margin-left: auto;
     margin-right: auto;
-    padding-right: 150px;
-    padding-top: 50px;
+    margin-top: 50px;
     text-align: center;
 }
 
