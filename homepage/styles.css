@@ -28,6 +28,11 @@ h2 {
     .home{
         min-height: 50vh;
      }
+
+     .nav ul li {
+        font-size: 18px;
+        padding-right: 30px;
+    }
   }
 
 @media screen and (max-width: 768px) {
@@ -64,9 +69,6 @@ h2 {
     padding: 0.5rem 2rem 1rem 2rem;
 }
 
-.nav-link {
-    color: #fff;
-}
 
 .home{
     max-width:100%;
@@ -95,11 +97,15 @@ h2 {
     padding-right: 50;
 }
 
+
 .nav ul li {
     float: left;
     padding-right: 25px;
 }
 
+.nav-link {
+    color: #fff;
+}
 
 .nav-logo img {
     width: 7%;
