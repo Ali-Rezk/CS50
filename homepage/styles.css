@@ -6,6 +6,66 @@ h2 {
     text-align: center;
 }
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+@include media-breakpoint-up(sm) {
+    .part3 {
+        padding-inline: 15px;
+      }
+
+      .part3 {
+          margin-right: 50px;
+          margin-left: 50px;
+      }
+}
+@include media-breakpoint-up(md) {
+    .part3 {
+        padding-inline: 15px;
+      }
+
+      .part3 {
+          margin-right: 50px;
+          margin-left: 50px;
+      }
+ }
+@include media-breakpoint-up(lg) {
+    .part3 {
+        padding-inline: 15px;
+      }
+
+      .part3 {
+          margin-right: 50px;
+          margin-left: 50px;
+      }
+ }
+@include media-breakpoint-up(xl) {
+    .part3 {
+        padding-inline: 15px;
+      }
+
+      .part3 {
+          margin-right: 50px;
+          margin-left: 50px;
+      }
+ }
+@include media-breakpoint-up(xxl) {
+    .part3 {
+        padding-inline: 15px;
+      }
+
+      .part3 {
+          margin-right: 50px;
+          margin-left: 50px;
+      }
+ }
+
 @media (min-width: 768px) {
     .container p {
         padding-top: 20px;
