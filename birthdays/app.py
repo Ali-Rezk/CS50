@@ -30,7 +30,7 @@ def index():
         name = request.form.get("name")
         month = request.form.get("month")
         day = request.form.get("day")
-        if not name or not month or not day or not (0 <= month >= 12:
+        if not name or not month or not day:
             return redirect("/")
         db.execute("INSERT INTO birthdays (name,month,day) VALUES (?, ?, ?)", name, month, day)
         return redirect("/")
