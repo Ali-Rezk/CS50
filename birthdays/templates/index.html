@@ -35,9 +35,12 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                         name = SELECT name FROM birthdays;
-                         month = SELECT month FROM birthdays;
-                         day = SELECT day FROM birthdays;
+                         {% for rows in birthdays %}
+                            <tr>
+                                <td>{{rows.name}}</td>
+                                <td>{{rows.month, rows.day}}</td>
+                            </tr>
+                         {% endfor %}
                     </tbody>
                 </table>
             </div>
