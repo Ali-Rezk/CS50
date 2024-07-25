@@ -33,7 +33,7 @@ def index():
         if not name or not month or not day:
             return redirect("/")
 
-        elif month not in range(1, 13) or day not in range(1, 32):
+        elif month not in range_1:
             return redirect("/")
 
         else:
