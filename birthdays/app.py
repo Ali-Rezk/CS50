@@ -36,8 +36,9 @@ def index():
         elif month not in range(1, 13) or day not in range(1, 32):
             return redirect("/")
 
-        db.execute("INSERT INTO birthdays (name,month,day) VALUES (?, ?, ?)", name, month, day)
-        return redirect("/")
+        else:
+            db.execute("INSERT INTO birthdays (name,month,day) VALUES (?, ?, ?)", name, month, day)
+            return redirect("/")
 
     else:
 
