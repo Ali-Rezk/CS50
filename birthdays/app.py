@@ -11,7 +11,7 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
-
+range_1 = range(1, 13)
 
 @app.after_request
 def after_request(response):
@@ -35,7 +35,7 @@ def index():
 
         elif month in range(1,13):
             return redirect("/")
-        
+
         db.execute("INSERT INTO birthdays (name,month,day) VALUES (?, ?, ?)", name, month, day)
         return redirect("/")
 
