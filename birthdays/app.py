@@ -33,9 +33,9 @@ def index():
         if not name or not month or not day:
             return redirect("/")
 
-        elif  month in range(1,13):
+        elif month in range(1,13):
             return redirect("/")
-
+        
         db.execute("INSERT INTO birthdays (name,month,day) VALUES (?, ?, ?)", name, month, day)
         return redirect("/")
 
