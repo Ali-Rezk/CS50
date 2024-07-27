@@ -117,9 +117,7 @@ def register():
         reg_password = request.form.get("reg_password")
         confirmation = request.form.get("confirmation")
         if not reg_username or not reg_password or not confirmation:
-            return apology()
-        elif reg_password != confirmation:
-            return apology("your password does not match the confirmation password")
+            return apology("must provide username", 403)
         db.execute("INSERT INTO users (username, hash) values(?, ?)",reg_username, reg_password)
         return render_template("register.html")
 
