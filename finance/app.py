@@ -115,7 +115,8 @@ def register():
     if request.method == "POST":
         reg_username = request.form.get("reg_username")
         reg_password = request.form.get("reg_password")
-        if not reg_username or not reg_password:
+        confirmation = request.form.get("confirmation")
+        if not reg_username or not reg_password or not confirmation:
             return apology()
 
         db.execute("INSERT INTO users (username, hash) values(?, ?)",reg_username, reg_password)
