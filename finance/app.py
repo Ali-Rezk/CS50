@@ -118,7 +118,8 @@ def register():
         confirmation = request.form.get("confirmation")
         if not reg_username or not reg_password or not confirmation:
             return apology()
-
+        elif reg_password != confirmation:
+            return apology()
         db.execute("INSERT INTO users (username, hash) values(?, ?)",reg_username, reg_password)
         return render_template("register.html")
 
