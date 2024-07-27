@@ -116,10 +116,21 @@ def register():
         reg_username = request.form.get("reg_username")
         reg_password = request.form.get("reg_password")
         confirmation = request.form.get("confirmation")
-        if not reg_username or not reg_password or not confirmation:
+        if not reg_username:
             return apology("must provide username", 403)
-        db.execute("INSERT INTO users (username, hash) values(?, ?)",reg_username, reg_password)
-        return render_template("register.html")
+        elif not reg_password:
+            return apology("must provide password", 403)
+        elif not confirmation:
+            return apology("must provide confirmation", 403)
+        elif confirmation != reg_password:
+            return apology("password and confirmation does not match", 403)
+
+        try:
+            db.execute("INSERT INTO users (username) values(?)",reg_username)
+        except ValueError:
+            return apology("username is taken")
+        db.execute("INSERT INTO users (hash) values(?)", reg_password)
+        return render_template("login.html")
 
     else:
         return render_template("register.html")
