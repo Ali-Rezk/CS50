@@ -42,7 +42,7 @@ def index():
 @login_required
 def buy():
     """Buy shares of stock"""
-    
+    name = request.form.get("")
 
 
 @app.route("/history")
