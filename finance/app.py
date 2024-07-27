@@ -113,6 +113,9 @@ def quote():
 def register():
     """Register user"""
     reg_username = request.form.get("reg_username")
+    if not name:
+        return apology()
+    reg_password = request.form.get("reg_password")
 
     db.execute("INSERT INTO users (username, hash) values(?, ?)",reg_username, reg_password)
     return render_template("register.html")
