@@ -126,7 +126,7 @@ def register():
             return apology("password and confirmation does not match", 403)
         hash_password = generate_password_hash(reg_password, method='pbkdf2', salt_length=16)
         try:
-            db.execute("INSERT INTO checkk (name, password) VALUES (?, ?)", reg_username, hash_password)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", reg_username, hash_password)
         except ValueError:
             return apology("username is taken")
         return render_template("login.html")
