@@ -109,6 +109,7 @@ def quote():
     if request.method == "POST":
         name = request.form.get("symbol")
         lookup(name)
+        price = price.lookup(name)
         return render_template("quoted.html", symbol = name, price = price )
     else:
         return render_template("/quote.html")
