@@ -123,7 +123,7 @@ def register():
         return render_template("register.html")
 
     else:
-        return render_template("login.html")
+        return render_template("register.html")
 
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
