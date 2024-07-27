@@ -108,7 +108,8 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        
+
+        lookup(symbol)
     else:
         return render_template("/quote.html")
 @app.route("/register", methods=["GET", "POST"])
