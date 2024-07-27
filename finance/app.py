@@ -120,7 +120,10 @@ def register():
 
         db.execute("INSERT INTO users (username, hash) values(?, ?)",reg_username, reg_password)
         return render_template("register.html")
-    
+
+    else:
+        return render_template("login.html")
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
