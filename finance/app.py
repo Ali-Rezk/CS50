@@ -125,7 +125,7 @@ def register():
         elif confirmation != reg_password:
             return apology("password and confirmation does not match", 403)
         try:
-            db.execute("INSERT INTO users (username) values(?)",reg_username)
+            db.execute("INSERT INTO users (username) VALUES (?)", reg_username)
         except ValueError:
             return apology("username is taken")
         hash_password = generate_password_hash(reg_password, method='pbkdf2', salt_length=16)
