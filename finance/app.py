@@ -46,7 +46,7 @@ def buy():
         name = request.form.get("symbol")
         if not name:
             return apology("Missing name")
-        shares = request.form.get("share")
+        shares = request.form.get("shares")
         if not shares or int(shares) <= 0:
             return apology("invalid share")
         try:
