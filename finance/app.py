@@ -46,17 +46,16 @@ def buy():
         name = request.form.get("symbol")
         if not name:
             return apology("Missing name")
-        share = request.form.get("share")
-        if not share or share <= 0:
+        shares = request.form.get("share")
+        if not shares or shares <= 0:
             return apology("invalid share")
         try:
             result = lookup(name)
-            price = result["price"]
             symbol = result["symbol"]
         except:
             return apology("Invalid symbol")
-        session["user_id"]
-        db.execute("INSERT INTO stocks (id, symbol, shares) VALUES (?, ?, ?)",)
+
+        db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], symbol, shares)
         return render_template("index.html")
     else:
         return render_template("buy.html")
