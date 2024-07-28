@@ -10,11 +10,12 @@
             <tr>
                 <td>Symbol</td><td>Shares</td><td>Price</td><td>TOTAL</td>
             </tr>
+
+            {{% for rows in stocks %}}
             <tr>
-            {{ %for rows in stocks% }}
-                
-            {{ %endfor% }}
+                <td>{{rows.symbol}}</td><td>{{rows.shares}}</td>
             </tr>
+            {{% endfor %}}
         </table>
     </div>
 {% endblock %}
