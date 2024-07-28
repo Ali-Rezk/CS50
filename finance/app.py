@@ -56,7 +56,8 @@ def buy():
             symbol = result["symbol"]
         except:
             return apology("Invalid symbol")
-        cash = db.execute("SELECT cash FROM users WHERE id = (?)", user_id)
+        row = db.execute("SELECT cash FROM users WHERE id = (?)", user_id)
+        cash = row[0]["cash"]
         int(cash) == int(cash) - int(price)
         if int(cash) < 0:
             return apology("Sorry not enough cash")
