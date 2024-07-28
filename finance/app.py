@@ -48,7 +48,7 @@ def buy():
         if not share or share <= 0:
             return apology("invalid share")
         result = lookup(name)
-
+        return render_template("index.html")
     else:
         return render_template("buy.html")
 
