@@ -11,11 +11,11 @@
                 <td>Symbol</td><td>Shares</td><td>Price</td><td>TOTAL</td>
             </tr>
 
-            {{% for rows in stocks %}}
+            {% for rows in stocks %}
             <tr>
                 <td>{{ rows.symbol }}</td><td>{{ rows.shares }}</td><td>{{ price[rows] }}</td><td>total</td>
             </tr>
-            {{% endfor %}}
+            {% endfor %}
         </table>
     </div>
 {% endblock %}
