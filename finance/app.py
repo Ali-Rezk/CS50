@@ -51,11 +51,14 @@ def buy():
             return apology("invalid share")
         try:
             result = lookup(name)
+            price = result["price"]
             symbol = result["symbol"]
         except:
             return apology("Invalid symbol")
-
+        cash = db.execute("SELECT cash FROM users WHERE id = (?)", session["user_id"])
+        cash = cash - price
         db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], symbol, shares)
+        db.execute("")
         return render_template("index.html")
     else:
         return render_template("buy.html")
