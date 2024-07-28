@@ -7,7 +7,14 @@
 {% block main %}
     <div action="/" method="GET">
         <table>
-            
+            <tr>
+                <td>Symbol</td><td>Shares</td><td>Price</td><td>TOTAL</td>
+            </tr>
+            <tr>
+            {{ %for rows in stocks% }}
+
+            {{ %endfor% }}
+            </tr>
         </table>
     </div>
 {% endblock %}

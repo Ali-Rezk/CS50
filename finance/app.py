@@ -35,6 +35,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+
     return apology("TODO")
 
 
@@ -64,7 +65,7 @@ def buy():
             return apology("Sorry not enough cash")
         db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
         db.execute("UPDATE users SET cash = ? WHERE id=?", cash, user_id)
-        return render_template("index.html")
+        return redirect("/")
     else:
         return render_template("buy.html")
 
