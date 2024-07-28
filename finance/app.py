@@ -49,7 +49,12 @@ def buy():
         share = request.form.get("share")
         if not share or share <= 0:
             return apology("invalid share")
-        result = lookup(name)
+        try:
+            result = lookup(name)
+            price = result["price"]
+            symbol = result["symbol"]
+        except:
+            return apology("Invalid symbol")
         return render_template("index.html")
     else:
         return render_template("buy.html")
