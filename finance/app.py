@@ -35,7 +35,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    rows = db.execute("SELECT * FROM stocks WHERE stocks_id=? GROUP BY stocks_id", session["user_id"])
+    rows = db.execute("SELECT * FROM stocks WHERE stocks_id=? GROUP BY symbol", session["user_id"])
     price = [int(lookup(row['symbol'])['price']) for row in rows]
     return render_template("index.html", stocks = rows, price = price)
 
