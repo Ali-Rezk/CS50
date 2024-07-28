@@ -47,7 +47,7 @@ def buy():
         if not name:
             return apology("Missing name")
         shares = request.form.get("share")
-        if not shares or shares <= 0:
+        if not shares or int(shares) <= 0:
             return apology("invalid share")
         try:
             result = lookup(name)
