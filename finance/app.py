@@ -39,7 +39,7 @@ def index():
     for row in rows:
         result = lookup(rows[row][symbol])
         price[row] = result["price"]
-    return render_template("index.html", stocks = rows, price)
+    return render_template("index.html", stocks = rows, price = price)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
