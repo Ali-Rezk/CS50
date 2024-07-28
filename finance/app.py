@@ -58,6 +58,8 @@ def buy():
             return apology("Invalid symbol")
         cash = db.execute("SELECT cash FROM users WHERE id = (?)", user_id)
         cash = cash - price
+        if int(cash) < 0:
+            return apology("Sorry not enough cash")
         db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
         db.execute("UPDATE users SET cash = ? WHERE id=?", cash, user_id)
         return render_template("index.html")
