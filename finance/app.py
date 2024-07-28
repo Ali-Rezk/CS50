@@ -43,7 +43,7 @@ def index():
 def buy():
     """Buy shares of stock"""
     name = request.form.get("symbol")
-    
+
 
 
 @app.route("/history")
@@ -109,9 +109,12 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         name = request.form.get("symbol")
-        result = lookup(name)
-        price = result["price"]
-        symbol = result["symbol"]
+        try:
+            result = lookup(name)
+            price = result["price"]
+            symbol = result["symbol"]
+        except:
+            return apology("")
         return render_template("quoted.html", symbol = symbol, price = price)
     else:
         return render_template("/quote.html")
