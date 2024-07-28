@@ -55,7 +55,7 @@ def buy():
             symbol = result["symbol"]
         except:
             return apology("Invalid symbol")
-            
+        db.execute("INSERT INTO stocks (name, symbol, shares) VALUES (?, ?, ?)",)
         return render_template("index.html")
     else:
         return render_template("buy.html")
