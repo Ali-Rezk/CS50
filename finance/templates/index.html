@@ -14,9 +14,9 @@
             </thead>
             <tbody>
                 <!-- TODO: Loop through the database entries to display them in this table -->
-                {{int i = 0}}
+                {% i = 0 %}
                 {% for rows in stocks %}
-                {{i = i +1}}
+                {% i = i + 1 %}
                 <tr>
                     <td>{{ rows.symbol }}</td><td>{{ rows.shares }}</td><td>{{ prices[i] }}</td><td>total</td>
                 </tr>
