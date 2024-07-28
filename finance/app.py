@@ -44,6 +44,8 @@ def buy():
     """Buy shares of stock"""
     if request.method == "POST":
         name = request.form.get("symbol")
+        if not name:
+            return apology("Missing name")
         share = request.form.get("share")
         if not share or share <= 0:
             return apology("invalid share")
