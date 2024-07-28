@@ -38,7 +38,7 @@ def index():
     rows = db.execute("SELECT * FROM stocks WHERE stocks_id=? GROUP BY stocks_id", session["user_id"])
     for row in rows:
         result = lookup(rows[row][symbol])
-        int price[row] = int(result["price"])
+        price[row] = int(result["price"])
     return render_template("index.html", stocks = rows, price = price)
 
 @app.route("/buy", methods=["GET", "POST"])
