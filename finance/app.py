@@ -43,6 +43,7 @@ def index():
 def buy():
     """Buy shares of stock"""
     name = request.form.get("symbol")
+    result = lookup(name)
     
 
 
