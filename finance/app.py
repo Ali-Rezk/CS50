@@ -43,6 +43,7 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
+        user_id = session["user_id"]
         name = request.form.get("symbol")
         if not name:
             return apology("Missing name")
@@ -55,10 +56,10 @@ def buy():
             symbol = result["symbol"]
         except:
             return apology("Invalid symbol")
-        cash = db.execute("SELECT cash FROM users WHERE id = (?)", session["user_id"])
+        cash = db.execute("SELECT cash FROM users WHERE id = (?)", user_id)
         cash = cash - price
-        db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], symbol, shares)
-        db.execute("")
+        db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
+        db.execute("UPDATE users SET cash = ? WHERE id=?", cash, user_id)
         return render_template("index.html")
     else:
         return render_template("buy.html")
