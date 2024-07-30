@@ -178,13 +178,14 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
+        rows = db.execute("SELECT * FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
         name = request.form.get("symbol")
         if not name:
             return apology("Missing name")
         shares = request.form.get("shares")
         if not shares or int(shares) <= 0:
             return apology("invalid share")
-        
+        if rowshares
         return render_template("index.html")
     else:
         rows = db.execute("SELECT * FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
