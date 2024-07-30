@@ -7,8 +7,11 @@
 {% block main %}
     <form action="/sell" method="post">
         <div class="mb-3">
-            <select class="form-control mx-auto w-auto" name="symbol" type="select">
-                <option disabled select>Symbol</option>
+            <select class="form-select mx-auto w-auto" name="symbol" type="select">
+                <option disabled selected>Symbol</option>
+                {{% for row in rows %}}
+                <option value="{{ row.symbol }}">{{row.symbol}}</option>
+                {{% endfor %}}
         </div>
         <div class="mb-3">
             <input class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="number" min="1">
