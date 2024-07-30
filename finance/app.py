@@ -193,9 +193,9 @@ def sell():
                     return apology("Not enough shares")
                 else:
                     new_shares = int(row['shares']) - int(shares)
-                    result = lookup("name")
+                    result = lookup(name)
                     price = result["price"]
-                    new_cash = int(price) * int(shares) + int(cash)
+                    new_cash = int(price) * int(shares) + int(cash[cash])
                     db.execute("UPDATE users SET cash = ? WHERE id =?",new_cash ,session["user_id"] )
                     db.execute("update stocks set shares = ? WHERE id = ? AND symbol = ? GROUP BY symbol",new_shares ,session["user_id"], name)
         return render_template("index.html")
