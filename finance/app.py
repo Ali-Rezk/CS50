@@ -70,8 +70,10 @@ def buy():
         cash = int(cash) - int(price)
         if int(cash) < 0:
             return apology("Sorry not enough cash")
+        old_shares = db.execute("SELECT shares FROM stocks WHERE stocks_id = ? AND symbol = ?", user_id, symbol)
+        new_shares = int(shares) + int(old_shares)
         try:
-            db.execute("UPDATE stocks SET shares = ? WHERE symbol = ? AND stocks_id = ?", )
+            db.execute("UPDATE stocks SET shares = ? WHERE symbol = ? AND stocks_id = ?", new_shares, symbol, user_id)
         except:
             db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
         db.execute("UPDATE users SET cash = ? WHERE id=?", cash, user_id)
