@@ -16,14 +16,14 @@
                 <!-- TODO: Loop through the database entries to display them in this table -->
                 {% for row, price in rows_and_prices %}
                 <tr>
-                    <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>${{ price }}</td><td>${{ row.shares * price|round(2) }}</td>
+                    <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>${{ price }}</td><td>${{ "{:,}".format(row.shares * price|round(2)) }}</td>
                 </tr>
                 {% endfor %}
                 <tr>
-                    <td></td><td></td><td>Cash</td><td>${{ cash|round(2) }}</td>
+                    <td></td><td></td><td>Cash</td><td>${{ "{:,}".format(cash|round(2)) }}</td>
                 </tr>
                 <tr>
-                    <td></td><td></td><td>TOTAL</td><td>${{ total|round(2) }}</td>
+                    <td></td><td></td><td>TOTAL</td><td>${{ "{:,}".format(total|round(2)) }}</td>
                 </tr>
             </tbody>
         </table>
