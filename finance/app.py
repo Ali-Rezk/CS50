@@ -67,7 +67,7 @@ def buy():
             return apology("Invalid symbol")
         row = db.execute("SELECT cash FROM users WHERE id = (?)", user_id)
         cash = row[0]["cash"]
-        cash = int(cash) - int(price)
+        cash = int(cash) - (int(price) * int(shares))
         if int(cash) < 0:
             return apology("Sorry not enough cash")
         old_shares = db.execute("SELECT shares FROM stocks WHERE stocks_id = ? AND symbol = ?", user_id, symbol)
