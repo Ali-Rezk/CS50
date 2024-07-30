@@ -16,7 +16,7 @@
                 <!-- TODO: Loop through the database entries to display them in this table -->
                 {% for row, price in rows_and_prices %}
                 <tr>
-                    <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>{{ price }}</td><td>total</td>
+                    <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>${{ price }}</td><td>${{ row.shares * price }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
