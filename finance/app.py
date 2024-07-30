@@ -76,6 +76,7 @@ def buy():
             db.execute("UPDATE stocks SET shares = ? WHERE symbol = ? AND stocks_id = ?", new_shares, symbol, user_id)
         except:
             db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
+        db.execute("INSERT INTO history (history_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
         db.execute("UPDATE users SET cash = ? WHERE id=?", cash, user_id)
         return redirect("/")
     else:
