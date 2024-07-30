@@ -19,7 +19,12 @@
                     <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>${{ price }}</td><td>${{ row.shares * price|round(2)  }}</td>
                 </tr>
                 {% endfor %}
-                <tr></tr>
+                <tr>
+                    <td></td><td></td><td>Cash</td><td>{{cash}}</td>
+                </tr>
+                <tr>
+                    <td></td><td></td><td>TOTAL</td><td></td>
+                </tr>
             </tbody>
         </table>
     </div>

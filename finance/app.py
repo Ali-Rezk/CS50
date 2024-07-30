@@ -38,7 +38,8 @@ def index():
     rows = db.execute("SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id=? GROUP BY symbol", session["user_id"])
     price = [float(lookup(row['symbol'])['price']) for row in rows]
     rows_and_prices = zip(rows, price)
-    return render_template("index.html", rows_and_prices = rows_and_prices)
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
