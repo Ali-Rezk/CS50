@@ -179,6 +179,8 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         rows = db.execute("SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", )
+        print(rows)
         name = request.form.get("symbol")
         if not name:
             return apology("Missing name")
@@ -191,8 +193,12 @@ def sell():
                     return apology("Not enough shares")
                 else:
                     new_shares = int(row['shares']) - int(shares)
+                    result = lookup("name")
+                    price = result["price"]
+                    new_cash = price * shares +
+                    db.execute("UPDATE users SET cash = ? WHERE id =?",new_cash ,session["user_id"] )
                     db.execute("update stocks set shares = ? WHERE id = ? AND symbol = ? GROUP BY symbol",new_shares ,session["user_id"], name)
         return render_template("index.html")
     else:
-        rows = db.execute("SELECT * FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
+        rows = db.execute("SELECT symbol FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
         return render_template("sell.html", rows = rows)
