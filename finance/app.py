@@ -202,9 +202,10 @@ def sell():
                     result = lookup(name)
                     price = result["price"]
                     new_cash = int(price) * int(shares) + int(cash[0]['cash'])
+                    sold_shares = 0 - int(shares)
                     db.execute("UPDATE users SET cash = ? WHERE id =?",new_cash ,session["user_id"] )
                     db.execute("update stocks set shares = ? WHERE stocks_id = ? AND symbol = ? ",new_shares ,session["user_id"], name)
-                    db.execute("INSERT INTO history (history_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], name, shares)
+                    db.execute("INSERT INTO history (history_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], name, sold_shares)
         return redirect("/")
     else:
         rows = db.execute("SELECT symbol FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
