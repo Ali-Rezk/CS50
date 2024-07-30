@@ -179,7 +179,7 @@ def sell():
     """Sell shares of stock"""
     if request.method == "POST":
         rows = db.execute("SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", )
+        cash = db.execute("SELECT cash FROM users WHERE id = ?",session["user_id"] )
         print(rows)
         name = request.form.get("symbol")
         if not name:
