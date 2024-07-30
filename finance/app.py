@@ -36,7 +36,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     rows = db.execute("SELECT * FROM stocks WHERE stocks_id=? GROUP BY symbol", session["user_id"])
-    price = [int(lookup(row['symbol'])['price']) for row in rows]
+    price = [float(lookup(row['symbol'])['price']) for row in rows]
     print(price)
     return render_template("index.html", stocks = rows, prices = price)
 
