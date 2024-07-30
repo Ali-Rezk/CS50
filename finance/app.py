@@ -39,8 +39,10 @@ def index():
     price = [float(lookup(row['symbol'])['price']) for row in rows]
     rows_and_prices = zip(rows, price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+    total = 0
     for i,row in rows:
-        total = row[i]['shares']
+        total = total + row[i]['shares']
+        total = total * price
     return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash[0]['cash'])
 
 @app.route("/buy", methods=["GET", "POST"])
