@@ -211,3 +211,26 @@ def sell():
     else:
         rows = db.execute("SELECT symbol FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
         return render_template("sell.html", rows = rows)
+
+@app.route("/change_password", methods=["GET", "POST"])
+def register():
+    """Register user"""
+    if request.method == "POST":
+        current_password = request.form.get("current_password")
+        new_password = request.form.get("new_password")
+        confirmation = request.form.get("confirmation")
+        if not current_password:
+            return apology("must provide current password", 403)
+        elif not new_password:
+            return apology("must provide a new password", 403)
+        elif not confirmation:
+            return apology("must provide confirmation", 403)
+        elif confirmation != new_password:
+            return apology("password and confirmation does not match", 403)
+        elif current_password 
+        hash_password = generate_password_hash(new_password, method='pbkdf2', salt_length=16)
+        db.execute("UPDATE users SET hash = ?", hash_password)
+        return render_template("login.html")
+
+    else:
+        return render_template("register.html")
