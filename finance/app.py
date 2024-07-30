@@ -178,7 +178,7 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-        rows = db.execute("SELECT * FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
+        rows = db.execute("SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
         name = request.form.get("symbol")
         if not name:
             return apology("Missing name")
