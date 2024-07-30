@@ -227,10 +227,14 @@ def register():
             return apology("must provide confirmation", 403)
         elif confirmation != new_password:
             return apology("password and confirmation does not match", 403)
-        elif current_password 
+        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
+        if len(rows) != 1 or not check_password_hash(
+            rows[0]["hash"], request.form.get("password")
+        ):
+            return apology("invalid username and/or password", 403)
         hash_password = generate_password_hash(new_password, method='pbkdf2', salt_length=16)
         db.execute("UPDATE users SET hash = ?", hash_password)
         return render_template("login.html")
 
     else:
-        return render_template("register.html")
+        return render_template("change_password.html")
