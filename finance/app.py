@@ -198,7 +198,7 @@ def sell():
                     new_cash = int(price) * int(shares) + int(cash[0]['cash'])
                     db.execute("UPDATE users SET cash = ? WHERE id =?",new_cash ,session["user_id"] )
                     db.execute("update stocks set shares = ? WHERE stocks_id = ? AND symbol = ? ",new_shares ,session["user_id"], name)
-        return render_template("index.html")
+        return redirect("/")
     else:
         rows = db.execute("SELECT symbol FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
         return render_template("sell.html", rows = rows)
