@@ -14,7 +14,7 @@
             </thead>
             <tbody>
                 <!-- TODO: Loop through the database entries to display them in this table -->
-                 {{% set i = 0 %}}
+                {{% set i = 0 %}}
                 {% for row, price in rows_and_prices %}
                 <tr>
                     <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>${{ price }}</td><td>${{ row.shares * price|round(2) }}</td>
@@ -25,6 +25,10 @@
                     <td></td><td></td><td>Cash</td><td>${{cash|round(2)}}</td>
                 </tr>
                 <tr>
+                    {{% set i = 0 %}}
+                    {% for row, price in rows_and_prices %}
+                    {{% set i = i + (row.shares * price) %}}
+                    {% endfor %}
                     <td></td><td></td><td>TOTAL</td><td>${{i}}</td>
                 </tr>
             </tbody>
