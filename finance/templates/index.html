@@ -14,12 +14,10 @@
             </thead>
             <tbody>
                 <!-- TODO: Loop through the database entries to display them in this table -->
-                {% set i = 0 %}
-                {% for rows in stocks %}
+                {% for row, price in rows_and_prices %}
                 <tr>
-                    <td>{{ rows.symbol }}</td><td>{{ rows.shares }}</td><td>{{ prices[i] }}</td><td>total</td>
+                    <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>{{ price }}</td><td>total</td>
                 </tr>
-                {% set i = i + 1 %}
                 {% endfor %}
             </tbody>
         </table>

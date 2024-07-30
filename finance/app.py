@@ -37,8 +37,8 @@ def index():
     """Show portfolio of stocks"""
     rows = db.execute("SELECT * FROM stocks WHERE stocks_id=? GROUP BY symbol", session["user_id"])
     price = [float(lookup(row['symbol'])['price']) for row in rows]
-    print(price)
-    return render_template("index.html", stocks = rows, prices = price)
+    rows_and_prices = zip(rows, price)
+    return render_template("index.html", rows_and_prices = rows_and_prices)
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
