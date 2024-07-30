@@ -213,7 +213,7 @@ def sell():
         return render_template("sell.html", rows = rows)
 
 @app.route("/change_password", methods=["GET", "POST"])
-def register():
+def change_password():
     """Register user"""
     if request.method == "POST":
         current_password = request.form.get("current_password")
