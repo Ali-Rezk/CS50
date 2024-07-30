@@ -185,7 +185,7 @@ def sell():
         if not shares or int(shares) <= 0:
             return apology("invalid share")
         rows = db.execute("SELECT * FROM stocks WHERE id = ?", session["user_id"])
-        
+        print(rows)
         return render_template("sell.html", rows = rows)
     else:
         return render_template("sell.html")
