@@ -178,14 +178,14 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
+        rows = db.execute("SELECT * FROM stocks WHERE id = ?", session["user_id"])
+        print(rows)
         name = request.form.get("symbol")
         if not name:
             return apology("Missing name")
         shares = request.form.get("shares")
         if not shares or int(shares) <= 0:
             return apology("invalid share")
-        rows = db.execute("SELECT * FROM stocks WHERE id = ?", session["user_id"])
-        print(rows)
         return render_template("sell.html", rows = rows)
     else:
         return render_template("sell.html")
