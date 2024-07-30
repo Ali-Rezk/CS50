@@ -25,10 +25,6 @@
                     <td></td><td></td><td>Cash</td><td>${{cash|round(2)}}</td>
                 </tr>
                 <tr>
-                    {{% set i = 0 %}}
-                    {% for row, price in rows_and_prices %}
-                    {{% set i = i + (row.shares * price) %}}
-                    {% endfor %}
                     <td></td><td></td><td>TOTAL</td><td>${{i}}</td>
                 </tr>
             </tbody>
