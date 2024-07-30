@@ -17,9 +17,9 @@
                 {% set i = 0 %}
                 {% for rows in stocks %}
                 <tr>
-                    <td>{{ rows.symbol }}</td><td>{{ rows.shares }}</td><td>{{ prices[i] }} {% set i = i + 1 %}</td><td>total</td>
+                    <td>{{ rows.symbol }}</td><td>{{ rows.shares }}</td><td>{{ prices[i] }}</td><td>total</td>
                 </tr>
-
+                {% set i = i + 1 %}
                 {% endfor %}
             </tbody>
         </table>
