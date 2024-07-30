@@ -40,10 +40,11 @@ def index():
     rows_and_prices = zip(rows, price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     total = 0
-    for i,row in rows:
-        print(i)
+    i = 0
+    for row in rows:
         total = total + row[i]['shares']
         total = total * price[i]
+        i = i + 1
     total = total + cash[0]['cash']
     return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash[0]['cash'], total = total)
 
