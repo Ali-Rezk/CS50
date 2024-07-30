@@ -18,7 +18,7 @@
                 {% for rows in stocks %}
 
                 <tr>
-                    <td>{{ rows.symbol }}</td><td>{{ rows.shares }}</td><td>{{ prices[0] }}</td><td>total</td>
+                    <td>{{ rows.symbol }}</td><td>{{ rows.shares }}</td><td>${{ prices[0] }}</td><td>total</td>
                 </tr>
                 {% endfor %}
             </tbody>
