@@ -184,7 +184,7 @@ def sell():
         shares = request.form.get("shares")
         if not shares or int(shares) <= 0:
             return apology("invalid share")
-        return render_template("sell.html")
+        return render_template("index.html")
     else:
         rows = db.execute("SELECT * FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
         return render_template("sell.html", rows = rows)
