@@ -42,8 +42,8 @@ def index():
     total = 0
     i = 0
     for row in rows:
-        total = total + int(row[0]['shares'])
-        total = total * int(price[0])
+        total = total + int(row[i]['shares'])
+        total = total * int(price[i]])
         i = i + 1
     total = total + cash[0]['cash']
     return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash[0]['cash'], total = total)
