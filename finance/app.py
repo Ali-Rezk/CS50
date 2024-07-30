@@ -220,18 +220,17 @@ def register():
         new_password = request.form.get("new_password")
         confirmation = request.form.get("confirmation")
         if not current_password:
-            return apology("must provide current password", 403)
+            return apology("Must provide current password", 403)
         elif not new_password:
-            return apology("must provide a new password", 403)
+            return apology("Must provide a new password", 403)
         elif not confirmation:
-            return apology("must provide confirmation", 403)
+            return apology("Must provide confirmation", 403)
         elif confirmation != new_password:
-            return apology("password and confirmation does not match", 403)
-        rows = db.execute("SELECT * FROM users WHERE username = ?", request.form.get("username"))
-        if len(rows) != 1 or not check_password_hash(
-            rows[0]["hash"], request.form.get("password")
-        ):
-            return apology("invalid username and/or password", 403)
+            return apology("Password and confirmation does not match", 403)
+        rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+        if not check_password_hash(
+            rows[0]["hash"], request.form.get("current_password")):
+            return apology("Invalid password", 403)
         hash_password = generate_password_hash(new_password, method='pbkdf2', salt_length=16)
         db.execute("UPDATE users SET hash = ?", hash_password)
         return render_template("login.html")
