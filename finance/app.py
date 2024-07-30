@@ -184,8 +184,14 @@ def sell():
             return apology("Missing name")
         shares = request.form.get("shares")
         if not shares or int(shares) <= 0:
-            return apology("invalid share")
-        if rowshares
+            return apology("Invalid share")
+        for row in rows:
+            if row['symbol'] == name:
+                if int(row['shares']) < int(shares):
+                    return apology("Not enough shares")
+                else:
+                    new_shares = int(row['shares']) - int(shares)
+                    db.execute("update stocks set shares = ? WHERE id = ?",new_shares ,session["user_id"])
         return render_template("index.html")
     else:
         rows = db.execute("SELECT * FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
