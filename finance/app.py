@@ -191,7 +191,7 @@ def sell():
                     return apology("Not enough shares")
                 else:
                     new_shares = int(row['shares']) - int(shares)
-                    db.execute("update stocks set shares = ? WHERE id = ?",new_shares ,session["user_id"])
+                    db.execute("update stocks set shares = ? WHERE id = ? AND symbol = ? GROUP BY symbol",new_shares ,session["user_id"], name)
         return render_template("index.html")
     else:
         rows = db.execute("SELECT * FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
