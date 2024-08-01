@@ -55,13 +55,13 @@ def buy():
         user_id = session["user_id"]
         name = request.form.get("symbol")
         if not name:
-            return apology("Missing name")
+            return apology("Missing symbol")
         shares = request.form.get("shares")
         try:
             if not shares or int(shares) <= 0:
                 return apology("invalid share")
         except:
-            
+            return apology("invalid share")
         try:
             result = lookup(name)
             price = result["price"]
@@ -193,7 +193,7 @@ def sell():
         print(cash)
         name = request.form.get("symbol")
         if not name:
-            return apology("Missing name")
+            return apology("Missing symbol")
         shares = request.form.get("shares")
         if not shares or int(shares) <= 0:
             return apology("Invalid share")
