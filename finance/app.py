@@ -167,11 +167,11 @@ def register():
         reg_password = request.form.get("password")
         confirmation = request.form.get("confirmation")
         if not reg_username:
-            return apology("must provide username", 403)
+            return apology("must provide username", 400)
         elif not reg_password:
-            return apology("must provide password", 403)
+            return apology("must provide password", 400)
         elif not confirmation:
-            return apology("must provide confirmation", 403)
+            return apology("must provide confirmation", 400)
         elif confirmation != reg_password:
             return apology("password and confirmation does not match", 403)
         hash_password = generate_password_hash(reg_password, method='pbkdf2', salt_length=16)
