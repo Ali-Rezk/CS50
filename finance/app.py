@@ -163,7 +163,7 @@ def quote():
 def register():
     """Register user"""
     if request.method == "POST":
-        reg_username = request.form.get("reg_username")
+        reg_username = request.form.get("username")
         reg_password = request.form.get("reg_password")
         confirmation = request.form.get("confirmation")
         if not reg_username:
