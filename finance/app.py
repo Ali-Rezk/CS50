@@ -44,9 +44,9 @@ def index():
     for row in rows:
         total = total + int(row['shares']) * int(price[i])
         i = i + 1
+        if int(row['shares']) == 0:
+            db.execute("DELETE FROM stocks WHERE ")
     total = total + cash[0]['cash']
-    if int(cash[0]['cash']) == 0:
-        db.execute("DELETE FROM stocks WHERE ")
     return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash[0]['cash'], total = total)
 
 @app.route("/buy", methods=["GET", "POST"])
