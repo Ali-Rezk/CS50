@@ -195,7 +195,10 @@ def sell():
         if not name:
             return apology("Missing symbol")
         shares = request.form.get("shares")
-        if not shares or int(shares) <= 0:
+        try:
+            if not shares or int(shares) <= 0:
+                return apology("Invalid share")
+        except:
             return apology("Invalid share")
         for row in rows:
             if row['symbol'] == name:
