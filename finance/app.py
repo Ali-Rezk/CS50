@@ -36,7 +36,8 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     db.execute("DELETE FROM stocks WHERE shares = 0")
-    rows = db.execute("SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id=? GROUP BY symbol", session["user_id"])
+    rows = db.execute(
+        "SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id=? GROUP BY symbol", session["user_id"])
     price = [float(lookup(row['symbol'])['price']) for row in rows]
     rows_and_prices = zip(rows, price)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
@@ -46,7 +47,8 @@ def index():
         total = total + int(row['shares']) * int(price[i])
         i = i + 1
     total = total + cash[0]['cash']
-    return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash[0]['cash'], total = total)
+    return render_template("index.html", rows_and_prices=rows_and_prices, cash=cash[0]['cash'], total=total)
+
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
@@ -74,17 +76,22 @@ def buy():
         cash = int(cash) - (int(price) * int(shares))
         if int(cash) < 0:
             return apology("Sorry not enough cash")
-        old_shares = db.execute("SELECT shares FROM stocks WHERE stocks_id = ? AND symbol = ?", user_id, symbol)
+        old_shares = db.execute(
+            "SELECT shares FROM stocks WHERE stocks_id = ? AND symbol = ?", user_id, symbol)
         try:
             new_shares = int(shares) + int(old_shares[0]["shares"])
-            db.execute("UPDATE stocks SET shares = ? WHERE symbol = ? AND stocks_id = ?", new_shares, symbol, user_id)
+            db.execute("UPDATE stocks SET shares = ? WHERE symbol = ? AND stocks_id = ?",
+                       new_shares, symbol, user_id)
         except:
-            db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
-        db.execute("INSERT INTO history (history_id, symbol, shares) VALUES (?, ?, ?)", user_id, symbol, shares)
+            db.execute("INSERT INTO stocks (stocks_id, symbol, shares) VALUES (?, ?, ?)",
+                       user_id, symbol, shares)
+        db.execute("INSERT INTO history (history_id, symbol, shares) VALUES (?, ?, ?)",
+                   user_id, symbol, shares)
         db.execute("UPDATE users SET cash = ? WHERE id=?", cash, user_id)
         return redirect("/")
     else:
         return render_template("buy.html")
+
 
 @app.route("/history")
 @login_required
@@ -93,7 +100,9 @@ def history():
     rows = db.execute("SELECT * FROM history WHERE history_id=?", session["user_id"])
     price = [float(lookup(row['symbol'])['price']) for row in rows]
     rows_and_prices = zip(rows, price)
-    return render_template("history.html", rows_and_prices = rows_and_prices)
+    return render_template("history.html", rows_and_prices=rows_and_prices)
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -157,9 +166,11 @@ def quote():
         except:
             return apology("Invalid symbol")
         print(f"Symbol: {symbol}, Price: {price}")
-        return render_template("quoted.html", symbol = symbol, price = price)
+        return render_template("quoted.html", symbol=symbol, price=price)
     else:
         return render_template("/quote.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     """Register user"""
@@ -177,7 +188,8 @@ def register():
             return apology("password and confirmation does not match", 400)
         hash_password = generate_password_hash(reg_password, method='pbkdf2', salt_length=16)
         try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", reg_username, hash_password)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)",
+                       reg_username, hash_password)
         except ValueError:
             return apology("username is taken")
         return render_template("login.html")
@@ -185,13 +197,15 @@ def register():
     else:
         return render_template("register.html")
 
+
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-        rows = db.execute("SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
-        cash = db.execute("SELECT cash FROM users WHERE id = ?",session["user_id"] )
+        rows = db.execute(
+            "SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         print(cash)
         name = request.form.get("symbol")
         if not name:
@@ -212,13 +226,18 @@ def sell():
                     price = result["price"]
                     new_cash = int(price) * int(shares) + int(cash[0]['cash'])
                     sold_shares = 0 - int(shares)
-                    db.execute("UPDATE users SET cash = ? WHERE id =?",new_cash ,session["user_id"] )
-                    db.execute("update stocks set shares = ? WHERE stocks_id = ? AND symbol = ? ",new_shares ,session["user_id"], name)
-                    db.execute("INSERT INTO history (history_id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], name, sold_shares)
+                    db.execute("UPDATE users SET cash = ? WHERE id =?",
+                               new_cash, session["user_id"])
+                    db.execute("update stocks set shares = ? WHERE stocks_id = ? AND symbol = ? ",
+                               new_shares, session["user_id"], name)
+                    db.execute("INSERT INTO history (history_id, symbol, shares) VALUES (?, ?, ?)",
+                               session["user_id"], name, sold_shares)
         return redirect("/")
     else:
-        rows = db.execute("SELECT symbol FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
-        return render_template("sell.html", rows = rows)
+        rows = db.execute(
+            "SELECT symbol FROM stocks WHERE stocks_id = ? GROUP BY symbol", session["user_id"])
+        return render_template("sell.html", rows=rows)
+
 
 @app.route("/change_password", methods=["GET", "POST"])
 def change_password():
@@ -237,7 +256,7 @@ def change_password():
             return apology("Password and confirmation does not match", 403)
         rows = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
         if not check_password_hash(
-            rows[0]["hash"], request.form.get("current_password")):
+                rows[0]["hash"], request.form.get("current_password")):
             return apology("Invalid password", 403)
         hash_password = generate_password_hash(new_password, method='pbkdf2', salt_length=16)
         db.execute("UPDATE users SET hash = ?", hash_password)
