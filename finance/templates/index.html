@@ -16,7 +16,7 @@
                 <!-- TODO: Loop through the database entries to display them in this table -->
                 {% for row, price in rows_and_prices %}
                 <tr>
-                    <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>${{ "%.2f" | format(price) }}</td><td>${{ "%.2f" | format(row.shares * price) }}</td>
+                    <td>{{ row.symbol }}</td><td>{{ row.shares }}</td><td>${{ "%.2f" | format(price) }}</td><td>{{(row.shares * price) | usd }}</td>
                 </tr>
                 {% endfor %}
                 <tr>
