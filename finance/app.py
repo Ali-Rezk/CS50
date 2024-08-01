@@ -42,10 +42,11 @@ def index():
     total = 0
     i = 0
     for row in rows:
-        total = total + int(row['shares']) * int(price[i])
-        i = i + 1
         if int(row['shares']) == 0:
-            db.execute("DELETE FROM stocks WHERE ")
+            db.execute("DELETE FROM stocks WHERE shares = 0")
+        else:
+            total = total + int(row['shares']) * int(price[i])
+            i = i + 1
     total = total + cash[0]['cash']
     return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash[0]['cash'], total = total)
 
