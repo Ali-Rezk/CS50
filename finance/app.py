@@ -156,6 +156,7 @@ def quote():
             symbol = result["symbol"]
         except:
             return apology("Invalid symbol")
+        print(f"Symbol: {symbol}, Price: {price}")
         return render_template("quoted.html", symbol = symbol, price = price)
     else:
         return render_template("/quote.html")
