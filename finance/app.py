@@ -35,6 +35,7 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+    db.execute("DELETE FROM stocks WHERE shares = 0")
     rows = db.execute("SELECT symbol, SUM(shares) AS [shares] FROM stocks WHERE stocks_id=? GROUP BY symbol", session["user_id"])
     price = [float(lookup(row['symbol'])['price']) for row in rows]
     rows_and_prices = zip(rows, price)
@@ -42,11 +43,8 @@ def index():
     total = 0
     i = 0
     for row in rows:
-        if int(row['shares']) == 0:
-            db.execute("DELETE FROM stocks WHERE shares = 0")
-        else:
-            total = total + int(row['shares']) * int(price[i])
-            i = i + 1
+        total = total + int(row['shares']) * int(price[i])
+        i = i + 1
     total = total + cash[0]['cash']
     return render_template("index.html", rows_and_prices = rows_and_prices, cash = cash[0]['cash'], total = total)
 
