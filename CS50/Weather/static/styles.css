@@ -3,8 +3,8 @@ ul {
 }
 
 .nav-container {
-    marigin: 50px;
-    paddinf: 50px;
+    margin: 10px;
+
 }
 
 .nav {
@@ -12,7 +12,7 @@ ul {
 }
 
 .nav ul {
-
+    float: right;
 }
 
 .nav li {
@@ -20,5 +20,5 @@ ul {
 }
 
 .nav input {
-
+    
 }
