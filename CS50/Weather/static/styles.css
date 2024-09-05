@@ -2,8 +2,17 @@ ul {
     list-style-type: none;
 }
 
+.nav-container {
+    marigin: 50px;
+    paddinf: 10px;
+}
+
+.nav {
+
+}
+
 .nav ul {
-    float: right;
+
 }
 
 .nav li {
