@@ -4,7 +4,7 @@ ul {
 
 .nav-container {
     margin: 10px;
-
+    align-items: center;
 }
 
 .nav {
@@ -20,6 +20,5 @@ ul {
 }
 
 .search {
-    vertical-align: middle;
-    horizontal-align: middle;
+    align-items: center;
 }
