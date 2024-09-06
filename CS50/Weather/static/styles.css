@@ -8,6 +8,10 @@ ul {
 }
 
 .nav-container table tr td{
+    display: flex;
+}
+
+.nav-container table tr td{
     width: 1000px;
 }
 
