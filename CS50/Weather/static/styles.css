@@ -74,3 +74,10 @@ ul {
     align-items: center;
     justify-content: center;
 }
+
+.caret-off::before {
+    display: none;
+}
+.caret-off::after {
+    display: none;
+}
