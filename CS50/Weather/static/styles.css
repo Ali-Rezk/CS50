@@ -7,12 +7,11 @@ ul {
     align-items: center;
 }
 
-.nav-container table tr td{
-    display: flex;
-}
 
 .nav-container table tr td{
-    width: 1000px;
+    border: 1px solid black;
+    text-align: center;
+    width: 33.33%;
 }
 
 .logo{
@@ -27,6 +26,8 @@ ul {
 }
 
 .nav ul {
+    text-align: center;
+    vertical-align: middle;
 }
 
 .nav li {
