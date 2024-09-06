@@ -62,6 +62,8 @@ ul {
 .second-sec tr td button{
     background-color: transparent;
     color: white;
+    border: 0px;
+
 }
 
 .second-sec tr td {
