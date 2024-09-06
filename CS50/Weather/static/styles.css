@@ -57,6 +57,7 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 62px;
 }
 
 .second-sec tr td button{
@@ -69,7 +70,6 @@ ul {
     display: inline;
     padding: 0px 100px;
     font-size: 20px;
-    margin-bottom: 62px;
 }
 
 .input-group {
