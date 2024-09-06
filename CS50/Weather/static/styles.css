@@ -51,6 +51,7 @@ ul {
 
 .second-sec {
     margin: 15px 0px;
+    background-color: 
 }
 
 .second-sec ul {
@@ -62,6 +63,7 @@ ul {
 .second-sec ul li {
     display: inline;
     padding: 0px 100px;
+    font-size: 20px;
 }
 
 .input-group {
