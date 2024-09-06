@@ -11,25 +11,28 @@ ul {
 .nav-container table tr td{
     border: 1px solid black;
     text-align: center;
-    width: 1%;
+    width: 30%;
     vertical-align: middle;
 }
 
 .logo{
-    width: 10%;
-    vertical-align: left;
+    padding-left: 10px;
+    width: 13%;
+    float: left;
 }
 
 .nav-container ul li {
     display: inline;
+
 }
 
 .nav {
+    padding-right: 10px;
+    padding-top: 10px;
+    float: right;
 }
 
 .nav ul {
-    text-align: center;
-    vertical-align: middle;
 }
 
 .nav li {
