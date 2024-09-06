@@ -56,12 +56,11 @@ ul {
     align-items: center;
 }
 
-.second-sec ul {
-
+.second-sec tr {
 
 }
 
-.second-sec ul li {
+.second-sec tr td {
     display: inline;
     padding: 0px 100px;
     font-size: 20px;
