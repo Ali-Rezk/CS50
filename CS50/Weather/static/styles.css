@@ -11,11 +11,13 @@ ul {
 .nav-container table tr td{
     border: 1px solid black;
     text-align: center;
-    width: 33.33%;
+    width: 1%;
+    vertical-align: middle;
 }
 
 .logo{
     width: 10%;
+    vertical-align: left;
 }
 
 .nav-container ul li {
@@ -32,6 +34,8 @@ ul {
 
 .nav li {
     display: inline;
+    text-align: center;
+    vertical-align: middle;
 }
 
 ul li {
