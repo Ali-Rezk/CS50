@@ -86,7 +86,8 @@ ul {
 
 .weather-news {
     margin-top: 62px;
-
+    backgorund-color: white;
+    width: 50%;
 }
 
 .weather-news div p {
