@@ -51,12 +51,14 @@ ul {
 .second-sec {
     padding: 5px 0px;
     background-color: #05336b;
-}
-
-.second-sec ul {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.second-sec ul {
+
+
 }
 
 .second-sec ul li {
