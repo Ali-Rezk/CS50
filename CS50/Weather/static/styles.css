@@ -7,6 +7,10 @@ ul {
     align-items: center;
 }
 
+.nav-container ul li {
+    display: inline;
+}
+
 .nav {
 }
 
