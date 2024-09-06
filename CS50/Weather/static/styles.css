@@ -2,9 +2,13 @@ ul {
     list-style-type: none;
 }
 
-.nav-container {
+.global-container {
     margin: 10px;
+}
+
+.nav-container {
     align-items: center;
+    background-color: ##039;
 }
 
 
@@ -16,8 +20,8 @@ ul {
 }
 
 .logo{
-    padding-left: 10px;
-    width: 13%;
+    margin-left: 30px;
+    width: 10%;
     float: left;
 }
 
@@ -27,7 +31,7 @@ ul {
 }
 
 .nav {
-    padding-right: 10px;
+    padding-right: 30px;
     padding-top: 10px;
     float: right;
 }
