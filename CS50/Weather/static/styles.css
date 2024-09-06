@@ -4,8 +4,10 @@ ul {
 
 .global-container {
     margin: 10px;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(180deg, #039, #1b4de4);
     background-size: cover;
-    background: linear-gradient(180deg,#039, #1b4de4);
 
 }
 
