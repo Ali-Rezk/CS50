@@ -33,7 +33,19 @@ ul {
 
 }
 
-.nav {
+.input-group {
+    align-items: center;
+    justify-content: center;
+}
+
+.caret-off::before {
+    display: none;
+}
+.caret-off::after {
+    display: none;
+}
+
+.btn-group {
     padding-right: 30px;
     padding-top: 10px;
     float: right;
@@ -72,16 +84,9 @@ ul {
     font-size: 20px;
 }
 
-.input-group {
-    align-items: center;
-    justify-content: center;
-}
-
-.caret-off::before {
-    display: none;
-}
-.caret-off::after {
-    display: none;
+.space {
+    margin-top: 62px;
+    padding-bottom: 10px;
 }
 
 .weather-news {
@@ -100,7 +105,3 @@ ul {
     padding-left: 5px;
 }
 
-.space {
-    margin-top: 62px;
-    margin-bottom: 10px;
-}
