@@ -85,12 +85,18 @@ ul {
 }
 
 .weather-news {
-    margin-top: 62px;
     backgorund-color: white;
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 }
 
 .weather-news div p {
-    margin-top: 62px;
     font-size: 24px;
+    color: white;
+}
+
+.space {
+    margin-top: 62px;
 }
