@@ -49,14 +49,22 @@ ul {
     vertical-align: middle;
 }
 
+.second-sec {
+    margin: 15px 0px;
+}
+
 .second-sec ul {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 .second-sec ul li {
     display: inline;
+    padding: 0px 100px;
 }
 
-.form-outline input {
+.input-group {
     align-items: center;
+    justify-content: center;
 }
