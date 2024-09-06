@@ -6,7 +6,7 @@ ul {
     margin: 10px;
     width: 98.5%;
     height: 100vh;
-    background: linear-gradient(#002a7e, #1b4de4);
+    background: linear-gradient(#022d50, #13588b);
     background-size: cover;
 
 }
@@ -49,8 +49,8 @@ ul {
 }
 
 .second-sec {
-    padding: 5px 0px;
-    background-color: #05336b;
+    padding: 15px 0px;
+    background-color: #011b30;
     display: flex;
     justify-content: center;
     align-items: center;
