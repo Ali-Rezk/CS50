@@ -17,7 +17,6 @@ ul {
 
 
 .nav-container table tr td{
-    border: 1px solid black;
     text-align: center;
     width: 30%;
     vertical-align: middle;
@@ -50,7 +49,7 @@ ul {
 }
 
 .second-sec {
-    padding: 15px 0px;
+    padding: 5px 0px;
     background-color: #05336b;
 }
 
