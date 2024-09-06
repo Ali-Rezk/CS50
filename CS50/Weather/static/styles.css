@@ -49,6 +49,10 @@ ul {
     vertical-align: middle;
 }
 
+.second-sec ul {
+    align-items: center;
+}
+
 .second-sec ul li {
     display: inline;
 }
