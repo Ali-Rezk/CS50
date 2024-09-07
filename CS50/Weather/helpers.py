@@ -9,8 +9,6 @@ from flask import redirect, render_template, request, session
 from functools import wraps
 
 
-BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
-
 def apology(message, code=400):
     """Render message as an apology to user."""
 
@@ -35,7 +33,6 @@ def apology(message, code=400):
 
     return render_template("apology.html", top=code, bottom=escape(message)), code
 
-
 def login_required(f):
     """
     Decorate routes to require login.
@@ -52,39 +49,20 @@ def login_required(f):
     return decorated_function
 
 
-def lookup(symbol):
-    """Look up quote for symbol."""
 
-    # Prepare API request
-    symbol = symbol.upper()
-    end = datetime.datetime.now(pytz.timezone("US/Eastern"))
-    start = end - datetime.timedelta(days=7)
+api_key = '893cbbac726aa5674136bdefde03d5b5'
 
-    # Yahoo Finance API
-    url = (
-        f"https://query1.finance.yahoo.com/v7/finance/download/{urllib.parse.quote_plus(symbol)}"
-        f"?period1={int(start.timestamp())}"
-        f"&period2={int(end.timestamp())}"
-        f"&interval=1d&events=history&includeAdjustedClose=true"
-    )
+user_input = input("Enter city: ")
 
-    # Query API
-    try:
-        response = requests.get(
-            url,
-            cookies={"session": str(uuid.uuid4())},
-            headers={"Accept": "*/*", "User-Agent": request.headers.get("User-Agent")},
-        )
-        response.raise_for_status()
+weather_data = requests.get(
+    f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=imperial&APPID={api_key}")
 
-        # CSV header: Date,Open,High,Low,Close,Adj Close,Volume
-        quotes = list(csv.DictReader(response.content.decode("utf-8").splitlines()))
-        price = round(float(quotes[-1]["Adj Close"]), 2)
-        return {"price": price, "symbol": symbol}
-    except (KeyError, IndexError, requests.RequestException, ValueError):
-        return None
+if weather_data.json()['cod'] == '404':
+    print("No City Found")
+else:
+    weather = weather_data.json()['weather'][0]['main']
+    temp = round(weather_data.json()['main']['temp'])
 
-
-def usd(value):
-    """Format value as USD."""
-    return f"${value:,.2f}"
+    print(f"The weather in {user_input} is: {weather}")
+    print(f"The temperature in {user_input} is: {temp}ºF")
+    print(weather_data.json())
