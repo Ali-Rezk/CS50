@@ -58,6 +58,7 @@ def lookup(country, unit):
 
     if weather_data.json()['cod'] == '404':
         not_found = "No City Found"
+        return not_found
     else:
         weather = weather_data.json()['weather'][0]['main']
         temp = round(weather_data.json()['main']['temp'])
