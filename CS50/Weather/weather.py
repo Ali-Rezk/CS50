@@ -13,7 +13,7 @@ if weather_data.json()['cod'] == '404':
 else:
     weather = weather_data.json()['weather'][0]['main']
     temp = round(weather_data.json()['main']['temp'])
-    sunrise = dt.datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
+    sunrise = dt.datetime.utcfromtimestamp(weather_data['sys']['sunrise'] + weather_data['timezone'])
 
     print(f"The weather in {user_input} is: {weather}")
     print(f"The temperature in {user_input} is: {temp}ºF")
