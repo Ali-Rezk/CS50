@@ -50,7 +50,7 @@ def login_required(f):
 
 
 def lookup(country, unit):
-    
+
     """open weather api"""
     api_key = '893cbbac726aa5674136bdefde03d5b5'
 
@@ -63,12 +63,12 @@ def lookup(country, unit):
         temp = weather_data.json()['main']['temp']
         max_temp = weather_data.json()['main']['temp_min']
         min_temp = weather_data.json()['main']['temp_max']
-        feels_like = = round(weather_data.json()['main']['feels_like'])
-        humidity = = round(weather_data.json()['main']['humidity'])
-        wind_speed = = round(weather_data.json()['wind']['speed'])
+        feels_like = round(weather_data.json()['main']['feels_like'])
+        humidity = round(weather_data.json()['main']['humidity'])
+        wind_speed = round(weather_data.json()['wind']['speed'])
         sunrise = dt.datetime.utcfromtimestamp(weather_data.json()['sys']['sunrise'] + weather_data.json()['timezone'])
         sunset = dt.datetime.utcfromtimestamp(weather_data.json()['sys']['sunset'] + weather_data.json()['timezone'])
-        name = = round(weather_data.json()['name'])
+        name = round(weather_data.json()['name'])
 
         return weather, temp, max_temp, min_temp, feels_like, humidity, humidity, wind_speed, sunrise, sunset, name
 
