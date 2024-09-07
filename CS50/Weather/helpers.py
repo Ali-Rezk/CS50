@@ -9,6 +9,8 @@ from flask import redirect, render_template, request, session
 from functools import wraps
 
 
+BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
+
 def apology(message, code=400):
     """Render message as an apology to user."""
 
