@@ -61,6 +61,13 @@ def lookup(user_input):
     else:
         weather = weather_data.json()['weather'][0]['main']
         temp = round(weather_data.json()['main']['temp'])
+        max_temp = round(weather_data.json()['main']['temp_min'])
+        min_temp = round(weather_data.json()['main']['temp_max'])
+        feels_like = = round(weather_data.json()['main']['feels_like'])
+        humidity = = round(weather_data.json()['main']['humidity'])
+        wind_speed = = round(weather_data.json()['wind']['speed'])
+        humidity = = round(weather_data.json()['main']['humidity'])
+        humidity = = round(weather_data.json()['main']['humidity'])
 
         return weather, temp
         print(f"The weather in {user_input} is: {weather}")
