@@ -49,12 +49,12 @@ def login_required(f):
     return decorated_function
 
 
-def lookup(user_input):
+def lookup(country, unit):
     """open weather api"""
     api_key = '893cbbac726aa5674136bdefde03d5b5'
 
     weather_data = requests.get(
-        f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=imperial&APPID={api_key}")
+        f"https://api.openweathermap.org/data/2.5/weather?q={country}&units={unit}&APPID={api_key}")
 
     if weather_data.json()['cod'] == '404':
         not_found = "No City Found"
