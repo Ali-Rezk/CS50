@@ -67,6 +67,7 @@ def lookup(country, unit):
         feels_like = = round(weather_data.json()['main']['feels_like'])
         humidity = = round(weather_data.json()['main']['humidity'])
         wind_speed = = round(weather_data.json()['wind']['speed'])
+        
         humidity = = round(weather_data.json()['main']['humidity'])
         humidity = = round(weather_data.json()['main']['humidity'])
 
