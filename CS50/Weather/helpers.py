@@ -67,7 +67,7 @@ def lookup(country, unit):
         feels_like = = round(weather_data.json()['main']['feels_like'])
         humidity = = round(weather_data.json()['main']['humidity'])
         wind_speed = = round(weather_data.json()['wind']['speed'])
-        sunrise = dt.datetime.utcfromtimestamp(weather_data.json()['sys']['sunrise'])
+        sunrise = dt.datetime.utcfromtimestamp(weather_data.json()['sys']['sunrise'] + ['timezone'])
         humidity = = round(weather_data.json()['main']['humidity'])
         humidity = = round(weather_data.json()['main']['humidity'])
 
