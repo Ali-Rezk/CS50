@@ -52,7 +52,7 @@ def login_required(f):
 def lookup(country, unit):
     """open weather api"""
     api_key = '893cbbac726aa5674136bdefde03d5b5'
-
+    """units = imperial (F) or metric (C)"""
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={country}&units={unit}&APPID={api_key}")
 
