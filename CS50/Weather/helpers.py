@@ -1,5 +1,5 @@
 import csv
-import datetime
+import datetime as dt
 import pytz
 import requests
 import urllib
