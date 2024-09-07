@@ -56,10 +56,7 @@ def lookup(country, unit):
     weather_data = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={country}&units={unit}&APPID={api_key}")
 
-    if weather_data.json()['cod'] == '404':
-        not_found = "No City Found"
-        return not_found
-    else:
+    try:
         weather = weather_data.json()['weather'][0]['main']
         temp = weather_data.json()['main']['temp']
         max_temp = weather_data.json()['main']['temp_min']
@@ -72,3 +69,8 @@ def lookup(country, unit):
         name = = round(weather_data.json()['name'])
 
         return weather, temp, max_temp, min_temp, feels_like, humidity, humidity, wind_speed, sunrise, sunset, name
+
+    except:
+        not_found = "No City Found"
+        return not_found
+
