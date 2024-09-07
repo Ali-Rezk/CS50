@@ -61,9 +61,9 @@ def lookup(country, unit):
         return not_found
     else:
         weather = weather_data.json()['weather'][0]['main']
-        temp = round(weather_data.json()['main']['temp'])
-        max_temp = round(weather_data.json()['main']['temp_min'])
-        min_temp = round(weather_data.json()['main']['temp_max'])
+        temp = weather_data.json()['main']['temp']
+        max_temp = weather_data.json()['main']['temp_min']
+        min_temp = weather_data.json()['main']['temp_max']
         feels_like = = round(weather_data.json()['main']['feels_like'])
         humidity = = round(weather_data.json()['main']['humidity'])
         wind_speed = = round(weather_data.json()['wind']['speed'])
