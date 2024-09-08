@@ -24,4 +24,8 @@ def after_request(response):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("today.html")
+
+@app.route("/hourly")
+def hourly():
+    return render_template("hourly.html")

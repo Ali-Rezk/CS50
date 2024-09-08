@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div action="/" method="GET">
+        <div class="location">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown" aria-expanded="false">
+                button
+                </button>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
+        </div>
+        <div class="today-weather">
+            <ul>
+                <li>current weather</li>
+                <li>time</li>
+                <li class="temp">24°</li>
+                <li>condition</li>
+            </ul>
+            <table>
+                <tr>
+                    <td>wind speed/dir</td><td>feels like</td><td>humidity</td><td>vis</td>
+                </tr>
+                <tr>
+                    <td>wind speed/dir</td><td>feels like</td><td>humidity</td><td>vis</td>
+                </tr>
+            </table>
+        </div>
+        <div class="weather-news">
+            <div>
+                <p>max/min temp</p>
+                <p>rain chance</p>
+                <p>snow chance</p>
+                <p>snow_cm</p>
+                <p>sunrise</p>
+                <p>sunset</p>
+            </div>
+        </div>
+        <div class="astro-news">
+            <div>
+                <table>
+                    <tr><td>moon_phase</td><td>date</td><td>moon status</td></tr>
+                    <tr><td class="moon_phase">moon phase</td><td>time</td><td class="moon_illumination">moon_illumination</td></tr>
+                    <tr><td>moonrise</td><td>img</td></tr>
+                    <tr><td>moonset</td></tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -49,28 +49,35 @@ def login_required(f):
     return decorated_function
 
 
-def lookup(country, unit):
+def lookup(country, days, hour):
 
-    """open weather api"""
-    api_key = '893cbbac726aa5674136bdefde03d5b5'
+    api_key = '5aba5ac55b984050bfa230233240709'
 
-    """units = imperial (F) or metric (C)"""
-    weather_data = requests.get(
-        f"https://api.openweathermap.org/data/2.5/weather?q={country}&units={unit}&APPID={api_key}")
+    currentWeather_data = requests.get(
+        f"https://api.weatherapi.com/v1/current.json?key={api_key}&q={country}&aqi=no"
+    )
+
+    daily_data = requests.get(
+        f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q={country}&days={days}&aqi=yes&alerts=no"
+    )
+
+    hourly_data = requests.get(
+        f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q={country}&days={days}&aqi=yes&alerts=no&hour={hour}"
+    )
 
     try:
-        weather = weather_data.json()['weather'][0]['main']
-        temp = weather_data.json()['main']['temp']
-        max_temp = weather_data.json()['main']['temp_min']
-        min_temp = weather_data.json()['main']['temp_max']
-        feels_like = round(weather_data.json()['main']['feels_like'])
-        humidity = round(weather_data.json()['main']['humidity'])
-        wind_speed = round(weather_data.json()['wind']['speed'])
-        sunrise = dt.datetime.utcfromtimestamp(weather_data.json()['sys']['sunrise'] + weather_data.json()['timezone'])
-        sunset = dt.datetime.utcfromtimestamp(weather_data.json()['sys']['sunset'] + weather_data.json()['timezone'])
-        name = round(weather_data.json()['name'])
+        # date, max/avg/min temp, avg wind speed, avg humidity, rain chance, snow chance, condition
+        daily = daily_data.json()['forecast']['forecastday']
+        # time, temp, is_day?, condition, wind speed/dir, humidity, feelslike, vis, uv?, gust?, snow_cm?
+        hourly = hourly_data.json()['forecast']['forecastday'][0]['hour']
+        # sunrise, sunset, moon_phase, moon_illumination, moonset, moonrise
+        astro = hourly_data.json()['forecast']['forecastday'][0]['astro']
+        # name, region, country, localtime
+        location = currentWeather_data.json()['location']
+        # temp, is_day?, condition, wind speed/dir, humidity, feelslike, vis, uv?, gust?, snow_cm?
+        current = currentWeather_data.json()['current']
 
-        return weather, temp, max_temp, min_temp, feels_like, humidity, humidity, wind_speed, sunrise, sunset, name
+        return daily, hourly, astro, current, location
 
     except:
         not_found = "No City Found"

@@ -2,11 +2,17 @@ ul {
     list-style-type: none;
 }
 
+.btn-l {
+    padding: 0px 50px;
+}
+
 .global-container {
     margin: 10px;
     width: 98.5%;
     height: 100vh;
     background: linear-gradient(#022d50, #13588b);
+    /* background: linear-gradient(#313050, #615878); */
+
     background-size: cover;
 
 }
@@ -30,7 +36,6 @@ ul {
 
 .nav-container ul li {
     display: inline;
-
 }
 
 .input-group {
@@ -49,9 +54,6 @@ ul {
     margin-top: 10px;
     margin-bottom: 10px;
     float: right;
-}
-
-.nav ul {
 }
 
 .nav li {
@@ -89,15 +91,51 @@ ul {
     padding-bottom: 10px;
 }
 
+.location {
+    display: inline-flex;
+    width: 60%;
+}
+
+.today-weather {
+    width: 60%;
+    height: auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0px;
+    border-radius: 10px;
+    background-color: white;
+    background-image: url(/static/icons/night.jpg);
+    background-size: cover;
+    color: white;
+}
+
+.today-weather ul li {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.today-weather .temp {
+    font-size: 64px;
+}
+
+.today-weather table tr td{
+    font-size: 16px;
+    text-align: center;
+    width: 10%;
+    vertical-align: middle;
+}
+
 .weather-news {
-    width: 50%;
+    width: 60%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     padding: 5px;
-    justify-content: center;
     border-radius: 10px;
     background-color: white;
+    text-align: left;
 }
 
 .weather-news div p {
@@ -105,3 +143,28 @@ ul {
     padding-left: 5px;
 }
 
+.astro-news {
+    width: 80%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.astro-news div table tr td {
+    font-size: 18px;
+    text-align: center;
+    width: 20%;
+    vertical-align: middle;
+    color: white;
+}
+
+.astro-news .moon_phase {
+    font-size: 40px;
+}
+
+.astro-news .moon_illumination {
+    font-size: 40px;
+}
