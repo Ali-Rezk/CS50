@@ -20,17 +20,17 @@
         </div>
         <div class="today-weather">
             <ul>
-                <li>current weather</li>
-                <li>time</li>
-                <li class="temp">24°</li>
-                <li>condition</li>
+                <li>Current weather</li>
+                <li>{{ date_time[1] }}</li>
+                <li class="temp">{{ current[0] }}°</li>
+                <li>{{ current[1] }}</li>
             </ul>
             <table>
                 <tr>
-                    <td>wind speed/dir</td><td>feels like</td><td>humidity</td><td>vis</td>
+                    <td>Feels like</td><td>Wind ({{ current[4] }})</td><td>Pressure</td><td>Humidity</td><td>Visibility</td>
                 </tr>
                 <tr>
-                    <td>wind speed/dir</td><td>feels like</td><td>humidity</td><td>vis</td>
+                    <td>{{ current[2] }}°</td><td>{{ current[3] }} Km/h</td><td>{{ current[5] }} mb</td><td>{{ current[6] }}%</td><td>{{ current[7] }} Km</td>
                 </tr>
             </table>
         </div>
@@ -40,17 +40,16 @@
                 <p>rain chance</p>
                 <p>snow chance</p>
                 <p>snow_cm</p>
-                <p>sunrise</p>
+                <p>{{ sunrise }}</p>
                 <p>sunset</p>
             </div>
         </div>
         <div class="astro-news">
             <div>
                 <table>
-                    <tr><td>moon_phase</td><td>date</td><td>moon status</td></tr>
-                    <tr><td class="moon_phase">moon phase</td><td>time</td><td class="moon_illumination">moon_illumination</td></tr>
-                    <tr><td>moonrise</td><td>img</td></tr>
-                    <tr><td>moonset</td></tr>
+                    <tr><td>Moon phase</td><td>{{ date_time[0] }}</td><td>Moon status</td></tr>
+                    <tr><td class="moon_phase">{{ astra[4] }}</td><td>{{ date_time[1] }}</td><td class="moon_illumination">{{ astra[5] }}%</td></tr>
+                    <tr><td><p>Moonrise: {{ astra[2] }}</p></td><td><img src="static/icons/moon-phase-5.png"></td><td><p>Moonset: {{ astra[3] }}</p></td></tr>
                 </table>
             </div>
         </div>
