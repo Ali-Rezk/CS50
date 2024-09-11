@@ -1,5 +1,6 @@
 ul {
     list-style-type: none;
+    padding-left: 0;
 }
 
 .btn-l {
@@ -9,12 +10,9 @@ ul {
 .global-container {
     margin: 10px;
     width: 98.5%;
-    height: 100vh;
     background: linear-gradient(#022d50, #13588b);
     /* background: linear-gradient(#313050, #615878); */
-
     background-size: cover;
-
 }
 
 .nav-container {
@@ -74,7 +72,7 @@ ul {
     margin-bottom: 62px;
 }
 
-.second-sec tr td button{
+.second-sec tr td a{
     background-color: transparent;
     color: white;
     border: 0px;
@@ -113,7 +111,7 @@ ul {
 .today-weather ul li {
     font-size: 24px;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 25px;
 }
 
 .today-weather .temp {
@@ -142,9 +140,40 @@ ul {
     text-align: left;
 }
 
-.weather-news div p {
+
+.weather-news ul li {
     font-size: 24px;
-    padding-left: 5px;
+    padding-left: 25px;
+}
+
+.weather-news .feels_like {
+    font-size: 64px;
+}
+
+.weather-news .news-img {
+    width: 40%;
+    float: right;
+}
+
+.weather-news table{
+    width: 100%;
+}
+
+.weather-news .stats {
+    padding-right: 25px;
+}
+
+.weather-news table tr td{
+    padding: 5px;
+    text-align: left;
+    font-size: large;
+}
+
+.weather-news table tr .value{
+    padding: 5px;
+    padding-right: 5px;
+    text-align: right;
+    font-size: large;
 }
 
 .astro-news {
@@ -157,18 +186,59 @@ ul {
     background-color: black;
 }
 
+.astro-news div table {
+    width: 100%;
+}
+
 .astro-news div table tr td {
     font-size: 18px;
     text-align: center;
-    width: 20%;
-    vertical-align: middle;
+    vertical-align: top;
+    text-align: center;
     color: white;
+    width: 30%;
 }
 
 .astro-news .moon_phase {
     font-size: 40px;
+    color: #cfb11a;
+    padding-bottom: 10px;
 }
 
 .astro-news .moon_illumination {
     font-size: 40px;
+    color: #cfb11a;
+    padding-bottom: 10px;
+}
+
+.astro-news .moon_image {
+    width: 50%;
+}
+
+
+/* Hourly */
+
+.accordion-button table tr td ul li {
+    display: inline;
+    font-size: 16px;
+    padding: 0px 5px;
+}
+
+.accordion-button .hourly-temp {
+    font-size: 24px;
+}
+
+.accordion-button .hourly-wind {
+    text-align: right;
+}
+
+.accordion-body .hourly-body {
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.accordion-body .hourly-body tr td {
+    text-align: center;
+    width: 30%;
 }

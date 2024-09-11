@@ -27,29 +27,47 @@
             </ul>
             <table>
                 <tr>
-                    <td>Feels like</td><td>Wind ({{ current[4] }})</td><td>Pressure</td><td>Humidity</td><td>Visibility</td>
+                    <td>Dewpoint</td><td>Wind ({{ current[4] }})</td><td>Pressure</td><td>Humidity</td><td>Visibility</td>
                 </tr>
                 <tr>
-                    <td>{{ current[2] }}°</td><td>{{ current[3] }} Km/h</td><td>{{ current[5] }} mb</td><td>{{ current[6] }}%</td><td>{{ current[7] }} Km</td>
+                    <td>{{ current[9] }}</td><td>{{ current[3] }} Km/h</td><td>{{ current[5] }} mb</td><td>{{ current[6] }}%</td><td>{{ current[7] }} Km</td>
                 </tr>
             </table>
         </div>
         <div class="weather-news">
-            <div>
-                <p>max/min temp</p>
-                <p>rain chance</p>
-                <p>snow chance</p>
-                <p>snow_cm</p>
-                <p>{{ sunrise }}</p>
-                <p>sunset</p>
-            </div>
+                <ul>
+                    <li>Feels like</li>
+                        <li><table>
+                            <tr><td  class="feels_like">{{ current[2] }}°</td><td><img src="{{ current[10] }}" class="news-img"></td></tr>
+                        </table></li>
+                    <li class="stats">
+                        <table>
+                            <tr><td>Max/Min</td><td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td><td>Rain chance</td><td class="value">{{ daily[3] }}</td></tr>
+                            <tr><td>Sunrise:</td><td class="value">{{ astra[0] }}</td><td>Snow chance</td><td class="value">{{ daily[4] }}</td></tr>
+                            <tr><td>Sunset:</td><td class="value">{{ astra[1] }}</td><td>UV</td><td class="value">{{ current[8] }}</td></tr>
+                        </table>
+                    </li>
+                </ul>
         </div>
         <div class="astro-news">
             <div>
                 <table>
-                    <tr><td>Moon phase</td><td>{{ date_time[0] }}</td><td>Moon status</td></tr>
-                    <tr><td class="moon_phase">{{ astra[4] }}</td><td>{{ date_time[1] }}</td><td class="moon_illumination">{{ astra[5] }}%</td></tr>
-                    <tr><td><p>Moonrise: {{ astra[2] }}</p></td><td><img src="static/icons/moon-phase-5.png"></td><td><p>Moonset: {{ astra[3] }}</p></td></tr>
+                    <tr>
+                        <td>Moon phase</td>
+                        <td>{{ date_time[0] }}</td>
+                        <td>Moon illumination</td>
+                    </tr>
+                    <tr>
+                        <td><ul>
+                            <li class="moon_phase">{{ astra[4] }}</li>
+                            <li>Moonrise: {{ astra[2] }}</li>
+                        </ul></td>
+                        <td><img src="static/icons/First Quarter.png" class="moon_image"></td>
+                        <td><ul>
+                            <li class="moon_illumination">{{ astra[5] }}%</li>
+                            <li>Moonset: {{ astra[3] }}</li>
+                        </ul></td>
+                    </tr>
                 </table>
             </div>
         </div>

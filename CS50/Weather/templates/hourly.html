@@ -1,13 +1,80 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Home
+    Hourly
 {% endblock %}
 
 {% block main %}
-    <div action="/hourly" method="GET" class="weather-news">
-        <div>
-            <p>hello</p>
+    <div action="/" method="GET">
+        <div class="location">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown" aria-expanded="false">
+                button
+                </button>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">saved location</a></li>
+                <li><a class="dropdown-item" href="#">saved location</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
+        </div>
+        <div class="weather-news">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                      <table>
+                        <tr>
+                          <td>{{ date_time[1] }}</td>
+                          <td class="hourly-temp"><b>{{ current[0] }}°</b></td>
+                          <td><img src="{{ current[10] }}">{{ current[1] }}</td>
+                          <td class="hourly-wind"><i class="fa-solid fa-droplet"></i> {{ daily[3] }}</td>
+                          <td class="hourly-wind"><i class="fa-solid fa-wind"></i> {{ current[4] }}  {{ current[3] }} Km/h</td>
+                        </tr>
+                      </table>
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <div class="hourly-body">
+                        <table>
+                          <tr><td>feels_like</td><td>humidity</td><td>pressure</td></tr>
+                          <tr><td>feels_like</td><td>humidity</td><td>pressure</td></tr>
+                        </table>
+                          <hr>
+                        <table>
+                          <tr><td>uv</td><td>vis</td><td>cloud</td></tr>
+                          <tr><td>uv</td><td>vis</td><td>cloud</td></tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                      Accordion Item #2
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      Accordion Item #3
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                    </div>
+                  </div>
+                </div>
+              </div>
         </div>
     </div>
 {% endblock %}
