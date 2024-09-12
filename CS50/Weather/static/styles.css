@@ -130,7 +130,7 @@ ul {
 }
 
 .weather-news {
-    width: 60%;
+    width: 70%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -218,18 +218,43 @@ ul {
 
 /* Hourly */
 
-.accordion-button table tr td ul li {
-    display: inline;
-    font-size: 16px;
-    padding: 0px 5px;
+.weather-news .info {
+    padding: 15px 20px;
+    font-size: 20px;
+}
+
+.weather-news .info p b{
+    font-size: 24px;
 }
 
 .accordion-button .hourly-temp {
     font-size: 24px;
 }
 
-.accordion-button .hourly-wind {
-    text-align: right;
+.accordion-button {
+    padding: 16px 10px;
+}
+
+.accordion-button table tr td{
+    width: 15%;
+}
+
+.accordion-button .time{
+    text-align: center;
+}
+
+.accordion-button .fa-solid {
+    padding-right: 5px;
+    justify-self: center;
+}
+
+.accordion-button .hourly-rain {
+    text-align: center;
+}
+
+.accordion-button .hourly-rain .heavy-rain{
+    padding-right: 5px;
+    width: 20%;
 }
 
 .accordion-body .hourly-body {
@@ -241,4 +266,22 @@ ul {
 .accordion-body .hourly-body tr td {
     text-align: center;
     width: 30%;
+}
+
+.accordion-body .hourly-body .fa-solid {
+    padding-right: 5px;
+}
+
+.accordion-body .hourly-body .fa-regular {
+    padding-right: 5px;
+}
+
+.accordion-body .hourly-body .visibility {
+    padding-right: 5px;
+    width: 13%;
+}
+
+.accordion-body .hourly-body .cloud {
+    padding-right: 5px;
+    width: 13%;
 }

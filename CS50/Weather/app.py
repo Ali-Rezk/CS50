@@ -4,6 +4,7 @@ from flask_session import Session
 from werkzeug.security import check_password_hash, generate_password_hash
 from datetime import datetime
 from helpers import apology, login_required, lookup
+import pytz
 
 app = Flask(__name__)
 
@@ -25,6 +26,12 @@ def after_request(response):
 @app.route("/")
 def index():
     lookedup = lookup("cairo","0","0")
+
+    city = lookedup[0]['name']
+    region = lookedup[0]['region']
+    country = lookedup[0]['country']
+
+    location = [city, region, country]
 
     temp = lookedup[1]['temp_c']
     condition = lookedup[1]['condition']['text']
@@ -61,11 +68,18 @@ def index():
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     date_time = now.split()
 
-    return render_template("today.html", current=current, date_time=date_time, astra=astra, daily=daily)
+    return render_template("today.html", location=location, current=current, date_time=date_time, astra=astra, daily=daily)
 
 @app.route("/hourly")
 def hourly():
-    lookedup = lookup("cairo","0","23")
+    lookedup = lookup("cairo","","")
+
+    city = lookedup[0]['name']
+    region = lookedup[0]['region']
+    country = lookedup[0]['country']
+    tz_id = lookedup[0]['tz_id']
+
+    location = [city, region, country]
 
     temp = lookedup[1]['temp_c']
     condition = lookedup[1]['condition']['text']
@@ -89,8 +103,12 @@ def hourly():
     icon = lookedup[2][0]['day']['condition']['icon']
     daily = [round(max_temp), round(avg_temp), round(min_temp), rain_chance, snow_chance, condition, icon]
 
-    hourly_arr = lookedup[2][0]['hour']
-    print(hourly_arr)
+    hourly = lookedup[3]
+
+    for i in range(0,24):
+        n = hourly[i]
+        n['time'] = n['time'].split()[1]
+        hourly[i] = n
 
     sunrise = lookedup[4]['sunrise']
     sunset = lookedup[4]['sunset']
@@ -98,9 +116,13 @@ def hourly():
     moonset = lookedup[4]['moonset']
     moon_phase = lookedup[4]['moon_phase']
     moon_illumination = lookedup[4]['moon_illumination']
-    astra = [sunrise,sunset,moonrise,moonset,moon_phase,moon_illumination]
+    astro = [sunrise,sunset,moonrise,moonset,moon_phase,moon_illumination,]
 
-    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    timezone = pytz.timezone(tz_id)
+    now = datetime.now(timezone).strftime('%Y-%m-%d %H:%M %Z %z')
     date_time = now.split()
+    ss = str(datetime.now(timezone)).split('+')
+    date_time[3] = ss[1]
 
-    return render_template("hourly.html", current=current, date_time=date_time, astra=astra, daily=daily)
+
+    return render_template("hourly.html", location=location, current=current, date_time=date_time, astro=astro, daily=daily, hourly=hourly)

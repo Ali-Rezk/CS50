@@ -19,61 +19,45 @@
             <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
         </div>
         <div class="weather-news">
+          <div class="info">
+            <p><b>Hourly weather:</b> {{ location[0] }}, {{ location[1] }}, {{ location[2] }}</p>
+            <p><b>{{ date_time[0] }}</b> {{ date_time[1] }} {{ date_time[2] }} {{ date_time[3] }}</p>
+          </div>
             <div class="accordion" id="accordionPanelsStayOpenExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+              {% for row in hourly %}
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{ row.time }}" aria-expanded="false" aria-controls="panelsStayOpen-collapse{{ row.time }}">
+                    <table>
+                      <tr>
+                        <td class="time">{{ row.time }}</td>
+                        <td class="hourly-temp"><b>{{ row.temp_c|int }}°</b></td>
+                        <td><img src="{{ row.condition.icon }}">{{ row.condition.text }}</td>
+                        <!-- "https://www.flaticon.com/free-icons/heavy-rain" title="heavy-rain icons">Heavy-rain icons created by Saepul Nahwan - Flaticon -->
+                        <td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain">{{ row.chance_of_rain }}</td>
+                        <td ><i class="fa-solid fa-wind"></i>{{ row.wind_dir }} {{ row.wind_kph }} Km/h</td>
+                      </tr>
+                    </table>
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapse{{ row.time }}" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <div class="hourly-body">
                       <table>
-                        <tr>
-                          <td>{{ date_time[1] }}</td>
-                          <td class="hourly-temp"><b>{{ current[0] }}°</b></td>
-                          <td><img src="{{ current[10] }}">{{ current[1] }}</td>
-                          <td class="hourly-wind"><i class="fa-solid fa-droplet"></i> {{ daily[3] }}</td>
-                          <td class="hourly-wind"><i class="fa-solid fa-wind"></i> {{ current[4] }}  {{ current[3] }} Km/h</td>
-                        </tr>
+                        <tr><td><i class="fa-solid fa-temperature-quarter"></i>Feels Like</td><td><i class="fa-solid fa-droplet"></i> Humidity</td><td><i class="fa-solid fa-temperature-low"></i>Dew Point</td></tr>
+                        <tr><td>{{ row.feelslike_c|int }}°</td><td>{{ row.humidity }}</td><td>{{ row.dewpoint_c|int }}°</td></tr>
                       </table>
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                    <div class="accordion-body">
-                      <div class="hourly-body">
-                        <table>
-                          <tr><td>feels_like</td><td>humidity</td><td>pressure</td></tr>
-                          <tr><td>feels_like</td><td>humidity</td><td>pressure</td></tr>
-                        </table>
-                          <hr>
-                        <table>
-                          <tr><td>uv</td><td>vis</td><td>cloud</td></tr>
-                          <tr><td>uv</td><td>vis</td><td>cloud</td></tr>
-                        </table>
-                      </div>
+                        <hr>
+                      <table>
+                        <!-- href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by Freepik - Flaticon -->
+                        <tr><td><i class="fa-regular fa-sun"></i>UV Index</td><td><img src="/static/icons/visibility.png" class="visibility">Visibility</td><td><img src="/static/icons/cloud.png" class="cloud">Cloud Cover</td></tr>
+                        <tr><td>{{ row.uv }} of 11</td><td>{{ row.vis_km }}Km</td><td>{{ row.cloud }}%</td></tr>
+                      </table>
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                      Accordion Item #2
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                      Accordion Item #3
-                    </button>
-                  </h2>
-                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                    <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                    </div>
-                  </div>
-                </div>
+              </div>
+                {% endfor %}
               </div>
         </div>
     </div>

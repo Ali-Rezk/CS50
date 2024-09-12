@@ -38,13 +38,13 @@
                 <ul>
                     <li>Feels like</li>
                         <li><table>
-                            <tr><td  class="feels_like">{{ current[2] }}°</td><td><img src="{{ current[10] }}" class="news-img"></td></tr>
+                            <tr><td  class="feels_like">{{ current[2] }}°</td></tr>
                         </table></li>
                     <li class="stats">
                         <table>
                             <tr><td>Max/Min</td><td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td><td>Rain chance</td><td class="value">{{ daily[3] }}</td></tr>
-                            <tr><td>Sunrise:</td><td class="value">{{ astra[0] }}</td><td>Snow chance</td><td class="value">{{ daily[4] }}</td></tr>
-                            <tr><td>Sunset:</td><td class="value">{{ astra[1] }}</td><td>UV</td><td class="value">{{ current[8] }}</td></tr>
+                            <tr><td>Sunrise:</td><td class="value">{{ astro[0] }}</td><td>Snow chance</td><td class="value">{{ daily[4] }}</td></tr>
+                            <tr><td>Sunset:</td><td class="value">{{ astro[1] }}</td><td>UV</td><td class="value">{{ current[8] }}</td></tr>
                         </table>
                     </li>
                 </ul>
@@ -59,13 +59,13 @@
                     </tr>
                     <tr>
                         <td><ul>
-                            <li class="moon_phase">{{ astra[4] }}</li>
-                            <li>Moonrise: {{ astra[2] }}</li>
+                            <li class="moon_phase">{{ astro[4] }}</li>
+                            <li>Moonrise: {{ astro[2] }}</li>
                         </ul></td>
                         <td><img src="static/icons/First Quarter.png" class="moon_image"></td>
                         <td><ul>
-                            <li class="moon_illumination">{{ astra[5] }}%</li>
-                            <li>Moonset: {{ astra[3] }}</li>
+                            <li class="moon_illumination">{{ astro[5] }}%</li>
+                            <li>Moonset: {{ astro[3] }}</li>
                         </ul></td>
                     </tr>
                 </table>
