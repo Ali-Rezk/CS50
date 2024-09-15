@@ -5,19 +5,20 @@
 {% endblock %}
 
 {% block main %}
-    <div action="/" method="GET">
+    <div method="GET">
         <div class="location">
             <div class="btn-group" role="group">
                 <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown" aria-expanded="false">
                 button
                 </button>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
-                <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+                <li><a class="dropdown-item" href="#">saved location</a></li>
+                <li><a class="dropdown-item" href="#">saved location</a></li>
                 </ul>
             </div>
             <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
         </div>
+        <div class="block">
         <div class="today-weather">
             <ul>
                 <li>Current weather</li>
@@ -33,6 +34,15 @@
                     <td>{{ current[9] }}</td><td>{{ current[3] }} Km/h</td><td>{{ current[5] }} mb</td><td>{{ current[6] }}%</td><td>{{ current[7] }} Km</td>
                 </tr>
             </table>
+        </div>
+        <div class="map"></div>
+            <iframe
+            width="500"
+            height="310"
+            frameborder="0" style="border-radius: 5px;"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q=Eiffel+Tower,Paris+France">
+        </iframe>
         </div>
         <div class="weather-news">
                 <ul>

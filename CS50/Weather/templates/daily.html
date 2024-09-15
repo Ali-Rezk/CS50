@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hourly
+{% endblock %}
+
+{% block main %}
+    <div method="GET">
+        <div class="location">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown" aria-expanded="false">
+                button
+                </button>
+                <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">saved location</a></li>
+                <li><a class="dropdown-item" href="#">saved location</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
+        </div>
+        <div class="weather-news">
+          <div class="info">
+            <p><b>5 Day weather:</b> {{ location[0] }}, {{ location[1] }}, {{ location[2] }}</p>
+            <p><b>{{ date_time[0] }}</b> {{ date_time[1] }} {{ date_time[2] }} {{ date_time[3] }}</p>
+          </div>
+          {% for row in hourly %}
+          <hr>
+          <div class="rows_date">
+            <b>{{ row.date }}</b>
+          </div>
+          <hr>
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapse{{ row.day_day }}" aria-expanded="false" aria-controls="panelsStayOpen-collapse{{ row.day_day }}">
+                    <table>
+                      <tr>
+                        <td class="time">{{ row.date_day }}</td>
+                        <td class="hourly-temp"><b>{{ row.day.maxtemp_c|int }}°/{{ row.day.mintemp_c|int }}°</b></td>
+                        <td><img src="{{ row.day.condition.icon }}">{{ row.day.condition.text }}</td>
+                        <!-- "https://www.flaticon.com/free-icons/heavy-rain" title="heavy-rain icons">Heavy-rain icons created by Saepul Nahwan - Flaticon -->
+                        <td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain">{{ row.day.daily_chance_of_rain }}</td>
+                        <td ><i class="fa-solid fa-wind"></i>{{ row.day.wind_dir }} {{ row.day.maxwind_kph }} Km/h</td>
+                      </tr>
+                    </table>
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapse{{ row.day_day }}" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <div class="hourly-body">
+                      <table>
+                        <!-- "https://www.flaticon.com/free-icons/horizon" title="horizon icons">Horizon icons created by Muhamad Ulum - Flaticon -->
+                        <tr><td><img src="/static/icons/sunrise.png" class="sun_moon">Sunrise</td><td><i class="fa-solid fa-droplet"></i> Humidity</td><td><img src="/static/icons/moon_rise.png" class="sun_moon">Moonrise:</td></tr>
+                        <tr><td>{{ row.astro.sunrise }}</td><td>{{ row.day.avghumidity }}</td><td>{{ row.astro.moonrise }}</td></tr>
+                      </table>
+                        <hr>
+                        <table>
+                            <!-- "https://www.flaticon.com/free-icons/lamp" title="lamp icons">Lamp icons created by wanicon - Flaticon -->
+                            <tr><td><i class="fa-solid fa-moon"></i>Moon phase</td><td><i class="fa-regular fa-sun"></i>UV Index</td><td><img src="/static/icons/moon_illumination.png" class="sun_moon">Moon illumination</td></tr>
+                            <tr><td><b>{{ row.astro.moon_phase }}</b></td><td>{{ row.day.uv }} of 11</td><td>{{ row.astro.moon_illumination }}%</td></tr>
+                        </table>
+                        <hr>
+                      <table>
+                        <!-- "https://www.flaticon.com/free-icons/higher" title="higher icons">Higher icons created by amoghdesign - Flaticon -->
+                        <tr><td><img src="/static/icons/sunset.png" class="sun_moon">Sunset</td><td><img src="/static/icons/visibility.png" class="visibility">Visibility</td><td><img src="/static/icons/moon_set.png" class="sun_moon">Moonset:</td></tr>
+                        <tr><td>{{ row.astro.sunset }}/td><td>{{ row.day.avgvis_km }}Km</td><td>{{ row.astro.moonset }}</td></tr>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
