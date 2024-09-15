@@ -89,17 +89,21 @@ ul {
     padding-bottom: 10px;
 }
 
+/* today */
+
 .location {
     display: inline-flex;
-    width: 60%;
+    width: 100%;
+}
+
+.block {
+    width: 100%;
+    display: inline-flex;
 }
 
 .today-weather {
     width: 60%;
     height: auto;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
     padding: 20px 0px;
     border-radius: 10px;
     background-color: white;
@@ -130,10 +134,8 @@ ul {
 }
 
 .weather-news {
-    width: 70%;
+    width: 60%;
     margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
     padding: 5px;
     border-radius: 10px;
     background-color: white;
@@ -227,6 +229,11 @@ ul {
     font-size: 24px;
 }
 
+.weather-news .rows_date b{
+    padding: 5px 20px;
+    font-size: 20px;
+}
+
 .accordion-button .hourly-temp {
     font-size: 24px;
 }
@@ -282,6 +289,23 @@ ul {
 }
 
 .accordion-body .hourly-body .cloud {
+    padding-right: 5px;
+    width: 13%;
+}
+
+
+/* daily */
+
+.accordion-body .max_min {
+    padding: 15px 20px;
+    font-size: 30px;
+}
+
+.accordion-body .max_min table tr td{
+    font-size: 30px;
+}
+
+.accordion-body .hourly-body .sun_moon {
     padding-right: 5px;
     width: 13%;
 }
