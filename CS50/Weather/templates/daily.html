@@ -1,12 +1,18 @@
 {% extends "layout.html" %}
 
+{% block style %}
+    <style>
+        #map { height: 310px;width: 400px; }
+    </style>
+{% endblock %}
+
 {% block title %}
     Hourly
 {% endblock %}
 
 {% block main %}
     <div method="GET">
-        <div class="location">
+        <div class="location_daily">
             <div class="btn-group" role="group">
                 <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown" aria-expanded="false">
                 button
@@ -18,8 +24,10 @@
             </div>
             <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
         </div>
-        <div class="weather-news">
+        <div class="block">
+        <div class="weather-news_daily">
           <div class="info">
+            {% if loading %}
             <p><b>5 Day weather:</b> {{ location[0] }}, {{ location[1] }}, {{ location[2] }}</p>
             <p><b>{{ date_time[0] }}</b> {{ date_time[1] }} {{ date_time[2] }} {{ date_time[3] }}</p>
           </div>
@@ -69,8 +77,56 @@
                   </div>
                 </div>
               </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
+
+        <div id="map"></div>
+        <!-- <iframe
+        width="400"
+        height="310"
+        frameborder="0" style="border-radius: 5px;"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
+        </iframe> -->
+        </div>
+        <script>
+          var map = L.map('map').setView([51.505, -0.09], 5);
+          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+              maxZoom: 19,
+              attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          }).addTo(map);
+
+          navigator.geolocation.getCurrentPosition(success, error);
+          async function success(pos){
+              const lat = pos.coords.latitude;
+              const lng = pos.coords.longitude;
+              const accuracy = pos.coords.accuracy;
+
+              let marker = L.marker([lat, lng]).addTo(map);
+              let circle = L.circle([lat, lng], {radius: accuracy}).addTo(map)
+              map.fitBounds(circle.getBounds());
+
+              const params = new URLSearchParams({ lat: lat , long: lng});
+
+              await fetch(`http://localhost:5000/history?${params}`, {
+                  method: 'GET'
+              })
+              .then(response => response.json())
+              .then(data => console.log(data))
+              .catch(error => console.error('Error:', error));
+          }
+
+          function error(err){
+              if (err.code === 1){
+                  alert("Please allow location access")
+              }
+              else {
+                  alert("Can get current location")
+              }
+
+          }
+
+      </script>
     </div>
 {% endblock %}

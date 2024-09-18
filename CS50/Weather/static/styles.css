@@ -72,7 +72,7 @@ ul {
     margin-bottom: 62px;
 }
 
-.second-sec tr td a{
+.second-sec tr td a {
     background-color: transparent;
     color: white;
     border: 0px;
@@ -101,8 +101,9 @@ ul {
     display: inline-flex;
 }
 
+
 .today-weather {
-    width: 60%;
+    width: 70%;
     height: auto;
     padding: 20px 0px;
     border-radius: 10px;
@@ -110,8 +111,12 @@ ul {
     background-image: url(/static/icons/night.jpg);
     background-size: cover;
     color: white;
+    margin-left: auto;
 }
 
+.today-weather table {
+    width: 100%;
+}
 .today-weather ul li {
     font-size: 24px;
     text-align: left;
@@ -134,18 +139,16 @@ ul {
 }
 
 .weather-news {
-    width: 60%;
+    width: 100%;
     margin-top: 10px;
-    padding: 5px;
+    padding: 5px 25px;
     border-radius: 10px;
     background-color: white;
     text-align: left;
 }
 
-
 .weather-news ul li {
     font-size: 24px;
-    padding-left: 25px;
 }
 
 .weather-news .feels_like {
@@ -158,12 +161,26 @@ ul {
 }
 
 .weather-news table{
-    width: 100%;
+    width: 49%;
 }
 
 .weather-news .stats {
     padding-right: 25px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 25px;
+
 }
+
+.weather-news .stats .vl {
+    width: 1px; /* Adjust the width */
+    height: 200px; /* Adjust the height */
+    background-color: black; /* Adjust the color */
+    transform: rotate(0deg); /* Rotate to make it vertical */
+    margin: 0 auto; /* Center the line horizontally */
+  }
 
 .weather-news table tr td{
     padding: 5px;
@@ -176,6 +193,7 @@ ul {
     padding-right: 5px;
     text-align: right;
     font-size: large;
+    font-weight: bold;
 }
 
 .astro-news {
@@ -220,16 +238,31 @@ ul {
 
 /* Hourly */
 
-.weather-news .info {
-    padding: 15px 20px;
+.location_hourly {
+    display: inline-flex;
+    width: 100%;
+}
+
+.weather-news_hourly {
+    width: 80%;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+}
+
+.weather-news_hourly .info {
+    padding: 0px 20px;
+    padding-top: 15px;
     font-size: 20px;
 }
 
-.weather-news .info p b{
+.weather-news_hourly .info p b{
     font-size: 24px;
 }
 
-.weather-news .rows_date b{
+.weather-news_hourly .rows_date b{
     padding: 5px 20px;
     font-size: 20px;
 }
@@ -240,6 +273,10 @@ ul {
 
 .accordion-button {
     padding: 16px 10px;
+}
+
+.accordion-button table {
+    width: 100%;
 }
 
 .accordion-button table tr td{
@@ -270,6 +307,10 @@ ul {
     border-radius: 10px;
 }
 
+.accordion-body .hourly-body table {
+    width: 100%;
+}
+
 .accordion-body .hourly-body tr td {
     text-align: center;
     width: 30%;
@@ -295,6 +336,35 @@ ul {
 
 
 /* daily */
+
+.location_daily {
+    display: inline-flex;
+    width: 100%;
+}
+
+.weather-news_daily {
+    width: 80%;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+}
+
+.weather-news_daily .info {
+    padding: 0px 20px;
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.weather-news_daily .info p b{
+    font-size: 24px;
+}
+
+.weather-news_daily .rows_date b{
+    padding: 5px 20px;
+    font-size: 20px;
+}
 
 .accordion-body .max_min {
     padding: 15px 20px;
