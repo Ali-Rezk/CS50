@@ -1,5 +1,11 @@
 {% extends "layout.html" %}
 
+{% block style %}
+    <style>
+        #map { height: 310px;width: 400px; }
+    </style>
+{% endblock %}
+
 {% block title %}
     Home
 {% endblock %}
@@ -19,7 +25,11 @@
             <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
         </div>
         <div class="block">
+            {% if loading %}
+            <h1>loading</h1>
+            {% else %}
         <div class="today-weather">
+
             <ul>
                 <li>Current weather</li>
                 <li>{{ date_time[1] }}</li>
@@ -35,14 +45,15 @@
                 </tr>
             </table>
         </div>
-        <div class="map"></div>
+        <div class="map">
             <iframe
-            width="500"
+            width="400"
             height="310"
             frameborder="0" style="border-radius: 5px;"
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q=Eiffel+Tower,Paris+France">
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
         </iframe>
+        </div>
         </div>
         <div class="weather-news">
                 <ul>
@@ -52,9 +63,15 @@
                         </table></li>
                     <li class="stats">
                         <table>
-                            <tr><td>Max/Min</td><td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td><td>Rain chance</td><td class="value">{{ daily[3] }}</td></tr>
-                            <tr><td>Sunrise:</td><td class="value">{{ astro[0] }}</td><td>Snow chance</td><td class="value">{{ daily[4] }}</td></tr>
-                            <tr><td>Sunset:</td><td class="value">{{ astro[1] }}</td><td>UV</td><td class="value">{{ current[8] }}</td></tr>
+                            <tr><td>Max/Min</td><td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td></tr>
+                            <tr><td>Sunrise:</td><td class="value">{{ astro[0] }}</td></tr>
+                            <tr><td>Sunset:</td><td class="value">{{ astro[1] }}</td></tr>
+                        </table>
+                        <div class="vl"></div>
+                        <table>
+                            <tr><td>Rain chance</td><td class="value">{{ daily[3] }}</td></tr>
+                            <tr><td>Snow chance</td><td class="value">{{ daily[4] }}</td></tr>
+                            <tr><td>UV</td><td class="value">{{ current[8] }}</td></tr>
                         </table>
                     </li>
                 </ul>
@@ -81,5 +98,45 @@
                 </table>
             </div>
         </div>
+        {% endif %}
+        <div id="map"></div>
+        <script>
+            var map = L.map('map').setView([51.505, -0.09], 5);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            }).addTo(map);
+
+            navigator.geolocation.getCurrentPosition(success, error);
+            function success(pos){
+                const lat = pos.coords.latitude;
+                const lng = pos.coords.longitude;
+                const accuracy = pos.coords.accuracy;
+
+                let marker = L.marker([lat, lng]).addTo(map);
+                let circle = L.circle([lat, lng], {radius: accuracy}).addTo(map)
+                map.fitBounds(circle.getBounds());
+
+                const params = new URLSearchParams({ lat: lat , long: lng});
+
+                fetch(`http://localhost:5000/?${params}`, {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+            }
+
+            function error(err){
+                if (err.code === 1){
+                    alert("Please allow location access")
+                }
+                else {
+                    alert("Can not get current location")
+                }
+
+            }
+
+        </script>
     </div>
 {% endblock %}
