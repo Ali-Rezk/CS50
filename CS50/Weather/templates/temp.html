@@ -1,0 +1,196 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<style>
+    #map {
+        height: 310px;
+        width: 400px;
+    }
+</style>
+{% endblock %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block main %}
+<div>
+    <div class="location">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                button
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">saved location</a></li>
+                <li><a class="dropdown-item" href="#">saved location</a></li>
+            </ul>
+        </div>
+        <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
+    </div>
+    <div class="block">
+        <div class="today-weather">
+
+            <ul>
+                <li>Current weather</li>
+                <li>{{ date_time[1] }}</li>
+                <li class="temp">{{ current[0] }}°</li>
+                <li>{{ current[1] }}</li>
+            </ul>
+            <table>
+                <tr>
+                    <td>Dewpoint</td>
+                    <td>Wind ({{ current[4] }})</td>
+                    <td>Pressure</td>
+                    <td>Humidity</td>
+                    <td>Visibility</td>
+                </tr>
+                <tr>
+                    <td>{{ current[9] }}</td>
+                    <td>{{ current[3] }} Km/h</td>
+                    <td>{{ current[5] }} mb</td>
+                    <td>{{ current[6] }}%</td>
+                    <td>{{ current[7] }} Km</td>
+                </tr>
+            </table>
+        </div>
+        <div class="map">
+            <iframe width="400" height="310" frameborder="0" style="border-radius: 5px;"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
+            </iframe>
+        </div>
+    </div>
+    <div class="weather-news">
+        <ul>
+            <li>Feels like</li>
+            <li>
+                <table>
+                    <tr>
+                        <td class="feels_like">{{ current[2] }}°</td>
+                    </tr>
+                </table>
+            </li>
+            <li class="stats">
+                <table>
+                    <tr>
+                        <td>Max/Min</td>
+                        <td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td>
+                    </tr>
+                    <tr>
+                        <td>Sunrise:</td>
+                        <td class="value">{{ astro[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Sunset:</td>
+                        <td class="value">{{ astro[1] }}</td>
+                    </tr>
+                </table>
+                <div class="vl"></div>
+                <table>
+                    <tr>
+                        <td>Rain chance</td>
+                        <td class="value">{{ daily[3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Snow chance</td>
+                        <td class="value">{{ daily[4] }}</td>
+                    </tr>
+                    <tr>
+                        <td>UV</td>
+                        <td class="value">{{ current[8] }}</td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </div>
+    <div class="astro-news">
+        <div>
+            <table>
+                <tr>
+                    <td>Moon phase</td>
+                    <td>{{ date_time[0] }}</td>
+                    <td>Moon illumination</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li class="moon_phase">{{ astro[4] }}</li>
+                            <li>Moonrise: {{ astro[2] }}</li>
+                        </ul>
+                    </td>
+                    <td>-</td>
+                    <td>
+                        <ul>
+                            <li class="moon_illumination">{{ astro[5] }}%</li>
+                            <li>Moonset: {{ astro[3] }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- <div id="map"></div> -->
+    <script>
+        // var map = L.map('map').setView([51.505, -0.09], 5);
+        // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        //     maxZoom: 19,
+        //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        // }).addTo(map);
+
+        // navigator.geolocation.getCurrentPosition(success, error);
+        // function success(pos){
+        //     const lat = pos.coords.latitude;
+        //     const lng = pos.coords.longitude;
+        //     const accuracy = pos.coords.accuracy;
+
+        //     let marker = L.marker([lat, lng]).addTo(map);
+        //     let circle = L.circle([lat, lng], {radius: accuracy}).addTo(map)
+        //     map.fitBounds(circle.getBounds());
+
+        //     const params = new URLSearchParams({ lat: lat , long: lng});
+
+        //     fetch(`http://localhost:5000/?${params}`, {
+        //         method: 'GET'
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => console.log(data))
+        //     .catch(error => console.error('Error:', error));
+        // }
+
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(sendPosition, error);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+
+        function sendPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Send data to Flask
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ latitude: latitude, longitude: longitude })
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
+
+        function error(err){
+            if (err.code === 1){
+                alert("Please allow location access")
+            }
+            else {
+                alert("Can not get current location")
+            }
+
+        }
+    </script>
+</div>
+{% endblock %}

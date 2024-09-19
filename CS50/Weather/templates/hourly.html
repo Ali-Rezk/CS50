@@ -74,36 +74,14 @@
             </div>
             {% endfor %}
         </div>
-        <div id="map"></div>
-        </div>
-        <script>
-          var map = L.map('map').setView([51.505, -0.09], 5);
-          L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-              maxZoom: 19,
-              attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          }).addTo(map);
-
-          navigator.geolocation.getCurrentPosition(success, error);
-          function success(pos){
-              const lat = pos.coords.latitude;
-              const lng = pos.coords.longitude;
-              const accuracy = pos.coords.accuracy;
-
-              let marker = L.marker([lat, lng]).addTo(map);
-              let circle = L.circle([lat, lng], {radius: accuracy}).addTo(map)
-              map.fitBounds(circle.getBounds());
-
-          }
-
-          function error(err){
-              if (err.code === 1){
-                  alert("Please allow location access")
-              }
-              else {
-                  alert("Can get current location")
-              }
-
-          }
-      </script>
+        <div class="map">
+          <iframe
+          width="400"
+          height="310"
+          frameborder="0" style="border-radius: 5px;"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
+      </iframe>
+      </div>
     </div>
 {% endblock %}
