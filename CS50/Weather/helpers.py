@@ -49,14 +49,13 @@ def login_required(f):
     return decorated_function
 
 
-def lookup(country, lng=0):
+def lookup(country):
     api_key = '5aba5ac55b984050bfa230233240709'
     days = 5
 
     try:
-        int(country)
-        lat = country
-        long = lng
+        lat = float(country[0])
+        long = float(country[1])
         currentWeather_data = requests.get(
         f"https://api.weatherapi.com/v1/current.json?key={api_key}&q={lat},{long}&aqi=no"
         )
@@ -64,8 +63,10 @@ def lookup(country, lng=0):
         daily_data = requests.get(
             f"https://api.weatherapi.com/v1/forecast.json?key={api_key}&q={lat},{long}&days={days}&aqi=yes&alerts=no"
         )
+
+        currentWeather_data.raise_for_status()
+
     except:
-        user_input = country
         currentWeather_data = requests.get(
         f"https://api.weatherapi.com/v1/current.json?key={api_key}&q={country}&aqi=no"
         )
