@@ -21,8 +21,9 @@ ul {
 
 
 .nav-container table tr td{
+    display: inline-block;
     text-align: center;
-    width: 30%;
+    width: 33%;
     vertical-align: middle;
 }
 
@@ -30,6 +31,10 @@ ul {
     margin-left: 30px;
     width: 10%;
     float: left;
+}
+
+.nav-container table {
+    width: 100%;
 }
 
 .nav-container ul li {
@@ -51,7 +56,14 @@ ul {
 .A-btn-group {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+.A-btn-group .btn-group{
     float: right;
+}
+
+.A-btn-group .btn-group .btn{
+    color: white;
 }
 
 .nav li {
