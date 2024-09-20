@@ -11,7 +11,12 @@
 {% endblock %}
 
 {% block main %}
-    <div method="GET">
+    <div>
+      {% if location_missing %}
+            <!-- https://memegen.link/ -->
+            <!-- https://knowyourmeme.com/memes/grumpy-cat -->
+            <img alt="{{ top }}" class="border img-fluid" src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/CsCgN7Ll.png&width=400" title="{{ top }}">
+        {% else %}
         <div class="location_hourly">
             <div class="btn-group" role="group">
                 <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown" aria-expanded="false">
@@ -83,5 +88,30 @@
           src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
       </iframe>
       </div>
+      {% endif %}
+      <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(sendPosition);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+
+        function sendPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // Send data to Flask
+            fetch('/hourly', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ latitude: latitude, longitude: longitude })
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
     </div>
 {% endblock %}
