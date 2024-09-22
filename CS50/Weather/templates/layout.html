@@ -20,6 +20,7 @@
     <script src="https://kit.fontawesome.com/967c8d9878.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     {% block style %}{% endblock %}
     <title>
@@ -36,20 +37,21 @@
                     <form method="post">
                         <div class="input-group">
                             <div class="form-outline" data-mdb-input-init>
-                                <input type="search" id="form1" class="form-control" name="search" placeholder="Search"
+                                <input type="search" id="search" class="form-control" name="search" placeholder="Search"
                                     type="text" />
                             </div>
+                            <ul id="results"></ul>
                             <button type="submit" class="btn btn-primary" data-mdb-ripple-init>
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
                     </form>
                 </td>
-                <td class="A-btn-group">
-                    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
-                        <button type="button" class="btn btn-primary"><i class="fa-solid fa-globe"></i> eng</button>
+                <td>
+                    <!-- <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                        <button type="button" class="btn btn-primary"><i class="fa-solid fa-globe"></i> eng</button> -->
 
-                        <div class="btn-group" role="group">
+                        <!-- <div class="btn-group" role="group">
                             <button type="button" class="btn btn-primary dropdown-toggle caret-off"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 C°
@@ -58,8 +60,10 @@
                                 <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                                 <li><a class="dropdown-item" href="#">Dropdown link</a></li>
                             </ul>
-                        </div>
-                    </div>
+                        </div> -->
+                        {% block form %}
+                        {% endblock %}
+                    <!-- </div> -->
                 </td>
             </tr>
         </table>
@@ -71,10 +75,10 @@
                     <a href="/today">Today</a>
                 </td>
                 <td>
-                    <a href="/hourly">Hourly</a>
+                    <a href="/hourly">Hourly forecast</a>
                 </td>
                 <td>
-                    <a href="/daily">5 day</a>
+                    <a href="/daily">Daily forecast</a>
                 </td>
                 <td>
                     <a href="/history">History</a>
@@ -89,6 +93,24 @@
     <main class="container py-5 text-center">
         {% block main %}{% endblock %}
     </main>
+    <!-- <script>
+        $(document).ready(function() {
+            $('#search').on('input', function() {
+                var query = $(this).val();
+                $.ajax({
+                    url: '/search',
+                    type: 'GET',
+                    data: {'q': query},
+                    success: function(data) {
+                        $('#results').empty();
+                        data.forEach(function(item) {
+                            $('#results').append('<li>' + item.name + '</li>');
+                        });
+                    }
+                });
+            });
+        });
+    </script> -->
 </body>
 
 </html>

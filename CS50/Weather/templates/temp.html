@@ -1,14 +1,5 @@
 {% extends "layout.html" %}
 
-{% block style %}
-<style>
-    #map {
-        height: 310px;
-        width: 400px;
-    }
-</style>
-{% endblock %}
-
 {% block title %}
 Home
 {% endblock %}
@@ -29,8 +20,7 @@ Home
         <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
     </div>
     <div class="block">
-        <div class="today-weather">
-
+        <div class="today-weather0">
             <ul>
                 <li>Current weather</li>
                 <li>{{ date_time[1] }}</li>
@@ -182,8 +172,8 @@ Home
                 .catch(error => console.error('Error:', error));
         }
 
-        function error(err){
-            if (err.code === 1){
+        function error(err) {
+            if (err.code === 1) {
                 alert("Please allow location access")
             }
             else {

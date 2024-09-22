@@ -20,14 +20,14 @@ ul {
 }
 
 
-.nav-container table tr td{
+.nav-container table tr td {
     display: inline-block;
     text-align: center;
     width: 33%;
     vertical-align: middle;
 }
 
-.logo{
+.logo {
     margin-left: 30px;
     width: 10%;
     float: left;
@@ -53,16 +53,20 @@ ul {
     display: none;
 }
 
+.form-select {
+    float: right;
+}
+
 .A-btn-group {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.A-btn-group .btn-group{
+.A-btn-group .btn-group {
     float: right;
 }
 
-.A-btn-group .btn-group .btn{
+.A-btn-group .btn-group .btn {
     color: white;
 }
 
@@ -113,43 +117,84 @@ ul {
     display: inline-flex;
 }
 
+/* today night-background */
 
-.today-weather {
+.today-weather0 {
     width: 70%;
     height: auto;
     padding: 20px 0px;
     border-radius: 10px;
     background-color: white;
-    background-image: url(/static/icons/night.jpg);
+    background-image: url(/static/icons/day-night/night.jpg);
     background-size: cover;
     color: white;
     margin-left: auto;
 }
 
-.today-weather table {
+.today-weather1 {
+    width: 70%;
+    height: auto;
+    padding: 20px 0px;
+    border-radius: 10px;
+    background-color: white;
+    background-image: url(/static/icons/day-night/day2.jpg);
+    background-size: cover;
+    color: white;
+    margin-left: auto;
+}
+
+.today-weather0 table {
     width: 100%;
 }
-.today-weather ul li {
+
+.today-weather0 ul li {
     font-size: 24px;
     text-align: left;
     padding-left: 25px;
 }
 
-.today-weather .temp {
+.today-weather0 .temp {
     font-size: 64px;
 }
 
-/* .today-weather .temp img{
+/* .today-weather0 .temp img{
     width: 12%;
 } */
 
-.today-weather table tr td{
+.today-weather0 table tr td{
     font-size: 16px;
     text-align: center;
     width: 10%;
     vertical-align: middle;
 }
 
+/* today day-background */
+
+.today-weather1 table {
+    width: 100%;
+}
+
+.today-weather1 ul li {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.today-weather1 .temp {
+    font-size: 64px;
+}
+
+/* .today-weather1 .temp img{
+    width: 12%;
+} */
+
+.today-weather1 table tr td{
+    font-size: 16px;
+    text-align: center;
+    width: 10%;
+    vertical-align: middle;
+}
+/* end background */
 .weather-news {
     width: 100%;
     margin-top: 10px;
@@ -246,7 +291,6 @@ ul {
 .astro-news .moon_image {
     width: 50%;
 }
-
 
 /* Hourly */
 

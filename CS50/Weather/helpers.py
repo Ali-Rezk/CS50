@@ -4,6 +4,7 @@ import pytz
 import requests
 import urllib
 import uuid
+import pycountry
 
 from flask import redirect, render_template, request, session
 from functools import wraps
@@ -57,7 +58,7 @@ def lookup(country):
         lat = float(country[0])
         long = float(country[1])
         currentWeather_data = requests.get(
-        f"https://api.weatherapi.com/v1/current.json?key={api_key}&q={lat},{long}&aqi=no"
+            f"https://api.weatherapi.com/v1/current.json?key={api_key}&q={lat},{long}&aqi=no"
         )
 
         daily_data = requests.get(
@@ -104,3 +105,28 @@ def lookup(country):
         not_found = "No City Found"
         return not_found
 
+def search(city):
+    api = "893cbbac726aa5674136bdefde03d5b5"
+
+    all_data = requests.get(
+        f"http://api.openweathermap.org/geo/1.0/direct?q={city}&limit=5&appid={api}"
+    )
+
+    print(all_data.json())
+    # Example usage
+    # country_name = "united kingdom"
+    # country_code = country_name_to_code(country_name)
+    # print(f"The country code for {country_name} is {country_code}")
+    for row in all_data:
+        data = [row['name'], row['country'], row['state']]
+    return data
+
+
+def country_name_to_code(country_name):
+    try:
+        country = pycountry.countries.lookup(country_name)
+        return country.alpha_2  # or country.alpha_3 for three-letter codes
+    except LookupError:
+        return None
+
+    
