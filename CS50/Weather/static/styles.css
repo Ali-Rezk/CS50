@@ -17,6 +17,7 @@ ul {
 
 .nav-container {
     align-items: center;
+    margin-bottom: 5px;
 }
 
 
@@ -29,7 +30,7 @@ ul {
 
 .logo {
     margin-left: 30px;
-    width: 10%;
+    width: 12%;
     float: left;
 }
 
@@ -122,6 +123,7 @@ ul {
 .today-weather0 {
     width: 70%;
     height: auto;
+    margin-right: 10px;
     padding: 20px 0px;
     border-radius: 10px;
     background-color: white;
@@ -134,6 +136,7 @@ ul {
 .today-weather1 {
     width: 70%;
     height: auto;
+    margin-right: 10px;
     padding: 20px 0px;
     border-radius: 10px;
     background-color: white;
@@ -195,6 +198,11 @@ ul {
     vertical-align: middle;
 }
 /* end background */
+
+.block .map {
+    width: 30%;
+}
+
 .weather-news {
     width: 100%;
     margin-top: 10px;

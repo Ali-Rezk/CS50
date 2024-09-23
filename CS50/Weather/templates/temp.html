@@ -4,6 +4,15 @@
 Home
 {% endblock %}
 
+{% block form %}
+<form action="/" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+
 {% block main %}
 <div>
     <div class="location">

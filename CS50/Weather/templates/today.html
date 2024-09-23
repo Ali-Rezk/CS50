@@ -4,11 +4,12 @@
 Home
 {% endblock %}
 {% block form %}
-<form action="/today" method="post" id="select"></form>
-<select class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
-    <option value="C°">C°</option>
-    <option value="F°">F°</option>
-</select>
+<form action="/today" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
 {% endblock %}
 {% block main %}
 <div>
@@ -49,7 +50,7 @@ Home
                     <td>Visibility</td>
                 </tr>
                 <tr>
-                    <td>{{ current[9] }}</td>
+                    <td>{{ current[9] }}°</td>
                     <td>{{ current[3] }} Km/h</td>
                     <td>{{ current[5] }} mb</td>
                     <td>{{ current[6] }}%</td>
@@ -58,7 +59,7 @@ Home
             </table>
         </div>
         <div class="map">
-            <iframe width="400" height="310" frameborder="0" style="border-radius: 5px;"
+            <iframe width="100%" height="100%" frameborder="0" style="border-radius: 5px;"
                 referrerpolicy="no-referrer-when-downgrade"
                 src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
             </iframe>
@@ -152,20 +153,6 @@ Home
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ latitude: latitude, longitude: longitude })
-            })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error('Error:', error));
-        }
-
-        function submitForm() {
-            const unit =  document.getElementById("select")
-            fetch('/today', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ unit: unit })
             })
                 .then(response => response.json())
                 .then(data => console.log(data))

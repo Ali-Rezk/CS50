@@ -32,7 +32,7 @@
     <div class="nav-container">
         <table>
             <tr>
-                <td><img class="logo" src="/static/icons/website_icon.png"></td>
+                <td><img class="logo" src="/static/icons/icons8-weather-64(1).png"></td>
                 <td>
                     <form method="post">
                         <div class="input-group">
@@ -93,24 +93,33 @@
     <main class="container py-5 text-center">
         {% block main %}{% endblock %}
     </main>
-    <!-- <script>
-        $(document).ready(function() {
-            $('#search').on('input', function() {
-                var query = $(this).val();
-                $.ajax({
-                    url: '/search',
-                    type: 'GET',
-                    data: {'q': query},
-                    success: function(data) {
-                        $('#results').empty();
-                        data.forEach(function(item) {
-                            $('#results').append('<li>' + item.name + '</li>');
-                        });
-                    }
-                });
-            });
-        });
-    </script> -->
+    <footer>
+        <a target="_blank" href="https://icons8.com/icon/txoP0q0H3NEb/weather">Weather</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>    </footer>
+    <script>
+        // $(document).ready(function() {
+        //     $('#search').on('input', function() {
+        //         var query = $(this).val();
+        //         $.ajax({
+        //             url: '/search',
+        //             type: 'GET',
+        //             data: {'q': query},
+        //             success: function(data) {
+        //                 $('#results').empty();
+        //                 data.forEach(function(item) {
+        //                     $('#results').append('<li>' + item.name + '</li>');
+        //                 });
+        //             }
+        //         });
+        //     });
+        // });
+
+        function submitForm() {
+            const unit_select =  document.getElementById("unit_select")
+            const unit_form =  document.getElementById("unit_form")
+            unit_form.submit()
+        }
+    </script>
+
 </body>
 
 </html>
