@@ -3,7 +3,15 @@
 {% block title %}
 Home
 {% endblock %}
-{% block form %}
+{% block form1 %}
+<form action="/today" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+{% block form2 %}
 <form action="/today" method="post" id="unit_form">
     <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
         <option value="{{ unit1 }}">{{ unit1 }}</option>
@@ -20,19 +28,6 @@ Home
         src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/CsCgN7Ll.png&width=400"
         title="{{ top }}">
     {% else %}
-    <div class="location">
-        <div class="btn-group" role="group">
-            <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                button
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">saved location</a></li>
-                <li><a class="dropdown-item" href="#">saved location</a></li>
-            </ul>
-        </div>
-        <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
-    </div>
     <div class="block">
         <div class="today-weather{{ current[11] }}">
             <ul>
@@ -41,7 +36,29 @@ Home
                 <li class="temp">{{ current[0] }}°</li>
                 <li>{{ current[1] }}</li>
             </ul>
-            <table>
+            <table class="table_s">
+                <tr>
+                    <td>Dewpoint</td>
+                    <td>Wind ({{ current[4] }})</td>
+                </tr>
+                <tr>
+                    <td>{{ current[9] }}°</td>
+                    <td>{{ current[3] }} Km/h</td>
+                </tr>
+            </table>
+            <table class="table_s">
+                <tr>
+                    <td>Pressure</td>
+                    <td>Humidity</td>
+                    <td>Visibility</td>
+                </tr>
+                <tr>
+                    <td>{{ current[5] }} mb</td>
+                    <td>{{ current[6] }}%</td>
+                    <td>{{ current[7] }} Km</td>
+                </tr>
+            </table>
+            <table class="table_l">
                 <tr>
                     <td>Dewpoint</td>
                     <td>Wind ({{ current[4] }})</td>
@@ -92,6 +109,34 @@ Home
                 </table>
                 <div class="vl"></div>
                 <table>
+                    <tr>
+                        <td>Rain chance</td>
+                        <td class="value">{{ daily[3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Snow chance</td>
+                        <td class="value">{{ daily[4] }}</td>
+                    </tr>
+                    <tr>
+                        <td>UV</td>
+                        <td class="value">{{ current[8] }} of 11</td>
+                    </tr>
+                </table>
+            </li>
+            <li class="stats_s">
+                <table>
+                    <tr>
+                        <td>Max/Min</td>
+                        <td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td>
+                    </tr>
+                    <tr>
+                        <td>Sunrise:</td>
+                        <td class="value">{{ astro[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Sunset:</td>
+                        <td class="value">{{ astro[1] }}</td>
+                    </tr>
                     <tr>
                         <td>Rain chance</td>
                         <td class="value">{{ daily[3] }}</td>
