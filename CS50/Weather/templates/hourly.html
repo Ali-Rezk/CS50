@@ -4,7 +4,15 @@
     Hourly
 {% endblock %}
 
-{% block form %}
+{% block form1 %}
+<form action="/hourly" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+{% block form2 %}
 <form action="/hourly" method="post" id="unit_form">
     <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
         <option value="{{ unit1 }}">{{ unit1 }}</option>
@@ -14,7 +22,6 @@
 {% endblock %}
 
 {% block main %}
-    <div>
       {% if location_missing %}
             <!-- https://memegen.link/ -->
             <!-- https://knowyourmeme.com/memes/grumpy-cat -->
@@ -23,18 +30,6 @@
         {% set temp_key = 'temp_' + unit %}
         {% set feelslike_key = 'feelslike_' + unit %}
         {% set dewpoint_key = 'dewpoint_' + unit %}
-        <div class="location_hourly">
-            <div class="btn-group" role="group">
-                <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown" aria-expanded="false">
-                button
-                </button>
-                <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">saved location</a></li>
-                <li><a class="dropdown-item" href="#">saved location</a></li>
-                </ul>
-            </div>
-            <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
-        </div>
         <div class="block">
         <div class="weather-news_hourly">
           <div class="info">
@@ -56,10 +51,11 @@
                       <tr>
                         <td class="time">{{ row.time }}</td>
                         <td class="hourly-temp"><b>{{ row[temp_key]|int }}°</b></td>
-                        <td><img src="{{ row.condition.icon }}">{{ row.condition.text }}</td>
+                        <td class="condition_td"><img src="{{ row.condition.icon }}">{{ row.condition.text }}</td>
+                        <td class="condition_td_s"><img src="{{ row.condition.icon }}"></td>
                         <!-- "https://www.flaticon.com/free-icons/heavy-rain" title="heavy-rain icons">Heavy-rain icons created by Saepul Nahwan - Flaticon -->
                         <td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain">{{ row.chance_of_rain }}</td>
-                        <td ><i class="fa-solid fa-wind"></i>{{ row.wind_dir }} {{ row.wind_kph }} Km/h</td>
+                        <td class="hourly-wind"><i class="fa-solid fa-wind"></i>{{ row.wind_dir }} {{ row.wind_kph }} Km/h</td>
                       </tr>
                     </table>
                   </button>
@@ -78,6 +74,23 @@
                         <tr><td>{{ row.uv }} of 11</td><td>{{ row.vis_km }}Km</td><td>{{ row.cloud }}%</td></tr>
                       </table>
                     </div>
+                    <div class="hourly-body_s">
+                        <table>
+                          <tr><td><i class="fa-solid fa-temperature-quarter"></i>Feels Like</td><td><i class="fa-solid fa-droplet"></i> Humidity</td><td><i class="fa-solid fa-temperature-low"></i>Dew Point</td></tr>
+                          <tr><td>{{ row[dewpoint_key]|int }}°</td><td>{{ row.humidity }}</td><td>{{ row[dewpoint_key]|int }}°</td></tr>
+                        </table>
+                          <hr>
+                        <table>
+                          <!-- href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by Freepik - Flaticon -->
+                          <tr><td><i class="fa-regular fa-sun"></i>UV Index</td><td><img src="/static/icons/visibility.png" class="visibility">Visibility</td><td><img src="/static/icons/cloud.png" class="cloud">Cloud Cover</td></tr>
+                          <tr><td>{{ row.uv }} of 11</td><td>{{ row.vis_km }}Km</td><td>{{ row.cloud }}%</td></tr>
+                        </table>
+                          <hr>
+                        <table>
+                          <tr><td><i class="fa-solid fa-wind"></i>(dir)</td><td><i class="fa-solid fa-wind"></i></td><td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain"></td></tr>
+                          <tr><td>{{ row.wind_dir }}</td><td>{{ row.wind_kph }} Km/h</td><td>{{ row.chance_of_rain }}</td></tr>
+                        </table>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -87,7 +100,7 @@
         </div>
         <div class="map">
           <iframe
-          width="400"
+          width="100%"
           height="310"
           frameborder="0" style="border-radius: 5px;"
           referrerpolicy="no-referrer-when-downgrade"

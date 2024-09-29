@@ -13,7 +13,15 @@
 Daily
 {% endblock %}
 
-{% block form %}
+{% block form1 %}
+<form action="/daily" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+{% block form2 %}
 <form action="/daily" method="post" id="unit_form">
     <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
         <option value="{{ unit1 }}">{{ unit1 }}</option>
@@ -33,19 +41,6 @@ Daily
   {% else %}
   {% set maxtemp_key = 'maxtemp_' + unit %}
   {% set mintemp_key = 'mintemp_' + unit %}
-  <div class="location_daily">
-    <div class="btn-group" role="group">
-      <button type="button" class="btn dropdown-toggle text-white btn-l" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">saved location</a></li>
-        <li><a class="dropdown-item" href="#">saved location</a></li>
-      </ul>
-    </div>
-    <button type="button" class="btn text-white"><i class="fa-solid fa-star"></i></button>
-  </div>
   <div class="block">
     <div class="weather-news_daily">
       <div class="info">
@@ -129,7 +124,7 @@ Daily
       {% endfor %}
     </div>
     <div class="map">
-      <iframe width="400" height="310" frameborder="0" style="border-radius: 5px;"
+      <iframe width="100%" height="310" frameborder="0" style="border-radius: 5px;"
         referrerpolicy="no-referrer-when-downgrade"
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
       </iframe>
