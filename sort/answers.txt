@@ -1,12 +1,12 @@
-sort1 uses: TODO
-bubble
-How do you know?: TODO
-it took the smallest time in the sorted text
-sort2 uses: TODO
-merge
-How do you know?: TODO
-it took the smallest time in the reversed text
-sort3 uses: TODO
-selection
-How do you know?: TODO
-it took the longest in sorted text
+sort1 uses: bubble
+
+How do you know?: it took the smallest time in the sorted text
+
+sort2 uses: merge
+
+How do you know?: it took the smallest time in the reversed text
+
+sort3 uses: selection
+
+How do you know?: it took the longest in sorted text
+
