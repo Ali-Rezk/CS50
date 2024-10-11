@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Hourly
+{% endblock %}
+
+{% block form1 %}
+<form action="/hourly" method="post" id="unit_form">
+  <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+    <option value="{{ unit1 }}">{{ unit1 }}</option>
+    <option value="{{ unit2 }}">{{ unit2 }}</option>
+  </select>
+</form>
+{% endblock %}
+{% block form2 %}
+<form action="/hourly" method="post" id="unit_form">
+  <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+    <option value="{{ unit1 }}">{{ unit1 }}</option>
+    <option value="{{ unit2 }}">{{ unit2 }}</option>
+  </select>
+</form>
+{% endblock %}
+
+{% block main %}
+{% if location_missing %}
+<!-- https://memegen.link/ -->
+<!-- https://knowyourmeme.com/memes/grumpy-cat -->
+<img alt="{{ top }}" class="border img-fluid"
+  src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/CsCgN7Ll.png&width=400"
+  title="{{ top }}">
+{% else %}
+{% set temp_key = 'temp_' + unit %}
+{% set feelslike_key = 'feelslike_' + unit %}
+{% set dewpoint_key = 'dewpoint_' + unit %}
+<div class="block">
+  <div class="weather-news_hourly">
+    <div class="info">
+      <p><b>Hourly weather:</b> {{ location[0] }}, {{ location[1] }}, {{ location[2] }}</p>
+      <p><b>{{ date_time[0] }}</b> {{ date_time[1] }} {{ date_time[2] }} {{ date_time[3] }} ({{ date_time[4] }})</p>
+    </div>
+    {% for rows in hourly %}
+    <hr>
+    <div class="rows_date">
+      <b>{{ rows.date }}</b>
+    </div>
+    <hr>
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+      {% for row in rows['hour'] %}
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapse{{ row.time }}" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapse{{ row.time }}">
+            <table>
+              <tr>
+                <td class="time">{{ row.time }}</td>
+                <td class="hourly-temp"><b>{{ row[temp_key]|int }}°</b></td>
+                <td class="condition_td"><img src="{{ row.condition.icon }}">{{ row.condition.text }}</td>
+                <td class="condition_td_s"><img src="{{ row.condition.icon }}"></td>
+                <!-- "https://www.flaticon.com/free-icons/heavy-rain" title="heavy-rain icons">Heavy-rain icons created by Saepul Nahwan - Flaticon -->
+                <td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain">{{ row.chance_of_rain
+                  }}</td>
+                <td class="hourly-wind"><i class="fa-solid fa-wind"></i>{{ row.wind_dir }} {{ row.wind_kph }} Km/h</td>
+              </tr>
+            </table>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapse{{ row.time }}" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <div class="hourly-body">
+              <table>
+                <tr>
+                  <td><i class="fa-solid fa-temperature-quarter"></i>Feels Like</td>
+                  <td><i class="fa-solid fa-droplet"></i> Humidity</td>
+                  <td><i class="fa-solid fa-temperature-low"></i>Dew Point</td>
+                </tr>
+                <tr>
+                  <td>{{ row[dewpoint_key]|int }}°</td>
+                  <td>{{ row.humidity }}</td>
+                  <td>{{ row[dewpoint_key]|int }}°</td>
+                </tr>
+              </table>
+              <hr>
+              <table>
+                <!-- href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by Freepik - Flaticon -->
+                <tr>
+                  <td><i class="fa-regular fa-sun"></i>UV Index</td>
+                  <td><img src="/static/icons/visibility.png" class="visibility">Visibility</td>
+                  <td><img src="/static/icons/cloud.png" class="cloud">Cloud Cover</td>
+                </tr>
+                <tr>
+                  <td>{{ row.uv }} of 11</td>
+                  <td>{{ row.vis_km }}Km</td>
+                  <td>{{ row.cloud }}%</td>
+                </tr>
+              </table>
+            </div>
+            <div class="hourly-body_s">
+              <table>
+                <tr>
+                  <td><i class="fa-solid fa-temperature-quarter"></i>Feels Like</td>
+                  <td><i class="fa-solid fa-droplet"></i> Humidity</td>
+                  <td><i class="fa-solid fa-temperature-low"></i>Dew Point</td>
+                </tr>
+                <tr>
+                  <td>{{ row[dewpoint_key]|int }}°</td>
+                  <td>{{ row.humidity }}</td>
+                  <td>{{ row[dewpoint_key]|int }}°</td>
+                </tr>
+              </table>
+              <hr>
+              <table>
+                <!-- href="https://www.flaticon.com/free-icons/cloud" title="cloud icons">Cloud icons created by Freepik - Flaticon -->
+                <tr>
+                  <td><i class="fa-regular fa-sun"></i>UV Index</td>
+                  <td><img src="/static/icons/visibility.png" class="visibility">Visibility</td>
+                  <td><img src="/static/icons/cloud.png" class="cloud">Cloud Cover</td>
+                </tr>
+                <tr>
+                  <td>{{ row.uv }} of 11</td>
+                  <td>{{ row.vis_km }}Km</td>
+                  <td>{{ row.cloud }}%</td>
+                </tr>
+              </table>
+              <hr>
+              <table>
+                <tr>
+                  <td><i class="fa-solid fa-wind"></i>Wind dir</td>
+                  <td><i class="fa-solid fa-wind"></i>Wind speed</td>
+                  <td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain">Rain chane</td>
+                </tr>
+                <tr>
+                  <td>{{ row.wind_dir }}</td>
+                  <td>{{ row.wind_kph }} Km/h</td>
+                  <td>{{ row.chance_of_rain }}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  <div class="map">
+    <iframe width="100%" height="310" frameborder="0" style="border-radius: 5px;"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
+    </iframe>
+  </div>
+  {% endif %}
+  <script>
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(sendPosition);
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
+
+    function sendPosition(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      // used the help of bing chat with this part
+      // Send data to Flask
+      fetch('/hourly', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ latitude: latitude, longitude: longitude })
+      })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
+    }
+  </script>
+</div>
+{% endblock %}

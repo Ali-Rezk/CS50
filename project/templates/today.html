@@ -1,0 +1,209 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+{% block form1 %}
+<form action="/today" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+{% block form2 %}
+<form action="/today" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+{% block main %}
+<div>
+    {% if location_missing %}
+    <!-- https://memegen.link/ -->
+    <!-- https://knowyourmeme.com/memes/grumpy-cat -->
+    <img alt="{{ top }}" class="border img-fluid"
+        src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/CsCgN7Ll.png&width=400"
+        title="{{ top }}">
+    {% else %}
+    <div class="block">
+        <div class="today-weather{{ current[11] }}">
+            <ul>
+                <li>Current weather</li>
+                <li>{{ date_time[1] }} {{ date_time[2] }}</li>
+                <li class="temp">{{ current[0] }}°</li>
+                <li>{{ current[1] }}</li>
+            </ul>
+            <table class="table_s">
+                <tr>
+                    <td>Dewpoint</td>
+                    <td>Wind ({{ current[4] }})</td>
+                </tr>
+                <tr>
+                    <td>{{ current[9] }}°</td>
+                    <td>{{ current[3] }} Km/h</td>
+                </tr>
+            </table>
+            <table class="table_s">
+                <tr>
+                    <td>Pressure</td>
+                    <td>Humidity</td>
+                    <td>Visibility</td>
+                </tr>
+                <tr>
+                    <td>{{ current[5] }} mb</td>
+                    <td>{{ current[6] }}%</td>
+                    <td>{{ current[7] }} Km</td>
+                </tr>
+            </table>
+            <table class="table_l">
+                <tr>
+                    <td>Dewpoint</td>
+                    <td>Wind ({{ current[4] }})</td>
+                    <td>Pressure</td>
+                    <td>Humidity</td>
+                    <td>Visibility</td>
+                </tr>
+                <tr>
+                    <td>{{ current[9] }}°</td>
+                    <td>{{ current[3] }} Km/h</td>
+                    <td>{{ current[5] }} mb</td>
+                    <td>{{ current[6] }}%</td>
+                    <td>{{ current[7] }} Km</td>
+                </tr>
+            </table>
+        </div>
+        <div class="map">
+            <iframe width="100%" height="100%" frameborder="0" style="border-radius: 5px;"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
+            </iframe>
+        </div>
+    </div>
+    <div class="weather-news">
+        <ul>
+            <li>Feels like</li>
+            <li>
+                <table>
+                    <tr>
+                        <td class="feels_like">{{ current[2] }}°</td>
+                    </tr>
+                </table>
+            </li>
+            <li class="stats">
+                <table>
+                    <tr>
+                        <td>Max/Min</td>
+                        <td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td>
+                    </tr>
+                    <tr>
+                        <td>Sunrise:</td>
+                        <td class="value">{{ astro[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Sunset:</td>
+                        <td class="value">{{ astro[1] }}</td>
+                    </tr>
+                </table>
+                <div class="vl"></div>
+                <table>
+                    <tr>
+                        <td>Rain chance</td>
+                        <td class="value">{{ daily[3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Snow chance</td>
+                        <td class="value">{{ daily[4] }}</td>
+                    </tr>
+                    <tr>
+                        <td>UV</td>
+                        <td class="value">{{ current[8] }} of 11</td>
+                    </tr>
+                </table>
+            </li>
+            <li class="stats_s">
+                <table>
+                    <tr>
+                        <td>Max/Min</td>
+                        <td class="value">{{ daily[0] }}°/{{ daily[2] }}°</td>
+                    </tr>
+                    <tr>
+                        <td>Sunrise:</td>
+                        <td class="value">{{ astro[0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Sunset:</td>
+                        <td class="value">{{ astro[1] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Rain chance</td>
+                        <td class="value">{{ daily[3] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Snow chance</td>
+                        <td class="value">{{ daily[4] }}</td>
+                    </tr>
+                    <tr>
+                        <td>UV</td>
+                        <td class="value">{{ current[8] }} of 11</td>
+                    </tr>
+                </table>
+            </li>
+        </ul>
+    </div>
+    <div class="astro-news">
+        <div>
+            <table>
+                <tr>
+                    <td>Moon phase</td>
+                    <td>{{ date_time[0] }}</td>
+                    <td>Moon illumination</td>
+                </tr>
+                <tr>
+                    <td>
+                        <ul>
+                            <li class="moon_phase">{{ astro[4] }}</li>
+                            <li>Moonrise: {{ astro[2] }}</li>
+                        </ul>
+                    </td>
+                    <td><img src="static/icons/moons/{{ astro[4] }}.png" class="moon_image"></td>
+                    <td>
+                        <ul>
+                            <li class="moon_illumination">{{ astro[5] }}%</li>
+                            <li>Moonset: {{ astro[3] }}</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    {% endif %}
+    <script>
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(sendPosition);
+        } else {
+            console.log("Geolocation is not supported by this browser.");
+        }
+
+        function sendPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.coords.longitude;
+
+            // used the help of bing chat with javascript
+            // Send data to Flask
+            fetch('/today', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ latitude: latitude, longitude: longitude })
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</div>
+{% endblock %}

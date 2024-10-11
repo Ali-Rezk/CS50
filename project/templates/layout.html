@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/static/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/static/icons/website_icon.png" rel="icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/967c8d9878.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link href="Leaflet.Weather.css" rel="stylesheet" type="text/css" />
+    <script src="Leaflet.Weather.js"></script>
+
+    {% block style %}{% endblock %}
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+</head>
+<body class="global-container">
+    <div class="nav-container">
+        <table class="nav_l">
+            <tr>
+                <td><img class="logo" src="/static/icons/icons8-weather-64(1).png"></td>
+                <td class="search_bar">
+                    <form method="post">
+                        <div class="input-group">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input type="search" id="form1" name="search" placeholder="Search"
+                                    class="form-control" />
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-mdb-ripple-init>
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    {% block form1 %}
+                    {% endblock %}
+                </td>
+            </tr>
+        </table>
+        <table class="nav_s">
+            <tr>
+                <td><img class="logo" src="/static/icons/icons8-weather-64(1).png"></td>
+                <td>
+                    {% block form2 %}
+                    {% endblock %}
+                </td>
+                <td class="search_bar">
+                    <form method="post">
+                        <div class="input-group">
+                            <div class="form-outline" data-mdb-input-init>
+                                <input type="search" id="form1" name="search" placeholder="Search"
+                                    class="form-control" />
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-mdb-ripple-init>
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="second-sec">
+        <table>
+            <tr>
+                <td>
+                    <a href="/today">Today</a>
+                </td>
+                <td>
+                    <a href="/hourly">Hourly forecast</a>
+                </td>
+                <td>
+                    <a href="/daily">Daily forecast</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="space"></div>
+    <main class="container py-5 text-center">
+        {% block main %}{% endblock %}
+    </main>
+    <footer>
+        <a target="_blank" href="https://icons8.com/icon/txoP0q0H3NEb/weather">Weather</a> icon by <a target="_blank"
+            href="https://icons8.com">Icons8</a>
+    </footer>
+    <script>
+        // used the help of bing chat with javascript
+        function submitForm() {
+            const unit_select = document.getElementById("unit_select")
+            const unit_form = document.getElementById("unit_form")
+            unit_form.submit()
+        }
+    </script>
+</body>
+</html>

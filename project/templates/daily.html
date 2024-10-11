@@ -1,0 +1,213 @@
+{% extends "layout.html" %}
+
+{% block style %}
+<style>
+  #map {
+    height: 310px;
+    width: 400px;
+  }
+</style>
+{% endblock %}
+
+{% block title %}
+Daily
+{% endblock %}
+
+{% block form1 %}
+<form action="/daily" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+{% block form2 %}
+<form action="/daily" method="post" id="unit_form">
+    <select id="unit_select" class="form-select mx-auto w-auto" name="symbol" onchange="submitForm()">
+        <option value="{{ unit1 }}">{{ unit1 }}</option>
+        <option value="{{ unit2 }}">{{ unit2 }}</option>
+    </select>
+</form>
+{% endblock %}
+
+{% block main %}
+<div>
+  {% if location_missing %}
+  <!-- https://memegen.link/ -->
+  <!-- https://knowyourmeme.com/memes/grumpy-cat -->
+  <img alt="{{ top }}" class="border img-fluid"
+    src="https://api.memegen.link/images/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://i.imgur.com/CsCgN7Ll.png&width=400"
+    title="{{ top }}">
+  {% else %}
+  {% set maxtemp_key = 'maxtemp_' + unit %}
+  {% set mintemp_key = 'mintemp_' + unit %}
+  <div class="block">
+    <div class="weather-news_daily">
+      <div class="info">
+        <p><b>Daily weather:</b> {{ location[0] }}, {{ location[1] }}, {{ location[2] }}</p>
+        <p><b>{{ date_time[0] }}</b> {{ date_time[1] }} {{ date_time[2] }} {{ date_time[3] }} ({{ date_time[4] }})</p>
+      </div>
+      {% for row in daily %}
+      <hr>
+      <div class="rows_date">
+        <b>{{ row.date }}</b>
+      </div>
+      <hr>
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapse{{ row.day_day }}" aria-expanded="false"
+              aria-controls="panelsStayOpen-collapse{{ row.day_day }}">
+              <table>
+                <tr>
+                  <td class="time">{{ row.date_day }}</td>
+                  <td class="hourly-temp"><b>{{ row.day[maxtemp_key]|int }}°/{{ row.day[mintemp_key]|int }}°</b></td>
+                  <td class="condition_td"><img src="{{ row.day.condition.icon }}">{{ row.day.condition.text }}</td>
+                  <td class="condition_td_s"><img src="{{ row.day.condition.icon }}"></td>
+                  <!-- "https://www.flaticon.com/free-icons/heavy-rain" title="heavy-rain icons">Heavy-rain icons created by Saepul Nahwan - Flaticon -->
+                  <td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain">{{ row.day.daily_chance_of_rain }}</td>
+                  <td class="hourly-wind"><i class="fa-solid fa-wind"></i>{{ row.day.maxwind_kph }} Km/h</td>
+                </tr>
+              </table>
+            </button>
+          </h2>
+          <div id="panelsStayOpen-collapse{{ row.day_day }}" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <div class="hourly-body">
+                <table>
+                  <!-- "https://www.flaticon.com/free-icons/horizon" title="horizon icons">Horizon icons created by Muhamad Ulum - Flaticon -->
+                  <tr>
+                    <td><img src="/static/icons/sunrise.png" class="sun_moon">Sunrise</td>
+                    <td><i class="fa-solid fa-droplet"></i> Humidity</td>
+                    <td><img src="/static/icons/moon_rise.png" class="sun_moon">Moonrise:</td>
+                  </tr>
+                  <tr>
+                    <td>{{ row.astro.sunrise }}</td>
+                    <td>{{ row.day.avghumidity }}</td>
+                    <td>{{ row.astro.moonrise }}</td>
+                  </tr>
+                </table>
+                <hr>
+                <table>
+                  <!-- "https://www.flaticon.com/free-icons/lamp" title="lamp icons">Lamp icons created by wanicon - Flaticon -->
+                  <tr>
+                    <td><i class="fa-solid fa-moon"></i>Moon phase</td>
+                    <td><i class="fa-regular fa-sun"></i>UV Index</td>
+                    <td><img src="/static/icons/moon_illumination.png" class="sun_moon">Moon illumination</td>
+                  </tr>
+                  <tr>
+                    <td><b>{{ row.astro.moon_phase }}</b></td>
+                    <td>{{ row.day.uv }} of 11</td>
+                    <td>{{ row.astro.moon_illumination }}%</td>
+                  </tr>
+                </table>
+                <hr>
+                <table>
+                  <!-- "https://www.flaticon.com/free-icons/higher" title="higher icons">Higher icons created by amoghdesign - Flaticon -->
+                  <tr>
+                    <td><img src="/static/icons/sunset.png" class="sun_moon">Sunset</td>
+                    <td><img src="/static/icons/visibility.png" class="visibility">Visibility</td>
+                    <td><img src="/static/icons/moon_set.png" class="sun_moon">Moonset</td>
+                  </tr>
+                  <tr>
+                    <td>{{ row.astro.sunset }}
+                    <td>{{ row.day.avgvis_km }}Km</td>
+                    <td>{{ row.astro.moonset }}</td>
+                  </tr>
+                </table>
+              </div>
+              <div class="daily-body_s">
+                <table>
+                  <!-- "https://www.flaticon.com/free-icons/horizon" title="horizon icons">Horizon icons created by Muhamad Ulum - Flaticon -->
+                  <tr>
+                    <td><img src="/static/icons/sunrise.png" class="sun_moon">Sunrise</td>
+                    <td><i class="fa-solid fa-droplet"></i> Humidity</td>
+                    <td><img src="/static/icons/moon_rise.png" class="sun_moon">Moonrise</td>
+                  </tr>
+                  <tr>
+                    <td>{{ row.astro.sunrise }}</td>
+                    <td>{{ row.day.avghumidity }}</td>
+                    <td>{{ row.astro.moonrise }}</td>
+                  </tr>
+                </table>
+                <hr>
+                <table>
+                  <!-- "https://www.flaticon.com/free-icons/lamp" title="lamp icons">Lamp icons created by wanicon - Flaticon -->
+                  <tr>
+                    <td><i class="fa-solid fa-moon"></i>Moon phase</td>
+                    <td><i class="fa-regular fa-sun"></i>UV Index</td>
+                    <td><img src="/static/icons/moon_illumination.png" class="moon_illum">Moon illumination</td>
+                  </tr>
+                  <tr>
+                    <td><b>{{ row.astro.moon_phase }}</b></td>
+                    <td>{{ row.day.uv }} of 11</td>
+                    <td>{{ row.astro.moon_illumination }}%</td>
+                  </tr>
+                </table>
+                <hr>
+                <table>
+                  <!-- "https://www.flaticon.com/free-icons/higher" title="higher icons">Higher icons created by amoghdesign - Flaticon -->
+                  <tr>
+                    <td><img src="/static/icons/sunset.png" class="sun_moon">Sunset</td>
+                    <td><img src="/static/icons/visibility.png" class="visibility">Visibility</td>
+                    <td><img src="/static/icons/moon_set.png" class="sun_moon">Moonset:</td>
+                  </tr>
+                  <tr>
+                    <td>{{ row.astro.sunset }}
+                    <td>{{ row.day.avgvis_km }}Km</td>
+                    <td>{{ row.astro.moonset }}</td>
+                  </tr>
+                </table>
+                <hr>
+                <table>
+                  <tr>
+                    <td><i class="fa-solid fa-wind"></i>Wind speed</td>
+                    <td class="hourly-rain"><img src="/static/icons/heavy-rain.png" class="heavy-rain">Rain chane</td>
+                  </tr>
+                  <tr>
+                    <td>{{ row.day.wind_kph }} Km/h</td>
+                    <td>{{ row.day.daily_chance_of_rain }}</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="map">
+      <iframe width="100%" height="310" frameborder="0" style="border-radius: 5px;"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAxbp1ejrfY-7Mg62hFzebIIIOcgSH_IWw&q={{ location[0], location[1], location[2] }}">
+      </iframe>
+    </div>
+    {% endif %}
+    <script>
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(sendPosition);
+      } else {
+        console.log("Geolocation is not supported by this browser.");
+      }
+
+      function sendPosition(position) {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        // used the help of bing chat with this part
+        // Send data to Flask
+        fetch('/daily', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ latitude: latitude, longitude: longitude })
+        })
+          .then(response => response.json())
+          .then(data => console.log(data))
+          .catch(error => console.error('Error:', error));
+      }
+    </script>
+  </div>
+  {% endblock %}

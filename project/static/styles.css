@@ -1,0 +1,826 @@
+@media only screen and (max-width: 600px) { 
+    .nav_l {
+        display: none;
+    }
+    
+    .logo {
+        /* margin-left: 30px; */
+        width: 90%;
+        float: left;
+    }
+
+    .nav-container table tr {
+        vertical-align: middle;
+    }
+
+    .nav-container table tr td {
+        justify-items: center;
+        vertical-align: middle;
+    }
+
+    .nav-container .search_bar {
+        margin-top: 7px;
+        justify-content: flex-end;
+    }
+
+    .nav-container .search_bar form {
+        width: 90%;
+    }
+    
+    .nav-container .nav_s .input-group {
+        flex-wrap: nowrap;
+    }
+
+    .second-sec tr td{
+        font-size: 18px;
+    }
+
+    .block {
+        width: 100%;
+    }
+
+    .today-weather0 {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .today-weather0 .table_l {
+        display: none;
+    }
+
+    .today-weather0 .table_s {
+        width: 100%;
+    }
+    
+    .today-weather1 {
+        width: 100%;
+    }
+
+    .today-weather1 .table_l {
+        display: none;
+    }
+
+    .today-weather1 .table_s {
+        width: 100%;
+    }
+
+    .block .map {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .weather-news .stats {
+        display: none;
+    
+    }
+
+    .weather-news .stats_s {
+        padding-right: 25px;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: inline-flex;
+        width: 100%;
+        padding: 10px 25px;
+    }
+
+    .weather-news .stats_s table {
+        width: 100%;
+    }
+
+    .weather-news .stats_s table tr td{
+        font-size: small;
+    }
+
+    .weather-news .stats .vl {
+        display: none;
+    }
+
+    .astro-news .moon_image {
+        width: 100%;
+    }
+
+    .astro-news table tr td {
+        font-size: small;
+    }
+
+    .astro-news table tr td ul li{
+        font-size: small;
+    }
+
+    .astro-news .moon_phase {
+        font-size: 18px;
+        color: #cfb11a;
+        padding-bottom: 10px;
+    }
+    
+    .astro-news .moon_illumination {
+        margin: 15px 0px;
+        font-size: 16px;
+        color: #cfb11a;
+        padding-bottom: 10px;
+    }
+
+    /* hourly */
+    .weather-news_hourly {
+        width: 100%;
+    }
+
+    .accordion-button {
+        padding: 16px 0px;
+    }
+
+    .accordion-button .condition_td_s{
+        width: 20%;
+        text-align: center;
+    }
+
+    .accordion-button .hourly-temp {
+        text-align: center;
+    }
+
+    .accordion-button .condition_td{
+        display: none;
+    }
+
+    .accordion-button .hourly-rain {
+        display: none;
+    }
+
+    .accordion-button .hourly-wind{
+        display: none;
+    }
+
+    .accordion-body .hourly-body {
+        display: none;
+    }
+
+    .accordion-body .hourly-body_s .visibility {
+        padding-right: 5px;
+        width: 30%;
+    }
+    
+    .accordion-body .hourly-body_s .cloud {
+        padding-right: 5px;
+        width: 30%;
+    }
+
+    .accordion-body .hourly-body_s .heavy-rain{
+        padding-right: 5px;
+        width: 35%;
+    }
+
+    /* daily */
+    .weather-news_daily {
+        width: 100%;
+    }
+
+    .accordion-body .daily-body_s .visibility {
+        padding-right: 5px;
+        width: 30%;
+    }
+    
+    .accordion-body .daily-body_s .cloud {
+        padding-right: 5px;
+        width: 30%;
+    }
+
+    .accordion-body .daily-body_s .heavy-rain{
+        padding-right: 5px;
+        width: 25%;
+    }
+
+    .accordion-body .daily-body_s .sun_moon {
+        padding-right: 5px;
+        width: 30%;
+    }
+
+    .accordion-body .daily-body_s .moon_illum {
+        padding-right: 5px;
+        width: 25%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    /* layout */
+    .nav_s {
+        display: none;
+    }
+    
+    .logo {
+        width: 17%;
+        float: left;
+    }
+
+    .nav-container table tr td {
+        display: inline-block;
+        width: 33%;
+    }
+
+    .form-outline {
+        width: 70%;
+    }
+
+    .second-sec tr td{
+        font-size: 20px;
+    }
+
+    /* today */
+    .block {
+        width: 100%;
+        display: inline-flex;
+    }
+
+    .today-weather0 {
+        width: 70%;
+        margin-right: 10px;
+    }
+
+    .today-weather0 .table_s {
+        display: none;
+    }
+
+    .today-weather0 .table_l {
+        width: 100%;
+    }
+
+    .today-weather1 {
+        width: 70%;
+        margin-right: 10px;
+    }
+
+    .today-weather1 .table_s {
+        display: none;
+    }
+
+    .today-weather1 .table_l {
+        width: 100%;
+    }
+
+    .block .map {
+        width: 30%;
+    }
+
+    .weather-news .stats_s {
+        display: none;
+    
+    }
+
+    .weather-news .stats {
+        padding-right: 25px;
+        border: 1px solid black;
+        border-radius: 10px;
+        display: inline-flex;
+        width: 100%;
+        padding: 10px 25px;
+    
+    }
+
+    .weather-news .stats .vl {
+        width: 1px;
+        height: 200px;
+        background-color: black;
+        transform: rotate(0deg);
+        margin: 0 auto;
+    }
+
+    .astro-news div table tr td {
+        font-size: 18px;
+    }
+
+    .astro-news .moon_image {
+        width:80%;
+    }
+
+    .astro-news .moon_phase {
+        font-size: 36px;
+        color: #cfb11a;
+        padding-bottom: 10px;
+    }
+    
+    .astro-news .moon_illumination {
+        margin: 25px 0px;
+        font-size: 36px;
+        color: #cfb11a;
+        padding-bottom: 10px;
+    }
+
+    /* hourly */
+    .weather-news_hourly {
+        width: 80%;
+    }
+
+    .accordion-button {
+        padding: 16px 10px;
+    }
+
+    .accordion-button .condition_td{
+        width: 25%;
+    }
+
+    .accordion-button .condition_td_s{
+        display: none;
+    }
+
+    .accordion-button .hourly-rain .heavy-rain{
+        padding-right: 5px;
+        width: 40%;
+    }
+
+    .accordion-body .hourly-body_s {
+        display: none;
+    }
+
+    .accordion-body .hourly-body .visibility {
+        padding-right: 5px;
+        width: 20%;
+    }
+    
+    .accordion-body .hourly-body .cloud {
+        padding-right: 5px;
+        width: 20%;
+    }
+
+    /* daily */
+    .weather-news_daily {
+        width: 80%;
+    }
+
+    .accordion-body .daily-body_s {
+        display: none;
+    }
+
+    .accordion-body .hourly-body .sun_moon {
+        width: 20%;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .logo {
+        /* margin-left: 30px; */
+        width: 13%;
+        float: left;
+    }
+
+    /* .form-outline {
+        width: 100%;
+    } */
+
+    .astro-news .moon_image {
+        width: 50%;
+    }
+
+    .astro-news .moon_phase {
+        margin: 25px 0px;
+    }
+
+    .astro-news .moon_illumination {
+        margin: 25px 0px;
+    }
+
+    .accordion-button .hourly-rain .heavy-rain{
+        padding-right: 5px;
+        width: 27%;
+    }
+
+    .accordion-body .hourly-body .visibility {
+        padding-right: 5px;
+        width: 13%;
+    }
+    
+    .accordion-body .hourly-body .cloud {
+        padding-right: 5px;
+        width: 13%;
+    }
+
+    /* daily */
+    .accordion-body .hourly-body .sun_moon {
+        width: 13%;
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.btn-l {
+    padding: 0px 50px;
+}
+
+.global-container {
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(#022d50, #13588b);
+    /* background: linear-gradient(#313050, #615878); */
+    /* background: linear-gradient(#005986, #d8eeee); */
+    background-size: cover;
+}
+
+.nav-container {
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.nav-container table tr td {
+    text-align: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.nav-container table {
+    width: 100%;
+}
+
+.nav-container ul li {
+    display: inline;
+}
+
+.float_btns {
+    position: absolute;
+    width: 15%;
+    top: 60px;
+    left: 40%; 
+    z-index: 1000; 
+    padding: 10px; 
+}
+
+.float_btns button{
+    display: block;
+    width: 100%;
+    padding: 5px;
+    border: white;
+    border-radius: 1px;
+}
+
+.nav-container .search_bar {
+    display: inline-flex;
+}
+
+.input-group {
+    align-items: center;
+    justify-content: center;
+}
+
+.caret-off::before {
+    display: none;
+}
+.caret-off::after {
+    display: none;
+}
+
+.form-select {
+    float: right;
+}
+
+.nav li {
+    display: inline;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.second-sec {
+    width: 100%;
+    padding: 15px 0px;
+    background-color: #011b30;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    /* margin-bottom: 62px; */
+}
+
+.second-sec table {
+    width: 100%;
+}
+
+.second-sec tr td{
+    text-align: center;
+    width: 33%;
+}
+
+.second-sec tr td a {
+    background-color: transparent;
+    color: white;
+    border: 0px;
+}
+
+/* today */
+
+/* .block {
+    width: 100%;
+    display: inline-flex;
+} */
+
+/* today night-background */
+
+.today-weather0 {
+    /* width: 70%; */
+    height: auto;
+    /* margin-right: 10px; */
+    padding: 20px 0px;
+    border-radius: 10px;
+    background-color: white;
+    background-image: url(/static/icons/day-night/night.jpg);
+    background-size: cover;
+    color: white;
+    margin-left: auto;
+}
+
+.today-weather1 {
+    /* width: 70%; */
+    height: auto;
+    /* margin-right: 10px; */
+    padding: 20px 0px;
+    border-radius: 10px;
+    background-color: white;
+    background-image: url(/static/icons/day-night/day2.jpg);
+    background-size: cover;
+    color: white;
+    margin-left: auto;
+}
+
+.today-weather0 ul li {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.today-weather0 .temp {
+    font-size: 64px;
+}
+
+/* .today-weather0 .temp img{
+    width: 12%;
+} */
+
+.today-weather0 table tr td{
+    font-size: 16px;
+    text-align: center;
+    width: 10%;
+    vertical-align: middle;
+}
+
+/* today day-background */
+
+.today-weather1 table {
+    width: 100%;
+}
+
+.today-weather1 ul li {
+    font-size: 24px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.today-weather1 .temp {
+    font-size: 64px;
+}
+
+/* .today-weather1 .temp img{
+    width: 12%;
+} */
+
+.today-weather1 table tr td{
+    font-size: 16px;
+    text-align: center;
+    width: 10%;
+    vertical-align: middle;
+}
+/* end background */
+
+/* .block .map {
+    width: 30%;
+} */
+
+.weather-news {
+    width: 100%;
+    margin-top: 10px;
+    padding: 5px 25px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+}
+
+.weather-news ul li {
+    font-size: 24px;
+}
+
+.weather-news .feels_like {
+    font-size: 64px;
+}
+
+.weather-news .news-img {
+    width: 40%;
+    float: right;
+}
+
+.weather-news table{
+    width: 49%;
+}
+
+.weather-news table tr td{
+    padding: 5px;
+    text-align: left;
+    font-size: large;
+}
+
+.weather-news table tr .value{
+    padding: 5px;
+    padding-right: 5px;
+    text-align: right;
+    font-size: large;
+    font-weight: bold;
+}
+
+.astro-news {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: black;
+}
+
+.astro-news div table {
+    width: 100%;
+}
+
+.astro-news div table tr td {
+    text-align: center;
+    vertical-align: top;
+    text-align: center;
+    color: white;
+    width: 30%;
+}
+
+/* .astro-news .moon_phase {
+    font-size: 40px;
+    color: #cfb11a;
+    padding-bottom: 10px;
+}
+
+.astro-news .moon_illumination {
+    font-size: 40px;
+    color: #cfb11a;
+    padding-bottom: 10px;
+} */
+
+/* .astro-news .moon_image {
+    width: 50%;
+} */
+
+/* Hourly */
+
+.weather-news_hourly {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+}
+
+.weather-news_hourly .info {
+    padding: 0px 20px;
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.weather-news_hourly .info p b{
+    font-size: 24px;
+}
+
+.weather-news_hourly .rows_date b{
+    padding: 5px 20px;
+    font-size: 20px;
+}
+
+.accordion-button .hourly-temp {
+    font-size: 24px;
+}
+
+.accordion-button table {
+    width: 100%;
+}
+
+.accordion-button table tr td{
+    width: 15%;
+}
+
+.accordion-button .time{
+    text-align: center;
+}
+
+.accordion-button .fa-solid {
+    padding-right: 5px;
+    justify-self: center;
+}
+
+.accordion-button .hourly-rain {
+    text-align: center;
+}
+
+
+.accordion-body .hourly-body {
+    padding: 5px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.accordion-body .hourly-body table {
+    width: 100%;
+}
+
+.accordion-body .hourly-body tr td {
+    text-align: center;
+    width: 30%;
+}
+
+.accordion-body .hourly-body .fa-solid {
+    padding-right: 5px;
+}
+
+.accordion-body .hourly-body .fa-regular {
+    padding-right: 5px;
+}
+
+.accordion-body .hourly-body_s {
+    padding: 5px 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.accordion-body .hourly-body_s table {
+    width: 100%;
+}
+
+.accordion-body .hourly-body_s tr td {
+    text-align: center;
+    width: 30%;
+}
+
+.accordion-body .hourly-body_s .fa-solid {
+    padding-right: 5px;
+}
+
+.accordion-body .hourly-body_s .fa-regular {
+    padding-right: 5px;
+}
+
+
+/* daily */
+
+.weather-news_daily {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: left;
+}
+
+.weather-news_daily .info {
+    padding: 0px 20px;
+    padding-top: 15px;
+    font-size: 20px;
+}
+
+.weather-news_daily .info p b{
+    font-size: 24px;
+}
+
+.weather-news_daily .rows_date b{
+    padding: 5px 20px;
+    font-size: 20px;
+}
+
+.accordion-body .max_min {
+    padding: 15px 20px;
+    font-size: 30px;
+}
+
+.accordion-body .max_min table tr td{
+    font-size: 30px;
+}
+
+.accordion-body .daily-body_s table {
+    width: 100%;
+}
+
+.accordion-body .daily-body_s tr td {
+    text-align: center;
+    width: 30%;
+}
+
+.accordion-body .daily-body_s .fa-solid {
+    padding-right: 5px;
+}
+
+.accordion-body .daily-body_s .fa-regular {
+    padding-right: 5px;
+}
+
+.accordion-body .hourly-body .sun_moon {
+    padding-right: 5px;
+}
+
+/* testing */
+
